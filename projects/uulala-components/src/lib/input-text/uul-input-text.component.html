@@ -1,0 +1,8 @@
+<div [ngClass]="{'control-container': true, containerCss: containerCss != ''}">
+  <label [ngClass]="{'control-label': true, labelCss: labelCss != ''}">{{ label }}</label>
+  <input [type]="type" [formControlName]="formControlName" placeholder="{{ placeholder }}" [ngClass]="{'control-input': true, containerCss: containerCss != ''}">
+
+  <!-- password img -->
+  <div class="control-img-pwd-hide" *ngIf="!showPassword" (click)="showPassword=!showPassword"></div>
+  <div class="control-img-pwd-show" *ngIf="showPassword" (click)="showPassword=!showPassword"></div>
+</div>

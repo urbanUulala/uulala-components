@@ -1,0 +1,57 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "uulala-components": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        }
+      },
+      "root": "projects/uulala-components",
+      "sourceRoot": "projects/uulala-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/uulala-components/tsconfig.lib.json",
+            "project": "projects/uulala-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/uulala-components/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/uulala-components/src/test.ts",
+            "tsConfig": "projects/uulala-components/tsconfig.spec.json",
+            "karmaConfig": "projects/uulala-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/uulala-components/tsconfig.lib.json",
+              "projects/uulala-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+
+  "cli": {
+    "analytics": "8c4a9550-1e2c-4a68-8893-05cd4794d5e5"
+  },
+  "defaultProject": "uulala-components"
+}
