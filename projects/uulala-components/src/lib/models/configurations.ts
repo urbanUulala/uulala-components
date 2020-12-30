@@ -1,7 +1,6 @@
 
 interface InputControlConfig {
-  id: string,
-  formControlName: string
+  id: string
 }
 
 export interface InputControlTextConfig extends InputControlConfig{}

@@ -1,12 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { InputControlTextConfig } from '../models/configurations';
-import { ControlTextTypes } from '../models/types';
+import { AbstractControl, FormControl } from '@angular/forms';
+
+//local files
 import { StringTools } from '../utilities/string.tools';
+import { ControlTextTypes } from '../models/types';
+import { InputControlTextConfig } from '../models/configurations';
 
 //Constants
 const defaultConfig: InputControlTextConfig = {
-  id: StringTools.generateNewIdString(),
-  formControlName: ''
+  id: StringTools.generateNewIdString()
 };
 
 @Component({
@@ -22,12 +24,16 @@ export class UulInputTextComponent implements OnInit {
   @Input() label: string = '';
 
   //reactive form
+  @Input() control: AbstractControl = new FormControl();
 
-  @Input() formControlName: string = '';
+
   //Input styles
   @Input() containerCss: string = '';
   @Input() inputCss: string = '';
   @Input() labelCss: string = '';
+
+  //private variables
+  private showPassword:boolean = false;
 
   constructor() { }
 
