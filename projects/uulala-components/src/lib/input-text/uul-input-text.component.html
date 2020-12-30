@@ -1,6 +1,21 @@
-<div [ngClass]="{'control-container': true, containerCss: containerCss != ''}">
-  <label [ngClass]="{'control-label': true, labelCss: labelCss != ''}">{{ label }}</label>
-  <input [type]="type" [formControl]="control" placeholder="{{ placeholder }}" [ngClass]="{'control-input': true, containerCss: containerCss != ''}">
+<div [ngClass]="containerStyles">
+  <label [ngClass]="labelStyles">{{ label }}</label>
+  <input [type]="type" [formControl]="control" placeholder="{{ placeholder }}" [ngClass]="inputStyles">
+  <ng-container [ngSwitch]="type">
 
-  <!-- password img -->
+    <ng-container *ngSwitchCase="'password'">
+      <input type="text" *ngIf="showPassword" [formControl]="control" placeholder="{{ placeholder }}"
+        [ngClass]="inputStyles">
+      <input type="password" *ngIf="!showPassword" [formControl]="control" placeholder="{{ placeholder }}"
+        [ngClass]="inputStyles">
+      <!-- password img -->
+      <div class="control-img-pwd-hide" *ngIf="!showPassword" (click)="showPassword=!showPassword"></div>
+      <div class="control-img-pwd-show" *ngIf="showPassword" (click)="showPassword=!showPassword"></div>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+      <input [type]="type" [formControl]="control" placeholder="{{ placeholder }}" [ngClass]="inputStyles">
+    </ng-container>
+
+  </ng-container>
 </div>

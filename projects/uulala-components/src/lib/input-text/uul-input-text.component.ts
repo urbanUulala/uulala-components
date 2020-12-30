@@ -32,6 +32,9 @@ export class UulInputTextComponent implements OnInit {
   @Input() inputCss: string = '';
   @Input() labelCss: string = '';
 
+  //local variables
+  showPassword: boolean = false;
+
   containerStyles:any = {
     'control-container': true
   }
@@ -42,8 +45,6 @@ export class UulInputTextComponent implements OnInit {
     'control-label': true
   }
 
-  //private variables
-  private showPassword:boolean = false;
 
   constructor() { }
 
