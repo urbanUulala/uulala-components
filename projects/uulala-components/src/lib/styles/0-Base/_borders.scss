@@ -1,0 +1,8 @@
+
+%normal-border {
+  border: 1px solid $color-borders;
+}
+
+.normal-border {
+  @extend %normal-border;
+}

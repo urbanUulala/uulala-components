@@ -1,0 +1,91 @@
+@import '../0-Base/base-dir';
+
+%plataform-card {
+  /*  extends  */
+  @extend %border-radius;
+  @extend %normal-border;
+
+  /*  shape  */
+  width: 100%;
+  height: 100%;
+
+  /*  grid  */
+  display: grid;
+  grid-template-columns: calc(100% - 30px);
+  grid-template-rows: 130px 20px 35px 70px 50px;
+  justify-content: center;
+
+
+
+}
+
+%plataform-card > .plataform-card-img {
+  /*  position  */
+  align-self: center;
+  justify-self: center;
+}
+
+%plataform-card > .plataform-card-tittle {
+  /*  extends  */
+  @extend %normal-text;
+  @extend %fs-14;
+
+  /*  position  */
+  align-self: center;
+  justify-self: center;
+}
+
+%plataform-card > .plataform-card-sub-tittle {
+  /*  extends  */
+  @extend %highlighted-text;
+  @extend %fs-10;
+
+  /*  position  */
+  align-self: start;
+  justify-self: center;
+  margin-top: 5px;
+}
+
+%plataform-card > .plataform-card-list {
+  /*  shape  */
+  padding-left: 15px;
+  margin: 0;
+
+  /*  color  */
+  list-style-image: url(/assets/img/icons/blue-point.svg);
+}
+
+//list-style-type: square;
+
+%plataform-card > .plataform-card-list > .plataform-card-item {
+  /*  extends  */
+  @extend %normal-text;
+  @extend %fs-8;
+
+  height: 15px;
+
+}
+
+%plataform-card > .plataform-card-list > .plataform-card-item-nb {
+  /*  extends  */
+  @extend %normal-text;
+  @extend %fs-8;
+
+  height: 15px;
+  list-style: none;
+}
+
+%plataform-card > button {
+  /*  extends  */
+  @extend %normal-button ;
+  @extend %w-116;
+
+  /*  position  */
+  align-self: center;
+  justify-self: center;
+}
+
+.plataform-card {
+  @extend %plataform-card;
+}
+

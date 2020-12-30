@@ -1,0 +1,43 @@
+@import "variables";
+
+/*  CONTAINERS  */
+%general-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  width: 99%;
+  height: 99vh;
+}
+
+/*  STYLERS  */
+
+%border-radius {
+  border-radius: $border-radius;
+}
+
+%border-radius-circle {
+  border-radius: 50%
+}
+
+
+%button-radius {
+  border-radius: $button-radius;
+}
+
+%border-container {
+  border: 1px solid $color-borders;
+}
+
+
+%clickeable {
+  cursor: pointer;
+}
+
+%center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

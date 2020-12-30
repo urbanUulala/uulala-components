@@ -1,0 +1,7 @@
+
+
+@mixin media-query($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}

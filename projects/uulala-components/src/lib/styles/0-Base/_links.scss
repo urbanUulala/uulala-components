@@ -1,0 +1,34 @@
+@import 'texts';
+@import 'utilities';
+
+%link-base {
+  @extend %highlighted-text;
+  @extend %fs-11;
+  @extend %clickeable;
+
+  text-decoration: underline;
+}
+
+%link-base:hover {
+  @extend %normal-text;
+  text-decoration: none;
+}
+
+.link-base {
+  @extend %link-base;
+}
+
+%link-disabled {
+  @extend %fs-11;
+  @extend %clickeable;
+  color: change-color($color: $color-text, $alpha: 0.5);
+}
+
+%link-disabled:hover {
+  color: $color-text;
+  text-decoration: underline
+}
+
+.link-disabled {
+  @extend %link-disabled;
+}

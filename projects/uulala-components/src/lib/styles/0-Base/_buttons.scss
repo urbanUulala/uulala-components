@@ -1,0 +1,231 @@
+@import "texts";
+@import "utilities";
+
+/*** ------------ ***/
+/*  NORMAL BUTTON  */
+/*** ------------ ***/
+
+%normal-button {
+  @extend %button-radius;
+  @extend %white-text;
+  @extend %fs-12;
+  @extend %clickeable;
+  background-color: $color-highlighted;
+  height: 22px;
+}
+
+%normal-button:disabled {
+  background-color: change-color($color: $color-highlighted, $alpha: 0.5);
+}
+
+/*** ------------ ***/
+/*  LARGE BUTTON  */
+/*** ------------ ***/
+
+%large-button {
+  @extend %button-radius;
+  @extend %white-text;
+  @extend %fs-11;
+  @extend %clickeable;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-purple-1;
+  height: 22px;
+  width: 152px;
+}
+
+%large-button:disabled {
+  background-color: change-color($color: $color-purple-1, $alpha: 0.5);
+}
+
+%large-button > img {
+  /*  position  */
+ padding: 5px;
+}
+
+/*** ------------ ***/
+/*  WELCOME BUTTON NEXT  */
+/*** ------------ ***/
+
+%shadow-button-next {
+  @extend %button-radius;
+  @extend %white-text;
+  @extend %fs-10;
+  @extend %clickeable;
+  background-color: $color-next-button-welcome;
+  height: 28px;
+  width : 88PX;
+
+}
+%shadow-button-next:not([class*=mat-elevation-z]) {
+  box-shadow: 0 0px 21px 4px rgb(141, 154, 239),
+  0 1px 1px 0 rgb(141, 154, 239), 
+  0 1px 3px 0 rgb(141, 154, 239);
+}
+%shadow-button-next:disabled {
+  background-color: change-color($color: $color-next-button-welcome, $alpha: 0.5);
+}
+%shadow-button-next > img {
+  /*  position  */
+ padding: 5px
+}
+
+/*** --------- ***/
+/*  EXIT BUTTON  */
+/*** --------- ***/
+
+%exit-button {
+  /*  extends  */
+  @extend %fs-10;
+  @extend %border-radius;
+  @extend %fw-bold;
+  @extend %clickeable;
+
+  /*  color  */
+  background-color: $color-back-menu;
+  color: $color-highlighted;
+
+  /*  shape  */
+  width: 100%;
+  height: 39px;
+  position: relative;
+}
+
+%exit-button > img {
+  /*  position  */
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+/*** ------------ ***/
+/*  WARNING MENU BUTTON  */
+/*** ------------ ***/
+
+%warning-button-menu {
+  /*  extends  */
+  @extend %border-radius;
+  @extend %clickeable;
+  @extend %fs-10;
+  @extend %fw-500;
+
+  /*  shape  */
+  width: 100%;
+  height: 32px;
+
+  /*  color  */
+  background-color: $color-warning;
+  color: $color-white;
+}
+
+%warning-button-menu > img {
+  margin-left: 8px;
+}
+
+/*** --------- ***/
+/*  BUTTON MENU  */
+/*** --------- ***/
+
+%button-menu {
+  /*  extends  */
+  @extend %border-radius;
+  @extend %fs-10;
+  @extend %clickeable;
+
+  /*  shape  */
+  width: 100%;
+  height: 40px;
+  text-align: left;
+  padding-left: 40px;
+
+  /*  color  */
+  background-color: transparent;
+  color: $color-text;
+
+  /*  position  */
+  position: relative;
+}
+
+%button-menu > img {
+  /*  position  */
+  position: absolute;
+  left: 15px;
+  top: 13px;
+
+  /*  shape  */
+  width: 14px;
+}
+
+%button-menu > .button-menu-status {
+  /*  extends  */
+  @extend %border-radius;
+
+  /*  position  */
+  position: absolute;
+  left: 3px;
+  top: 3px;
+
+  /*  color  */
+  background-color: transparent;
+  background-color: $color-success;
+
+  /*  shape  */
+  width: 4px;
+  height: 33px;
+  display: none;
+}
+
+%button-menu:hover > .button-menu-status {
+  display: block;
+}
+
+.active {
+  background-color: $color-white !important;
+}
+
+/*** ----------- ***/
+/*  BUTTON CIRCLE  */
+/*** ----------- ***/
+
+%button-circle {
+  /*  extends  */
+  @extend %center;
+  @extend %border-radius-circle;
+  @extend %clickeable;
+
+  /*  shape  */
+  width: 100%;
+  height: 100%;
+  padding: 0px
+}
+
+
+
+/*** ------------ ***/
+/*  EXPORT CLASSES  */
+/*** ------------ ***/
+
+.exit-button {
+  @extend %exit-button;
+}
+
+.normal-button {
+  @extend %normal-button;
+}
+
+.warning-button-menu {
+  @extend %warning-button-menu;
+}
+
+.button-menu {
+  @extend %button-menu;
+}
+
+.button-circle {
+  @extend %button-circle;
+}
+
+.large-button {
+  @extend %large-button;
+}
