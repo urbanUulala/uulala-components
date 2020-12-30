@@ -32,12 +32,29 @@ export class UulInputTextComponent implements OnInit {
   @Input() inputCss: string = '';
   @Input() labelCss: string = '';
 
+  containerStyles:any = {
+    'control-container': true
+  }
+  inputStyles:any = {
+    'control-input': true
+  }
+  labelStyles:any = {
+    'control-label': true
+  }
+
   //private variables
   private showPassword:boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.loadStyles();
+  }
+
+  loadStyles() {
+    this.containerStyles[this.containerCss] = this.containerCss != '';
+    this.inputStyles[this.inputCss] = this.inputCss != '';
+    this.labelStyles[this.labelCss] = this.labelCss != '';
   }
 
 }
