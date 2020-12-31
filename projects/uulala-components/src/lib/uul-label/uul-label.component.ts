@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-uul-label',
+  selector: 'uul-label',
   templateUrl: './uul-label.component.html',
   styleUrls: ['./uul-label.component.scss']
 })
