@@ -146,6 +146,31 @@
 
 }
 
+/*** ----------- ***/
+/*  LABEL CONTROL  */
+/*** ----------- ***/
+
+.label-container {
+  /*  shape  */
+  height: 30px;
+
+  /*  grid  */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+}
+
+.label-container > .tittle-label {
+  @extend %normal-text;
+  @extend %fs-14;
+}
+
+.label-container > .description-label {
+  @extend %normal-text;
+  @extend %fs-10;
+}
+
 
 
 /*  export extends  */
