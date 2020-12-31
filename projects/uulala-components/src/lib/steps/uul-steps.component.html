@@ -1,0 +1,19 @@
+<div [ngClass]="containerStyles">
+	<div  [ngClass]="bgStepStyles">
+		<div *ngFor="let s of steps;">
+			<ng-container [ngSwitch]="s">
+				<ng-container *ngSwitchCase="true">
+					<div class="step-one__yellow-circle"></div>
+					<div class="w-12"></div>
+				</ng-container>
+				<ng-container *ngSwitchCase="false">
+					<div class="step-one__disable-circle"></div>
+					<div class="w-12"></div>
+				</ng-container>
+			</ng-container>
+		</div>
+	</div>
+</div>
+
+
+

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UulLabelComponent } from './uul-label/uul-label.component';
 import { UulSelectComponent } from './uul-select/uul-select.component';
+import { StepsComponent} from './steps/uul-steps.component'
 
 
 
@@ -14,7 +15,8 @@ import { UulSelectComponent } from './uul-select/uul-select.component';
     UulalaComponentsComponent,
     UulInputTextComponent,
     UulLabelComponent,
-    UulSelectComponent
+    UulSelectComponent,
+    StepsComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { UulSelectComponent } from './uul-select/uul-select.component';
     UulalaComponentsComponent,
     UulInputTextComponent,
     UulLabelComponent,
-    UulSelectComponent
+    UulSelectComponent,
+    StepsComponent
   ]
 })
 export class UulalaComponentsModule { }

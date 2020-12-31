@@ -172,6 +172,52 @@
   @extend %fs-10;
 }
 
+/*** --------------------------- ***/
+/*  STEPS STYLES  */
+/*** --------------------------- ***/
+
+.step-one__container-step {
+  display: block;
+  /*  align flexBox  */
+  justify-self: flex-end;
+  align-self: flex-start;
+}
+
+.step-one__container-step-background{
+  /*  shape  */
+  background-color: $color-bg-step;
+  /*  align flexBox  dynamic*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+   /*  position  */
+  justify-content: center;
+  align-items: center;
+  height: 17px;
+  border-radius:20px;
+  padding: 0px 8px 0px 8px;
+
+}
+.step-one__yellow-circle{
+  background-color: $color-bg-circle-yellow;
+  width: 6px;
+  height: 6px;
+  border-radius:30px;
+   /*  position  */
+  justify-content: center;
+  align-self: center;
+}
+.step-one__disable-circle{
+  background-color:$color-next-button-welcome;
+  width: 6px;
+  height: 6px;
+  border-radius:30px;
+   /*  position  */
+  justify-content: center;
+  align-self: center;
+}
+
+
 /*  export extends  */
 %control-container {
   @extend .control-container;
@@ -180,3 +226,8 @@
 %dropdown-menu {
   @extend .dropdown-menu;
 }
+
+%step-one__container-step {
+  @extend .step-one__container-step;
+}
+
