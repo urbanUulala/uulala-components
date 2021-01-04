@@ -39,10 +39,8 @@ export class StepsComponent implements OnInit {
     this.bgStepStyles[this.bgStepCss] = this.bgStepCss != '';
   }
 
-  // Hice una funcion para carga de datos
   loadData() {
     //dynamic count steps and show circles disable or enable
-    // Guarde el step en tipo numerico para poder compararlo con el step seleccionado
     for (let index = 1; index <= this.totalStep; index++) {
       this.steps.push(index);
     }

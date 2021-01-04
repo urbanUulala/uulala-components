@@ -1,11 +1,6 @@
 <div [ngClass]="containerStyles">
   <div [ngClass]="bgStepStyles">
     <div *ngFor="let s of steps;">
-      <!--
-        Elimine el ngswitch y en lugar de eso para reducir las lineas use ng-class para elegir dependiendo el step seleccionado
-        la clase que se tiene que usar, como ahora el step es numerico podemos comparar directamente si es el que esta seleccionado y asi
-        asignarle su clase de css correspondiente.
-      -->
       <div [ngClass]="{ 'step-one__yellow-circle': s === step, 'step-one__disable-circle': s !== step }" ></div>
       <div class="w-12"></div>
     </div>
