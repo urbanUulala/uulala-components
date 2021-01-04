@@ -17,7 +17,8 @@ export class StepsComponent implements OnInit {
   @Input() containerCss: string = '';
   @Input() bgStepCss: string = '';
 
-  steps = [];
+  // Tipe la variable como arreglo numerico para guardar los steps
+  steps:number[] = [];
 
   containerStyles:any = {
     'step-container': true
@@ -30,16 +31,21 @@ export class StepsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadStyles();
+    this.loadData();
   }
 
   loadStyles() {
-
     this.containerStyles[this.containerCss] = this.containerCss != '';
     this.bgStepStyles[this.bgStepCss] = this.bgStepCss != '';
+  }
+
+  // Hice una funcion para carga de datos
+  loadData() {
     //dynamic count steps and show circles disable or enable
-    for (let index = 0; index < this.totalStep; index++) {
-      this.steps.push(this.step === index+1 ? true: false)
+    // Guarde el step en tipo numerico para poder compararlo con el step seleccionado
+    for (let index = 1; index <= this.totalStep; index++) {
+      this.steps.push(index);
     }
-  } 
+  }
 
 }
