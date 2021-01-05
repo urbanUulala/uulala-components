@@ -1,31 +1,29 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 
 //local files
 import { StringTools } from '../utilities/string.tools';
 import { ControlTextTypes } from '../models/types';
 import { InputControlTextConfig } from '../models/configurations';
-
-//Constants
-const defaultConfig: InputControlTextConfig = {
-  id: StringTools.generateNewIdString()
-};
+import { Subscription } from 'rxjs';
+import { StyleTools } from '../utilities';
 
 @Component({
   selector: 'uul-input-text',
   templateUrl: './uul-input-text.component.html',
   styleUrls: ['./uul-input-text.component.scss']
 })
-export class UulInputTextComponent implements OnInit {
+export class UulInputTextComponent implements OnInit, AfterViewInit {
   //control config
-  @Input() config: InputControlTextConfig = defaultConfig;
+  @Input() config: InputControlTextConfig = {
+    id: StringTools.generateNewRandomString(12)
+  };
   @Input() type: ControlTextTypes = 'text';
   @Input() placeholder: string = '';
   @Input() label: string = '';
 
   //reactive form
   @Input() control: AbstractControl = new FormControl();
-
 
   //Input styles
   @Input() containerCss: string = '';
@@ -35,27 +33,60 @@ export class UulInputTextComponent implements OnInit {
   //local variables
   showPassword: boolean = false;
 
-  containerStyles:any = {
+  //HTMLElements
+  containerElement: HTMLElement;
+  labelElement: HTMLElement;
+  inputElement: HTMLElement;
+
+  // observers
+  containerElement$: Subscription;
+  value$: Subscription;
+
+
+  containerStyles: any = {
     'control-container': true
   }
-  inputStyles:any = {
+  inputStyles: any = {
     'control-input': true
   }
-  labelStyles:any = {
-    'control-label': true
+  labelStyles: any = {
+    'control-label': true,
+    'control-label-focus': false
   }
 
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  ngAfterViewInit() {
     this.loadStyles();
+    this.validateContent();
+    this.loadElements();
+    this.value$ = this.control.valueChanges.subscribe(result => this.validateContent());
   }
 
   loadStyles() {
     this.containerStyles[this.containerCss] = this.containerCss != '';
     this.inputStyles[this.inputCss] = this.inputCss != '';
     this.labelStyles[this.labelCss] = this.labelCss != '';
+  }
+
+  loadElements() {
+    this.containerElement = document.getElementById(`${this.config.id}-container`);
+    this.labelElement = document.getElementById(`${this.config.id}-label`);
+    this.inputElement = document.getElementById(`${this.config.id}-input`);
+  }
+
+  selected() {
+    console.log('clicked container', this.inputElement);
+    this.inputElement.focus();
+  }
+
+  validateContent() {
+    this.labelStyles['control-label-focus'] = this.control.value != '';
+    this.labelStyles['control-label'] = this.control.value == '';
+    console.log('style status label', this.labelStyles);
   }
 
 }

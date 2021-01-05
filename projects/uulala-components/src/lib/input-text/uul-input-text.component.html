@@ -1,6 +1,6 @@
-<div [ngClass]="containerStyles">
-  <label [ngClass]="labelStyles">{{ label }}</label>
-  <input [type]="type" [formControl]="control" placeholder="{{ placeholder }}" [ngClass]="inputStyles">
+<div [ngClass]="containerStyles" [id]="`${ config.id }-container`">
+  <label [ngClass]="labelStyles" [id]="`${ config.id }-label`">{{ label }}</label>
+  <input [type]="type" [formControl]="control" placeholder="{{ placeholder }}" [ngClass]="inputStyles" [id]="`${ config.id }-input`">
   <ng-container [ngSwitch]="type">
 
     <ng-container *ngSwitchCase="'password'">
