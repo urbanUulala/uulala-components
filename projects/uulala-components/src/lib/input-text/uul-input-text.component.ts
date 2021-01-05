@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 
 //local files
@@ -13,7 +13,7 @@ import { StyleTools } from '../utilities';
   templateUrl: './uul-input-text.component.html',
   styleUrls: ['./uul-input-text.component.scss']
 })
-export class UulInputTextComponent implements OnInit, AfterViewInit {
+export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
   //control config
   @Input() config: InputControlTextConfig = {
     id: StringTools.generateNewRandomString(12)
@@ -64,6 +64,10 @@ export class UulInputTextComponent implements OnInit, AfterViewInit {
     this.validateContent();
     this.loadElements();
     this.value$ = this.control.valueChanges.subscribe(result => this.validateContent());
+  }
+
+  ngOnDestroy() {
+    this.value$.unsubscribe();
   }
 
   loadStyles() {
