@@ -36,7 +36,6 @@
   transition: 0.4s;
   z-index: 1;
 
-
   /*  responsive  */
   @include media-query(720px) {
     /*  shape  */
@@ -72,7 +71,24 @@
   transition: 0.4s;
 
   /*  responsive  */
+}
 
+.control-container > .control-label-select {
+  /*  extends  */
+  @extend %normal-text;
+  @extend %fs-12;
+
+  /*  position  */
+  position: absolute;
+  top: 3px;
+  left: 15px;
+  z-index: 2;
+
+  /*  transition  */
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  /*  responsive  */
 }
 
 .control-label-focus {
@@ -94,10 +110,10 @@
 
   /*  position  */
   top: 3px;
-
 }
 
-.control-container:focus-within > .control-label {
+.control-container:focus-within > .control-label,
+.control-container:focus-within > .control-label-select {
   /*  extends  */
   @extend %highlighted-text;
 
@@ -109,13 +125,12 @@
 }
 
 .control-container:focus-within > .control-input,
-.control-container:focus-within > .control-select  {
+.control-container:focus-within > .control-select {
   /*  position  */
   left: 15px;
   top: 19px;
   text-align: left;
   text-align-last: left;
-
 }
 
 .control-container:focus-within > .control-select > option {

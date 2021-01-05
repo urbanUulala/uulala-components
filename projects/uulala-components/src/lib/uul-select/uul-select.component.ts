@@ -30,7 +30,7 @@ export class UulSelectComponent implements OnInit {
     'control-select': true
   }
   labelStyles:any = {
-    'control-label': true
+    'control-label-select': true
   }
   constructor() { }
 

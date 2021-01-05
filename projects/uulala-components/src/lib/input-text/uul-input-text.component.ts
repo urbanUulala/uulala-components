@@ -79,14 +79,12 @@ export class UulInputTextComponent implements OnInit, AfterViewInit {
   }
 
   selected() {
-    console.log('clicked container', this.inputElement);
     this.inputElement.focus();
   }
 
   validateContent() {
     this.labelStyles['control-label-focus'] = this.control.value != '';
     this.labelStyles['control-label'] = this.control.value == '';
-    console.log('style status label', this.labelStyles);
   }
 
 }
