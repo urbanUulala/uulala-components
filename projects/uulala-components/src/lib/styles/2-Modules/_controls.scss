@@ -19,18 +19,23 @@
 .control-container > .control-input,
 .control-container > .control-select {
   /*  shape  */
-  width: 60%;
+  width: calc(100% - 30px);
   border: none;
+  outline: none;
+  background-color: transparent;
+
+  /*  position  */
 
   /*  position  */
   position: absolute;
-  right: 15px;
-  top: 10px;
+  left: 15px;
+  top: 19px;
 
   /*  transition  */
   -webkit-transition: 0.4s;
   transition: 0.4s;
   z-index: 1;
+
 
   /*  responsive  */
   @include media-query(720px) {
@@ -46,6 +51,10 @@
   }
 }
 
+.control-container > .control-select > option {
+  direction: rtl;
+}
+
 /*  label styles  */
 .control-container > .control-label {
   /*  extends  */
@@ -56,16 +65,36 @@
   position: absolute;
   top: 12px;
   left: 15px;
-  z-index: 1;
+  z-index: 2;
 
   /*  transition  */
   -webkit-transition: 0.4s;
   transition: 0.4s;
 
   /*  responsive  */
-  @include media-query(720px) {
-    display: none;
-  }
+
+}
+
+.control-label-focus {
+  /*  extends  */
+  @extend %fs-10;
+
+  /*  position  */
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  z-index: 2;
+
+  /*  transition  */
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  /*  extends  */
+  @extend %highlighted-text;
+
+  /*  position  */
+  top: 3px;
+
 }
 
 .control-container:focus-within > .control-label {
@@ -79,18 +108,18 @@
   font-size: 10px;
 }
 
-.control-container:focus-within > .control-input {
-  /*  shape  */
-  width: calc(100% - 30px);
-
+.control-container:focus-within > .control-input,
+.control-container:focus-within > .control-select  {
   /*  position  */
   left: 15px;
   top: 19px;
+  text-align: left;
+  text-align-last: left;
 
-  /*  responsive  */
-  @include media-query(720px) {
-    top: 10px;
-  }
+}
+
+.control-container:focus-within > .control-select > option {
+  direction: ltr;
 }
 
 /*  password img  */
@@ -183,40 +212,38 @@
   align-self: flex-start;
 }
 
-.step-one__container-step-background{
+.step-one__container-step-background {
   /*  shape  */
   background-color: $color-bg-step;
   /*  align flexBox  dynamic*/
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-   /*  position  */
+  /*  position  */
   justify-content: center;
   align-items: center;
   height: 17px;
-  border-radius:20px;
+  border-radius: 20px;
   padding: 0px 8px 0px 8px;
-
 }
-.step-one__yellow-circle{
+.step-one__yellow-circle {
   background-color: $color-bg-circle-yellow;
   width: 6px;
   height: 6px;
-  border-radius:30px;
-   /*  position  */
+  border-radius: 30px;
+  /*  position  */
   justify-content: center;
   align-self: center;
 }
-.step-one__disable-circle{
-  background-color:$color-next-button-welcome;
+.step-one__disable-circle {
+  background-color: $color-next-button-welcome;
   width: 6px;
   height: 6px;
-  border-radius:30px;
-   /*  position  */
+  border-radius: 30px;
+  /*  position  */
   justify-content: center;
   align-self: center;
 }
-
 
 /*  export extends  */
 %control-container {
@@ -230,4 +257,3 @@
 %step-one__container-step {
   @extend .step-one__container-step;
 }
-

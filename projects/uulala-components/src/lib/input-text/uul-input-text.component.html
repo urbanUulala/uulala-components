@@ -1,20 +1,19 @@
-<div [ngClass]="containerStyles" [id]="`${ config.id }-container`">
-  <label [ngClass]="labelStyles" [id]="`${ config.id }-label`">{{ label }}</label>
-  <input [type]="type" [formControl]="control" placeholder="{{ placeholder }}" [ngClass]="inputStyles" [id]="`${ config.id }-input`">
+<div [ngClass]="containerStyles" [id]="config.id + '-container'" (click)="selected()">
+  <label [ngClass]="labelStyles" [id]="config.id + '-label'">{{ label }}</label>
   <ng-container [ngSwitch]="type">
 
     <ng-container *ngSwitchCase="'password'">
-      <input type="text" *ngIf="showPassword" [formControl]="control" placeholder="{{ placeholder }}"
-        [ngClass]="inputStyles">
-      <input type="password" *ngIf="!showPassword" [formControl]="control" placeholder="{{ placeholder }}"
-        [ngClass]="inputStyles">
+      <input type="text" *ngIf="showPassword" [formControl]="control"
+        [ngClass]="inputStyles" [id]="config.id + '-input'">
+      <input type="password" *ngIf="!showPassword" [formControl]="control"
+        [ngClass]="inputStyles" [id]="config.id + '-input'">
       <!-- password img -->
       <div class="control-img-pwd-hide" *ngIf="!showPassword" (click)="showPassword=!showPassword"></div>
       <div class="control-img-pwd-show" *ngIf="showPassword" (click)="showPassword=!showPassword"></div>
     </ng-container>
 
     <ng-container *ngSwitchDefault>
-      <input [type]="type" [formControl]="control" placeholder="{{ placeholder }}" [ngClass]="inputStyles">
+      <input [type]="type" [formControl]="control"  [ngClass]="inputStyles" [id]="config.id + '-input'">
     </ng-container>
 
   </ng-container>
