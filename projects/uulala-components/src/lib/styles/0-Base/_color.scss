@@ -3,3 +3,15 @@
 %bwc-highlighted {
   background-color: $color-highlighted;
 }
+
+.bwc-highlighted {
+  @extend %bwc-highlighted;
+}
+
+%bwc-content-hover {
+  background-color: $color-content-hover;
+}
+
+.bwc-content-hover {
+  @extend %bwc-content-hover
+}
