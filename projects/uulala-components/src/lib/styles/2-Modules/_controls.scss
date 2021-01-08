@@ -241,21 +241,26 @@
   border-radius: 20px;
   padding: 0px 8px 0px 8px;
 }
-.step-one__yellow-circle {
+.step-one__yellow-circle{
   background-color: $color-bg-circle-yellow;
   width: 6px;
   height: 6px;
-  border-radius: 30px;
-  /*  position  */
+  border-radius:30px;
+  border: $color-white 0.3px solid;
+   /*  position  */
   justify-content: center;
   align-self: center;
+  box-shadow: 0 0px 17px 1px #ffd359,
+   0 0px 0px 0 #ffd359,
+    0 0px 3px 0 #ffd359
 }
-.step-one__disable-circle {
-  background-color: $color-next-button-welcome;
+
+.step-one__disable-circle{
+  background-color:$color-next-button-welcome;
   width: 6px;
   height: 6px;
-  border-radius: 30px;
-  /*  position  */
+  border-radius:30px;
+   /*  position  */
   justify-content: center;
   align-self: center;
 }
