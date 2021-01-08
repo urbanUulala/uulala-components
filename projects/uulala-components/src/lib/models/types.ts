@@ -3,3 +3,6 @@ export type ControlTextTypes =
   'password' |
   'date' |
   'number';
+
+export type ImageTypes =
+  'user-image';

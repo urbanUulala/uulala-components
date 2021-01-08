@@ -4,6 +4,7 @@ interface InputControlConfig {
 }
 
 export interface InputControlTextConfig extends InputControlConfig{}
+export interface InputControlImgConfig extends InputControlConfig{}
 
 // Structures for select component
 export interface SelectListItem {

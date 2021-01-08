@@ -41,3 +41,10 @@
 }
 
 
+.border-container {
+  @extend %border-container;
+}
+
+.border-radius {
+  @extend %border-radius;
+}
