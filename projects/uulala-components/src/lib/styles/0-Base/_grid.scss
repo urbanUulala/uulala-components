@@ -10,4 +10,24 @@
   @extend %two-fields;
 }
 
+%gc-2fr-1fr-gr-1fr {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.gc-2fr-1fr-gr-1fr {
+  @extend %gc-2fr-1fr-gr-1fr;
+}
+
+%gc-1fr-1fr-1fr-gr-1fr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.gc-1fr-1fr-1fr-gr-1fr {
+  @extend %gc-1fr-1fr-1fr-gr-1fr;
+}
+
 
