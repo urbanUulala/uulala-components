@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-uul-check',
+  selector: 'uul-check',
   templateUrl: './uul-check.component.html',
   styleUrls: ['./uul-check.component.scss']
 })

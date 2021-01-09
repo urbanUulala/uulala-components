@@ -32,7 +32,8 @@ import { UulCheckComponent } from './uul-check/uul-check.component'
     UulLabelComponent,
     UulSelectComponent,
     StepsComponent,
-    UulImgComponent
+    UulImgComponent,
+    UulCheckComponent
   ]
 })
 export class UulalaComponentsModule { }
