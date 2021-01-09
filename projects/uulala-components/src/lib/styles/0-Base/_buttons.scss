@@ -19,32 +19,6 @@
 }
 
 /*** ------------ ***/
-/*  LARGE BUTTON  */
-/*** ------------ ***/
-
-%large-button {
-  @extend %button-radius;
-  @extend %white-text;
-  @extend %fs-11;
-  @extend %clickeable;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $color-purple-1;
-  height: 22px;
-  width: 152px;
-}
-
-%large-button:disabled {
-  background-color: change-color($color: $color-purple-1, $alpha: 0.5);
-}
-
-%large-button > img {
-  /*  position  */
- padding: 5px;
-}
-
-/*** ------------ ***/
 /*  WELCOME BUTTON NEXT  */
 /*** ------------ ***/
 
@@ -70,6 +44,29 @@
   /*  position  */
  padding: 5px
 }
+/*** ------------ ***/
+/*  BUTTON ROUNDED BACK  */
+/*** ------------ ***/
+
+%rounded-button-back {
+  @extend %button-radius;
+  @extend %white-text;
+  @extend %clickeable;
+  @extend %center;
+  background-color: $color-btn-rounded-back;
+  height: 28px;
+  width : 28px;
+
+}
+
+%rounded-button-back:disabled {
+  background-color: change-color($color: $color-btn-rounded-back, $alpha: 0.5);
+}
+%rounded-button-back > img {
+  /*  position  */
+  width : 8px;
+}
+
 
 /*** --------- ***/
 /*  EXIT BUTTON  */
@@ -214,6 +211,10 @@
   @extend %normal-button;
 }
 
+.rounded-button-back {
+  @extend %rounded-button-back;
+}
+
 .warning-button-menu {
   @extend %warning-button-menu;
 }
@@ -224,8 +225,4 @@
 
 .button-circle {
   @extend %button-circle;
-}
-
-.large-button {
-  @extend %large-button;
 }
