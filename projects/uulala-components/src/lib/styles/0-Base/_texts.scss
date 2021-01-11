@@ -29,6 +29,33 @@
   @extend %white-text;
 }
 
+// PROFILE
+
+%normal-text-profile{
+  color: $color-prof-text-blue;
+  font-weight: 500;
+}
+.normal-text-profile {
+  @extend %normal-text-profile;
+}
+
+%highlighted-text-profile {
+  color: $color-prof-text-highlighted;
+  font-weight: 300;
+}
+
+.highlighted-text-profile {
+  @extend %highlighted-text-profile;
+}
+
+%menu-highlighted-text{
+  color: $color-prof-menu-text-highlighted;
+  font-weight: 500;
+}
+.menu-highlighted-text {
+  @extend %menu-highlighted-text;
+}
+
 /*  FONT WEIGHT  */
 
 %fw-normal {
