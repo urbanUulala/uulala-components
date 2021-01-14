@@ -8,7 +8,8 @@ import { UulLabelComponent } from './uul-label/uul-label.component';
 import { UulSelectComponent } from './uul-select/uul-select.component';
 import { StepsComponent} from './steps/uul-steps.component';
 import { UulImgComponent } from './uul-img/uul-img.component';
-import { UulCheckComponent } from './uul-check/uul-check.component'
+import { UulCheckComponent } from './uul-check/uul-check.component';
+import { UulMenuButtonsComponent } from './uul-menu-buttons/uul-menu-buttons.component'
 
 
 
@@ -20,7 +21,8 @@ import { UulCheckComponent } from './uul-check/uul-check.component'
     UulSelectComponent,
     StepsComponent,
     UulImgComponent,
-    UulCheckComponent
+    UulCheckComponent,
+    UulMenuButtonsComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { UulCheckComponent } from './uul-check/uul-check.component'
     UulSelectComponent,
     StepsComponent,
     UulImgComponent,
-    UulCheckComponent
+    UulCheckComponent,
+    UulMenuButtonsComponent
   ]
 })
 export class UulalaComponentsModule { }

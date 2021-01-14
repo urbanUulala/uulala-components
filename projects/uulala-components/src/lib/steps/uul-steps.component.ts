@@ -13,18 +13,25 @@ export class StepsComponent implements OnInit {
 
   @Input() step: ControlNumberSteps = 1;
   @Input() totalStep: number = 0;
+  @Input() blue;
   //Input styles
   @Input() containerCss: string = '';
   @Input() bgStepCss: string = '';
 
   // Tipe la variable como arreglo numerico para guardar los steps
   steps:number[] = [];
-
+  onPress: any = {};
+  blueState: boolean =false
   containerStyles:any = {
     'step-container': true
   }
+  
   bgStepStyles:any = {
     'step-one__container-step-background': true
+  }
+
+  bgStepStylesBlue:any = {
+    'step-one__container-step-blue': true
   }
 
   constructor() { }
@@ -35,8 +42,11 @@ export class StepsComponent implements OnInit {
   }
 
   loadStyles() {
+    console.log('this.blue',this.blue)
+    this.blueState = this.blue ===''? true: false
+    this.bgStepStyles = !this.blueState? this.bgStepStyles: this.bgStepStylesBlue;
     this.containerStyles[this.containerCss] = this.containerCss != '';
-    this.bgStepStyles[this.bgStepCss] = this.bgStepCss != '';
+    this.bgStepStyles[this.containerCss] = this.containerCss != '';
   }
 
   loadData() {

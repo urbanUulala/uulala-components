@@ -1,0 +1,19 @@
+@import '../styles/0-Base/base-dir';
+@import '../styles/2-Modules/modules-dir';
+
+.conatinerButton{
+	background-color: transparent;
+	margin-bottom: 12px;
+}
+.buttonBackground{
+	@extend %profile-button-li; 
+}
+
+.profile__list-menu{
+	/*  grid  */
+	display: flex;
+	grid-auto-columns: auto;
+	grid-column-gap: 9px;
+	/*  position  */
+	align-items: center;
+}
