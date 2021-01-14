@@ -41,10 +41,27 @@
 }
 
 
+%border-radius-buttons-menu {
+  border-radius: 2px
+}
+
+%border-radius-four {
+  border-radius: 4px
+}
+
+
 .border-container {
   @extend %border-container;
 }
 
 .border-radius {
   @extend %border-radius;
+}
+
+.border-radius-buttons-menu {
+  @extend %border-radius-buttons-menu;
+}
+
+.border-radius-four {
+  @extend %border-radius-four;
 }

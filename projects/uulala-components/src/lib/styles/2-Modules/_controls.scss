@@ -226,7 +226,7 @@
   align-self: flex-start;
 }
 
-.step-one__container-step-background {
+%step-one__container-step-background{
   /*  shape  */
   background-color: $color-bg-step;
   /*  align flexBox  dynamic*/
@@ -240,26 +240,51 @@
   border-radius: 20px;
   padding: 0px 8px 0px 8px;
 }
-.step-one__yellow-circle {
-  background-color: $color-bg-circle-yellow;
-  width: 6px;
-  height: 6px;
-  border-radius: 30px;
-  border: $color-white 0.3px solid;
-  /*  position  */
-  justify-content: center;
-  align-self: center;
-  box-shadow: 0 0px 17px 1px #ffd359, 0 0px 0px 0 #ffd359, 0 0px 3px 0 #ffd359;
+
+.step-one__container-step-background {
+  @extend %step-one__container-step-background;
 }
 
-.step-one__disable-circle {
-  background-color: $color-next-button-welcome;
+.step-one__container-step-blue {
+  /*  shape  */
+  background-color: transparent;
+  @extend %step-one__container-step-background;
+}
+%step__circle{
   width: 6px;
   height: 6px;
-  border-radius: 30px;
-  /*  position  */
+  border-radius:30px;
+   /*  position  */
   justify-content: center;
   align-self: center;
+}
+
+.step-one__blue-circle{
+  background-color: $color-prof-text-blue;
+  @extend %step__circle;
+}
+
+.step-one__disable-blue-circle{
+  background-color: rgba(112, 116, 152, 0.40);;
+  @extend %step__circle;
+}
+
+.step-one__yellow-circle{
+  background-color: $color-bg-circle-yellow;
+
+  border: $color-white 0.3px solid;
+  box-shadow: 0 0px 17px 1px #ffd359,
+   0 0px 0px 0 #ffd359,
+    0 0px 3px 0 #ffd359;
+
+  @extend %step__circle;
+
+}
+
+.step-one__disable-circle{
+  background-color:$color-next-button-welcome;
+  @extend %step__circle;
+
 }
 
 /*  export extends  */

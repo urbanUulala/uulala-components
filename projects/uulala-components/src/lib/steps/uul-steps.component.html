@@ -1,8 +1,10 @@
 <div [ngClass]="containerStyles">
   <div [ngClass]="bgStepStyles">
-    <div *ngFor="let s of steps;">
-      <div [ngClass]="{ 'step-one__yellow-circle': s === step, 'step-one__disable-circle': s !== step }" ></div>
-      <div class="w-12"></div>
-    </div>
+        <div *ngFor="let s of steps;">
+          <div *ngIf="blueState" [ngClass]="{ 'step-one__blue-circle': s === step, 'step-one__disable-blue-circle': s !== step }" ></div>
+          <div *ngIf="!blueState" [ngClass]="{ 'step-one__yellow-circle': s === step, 'step-one__disable-circle': s !== step }" ></div>
+          <div class="w-12"></div>
+        </div>
+   
   </div>
 </div>
