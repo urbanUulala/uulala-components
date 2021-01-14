@@ -1,4 +1,4 @@
-import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from "@angular/forms";
 
 export class ValidatorsTools {
   static equalValueValidator(targetKey: string, toMatchKey: string): ValidatorFn {
@@ -28,6 +28,19 @@ export class ValidatorsTools {
 
     return null;
 
+  }
+
+  static numericCodeValidatorArray(length: number) {
+    return [
+      Validators.required,
+      Validators.pattern("^[0-9]*$"),
+      Validators.minLength(length),
+      Validators.maxLength(length)
+    ]
+  }
+
+  static passwordValidatorArray(minLength: number = 8) {
+    return [Validators.required, Validators.pattern(`^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-\+]).{${ minLength },}$`)]
   }
 
 }
