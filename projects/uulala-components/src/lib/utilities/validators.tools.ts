@@ -1,4 +1,4 @@
-import { AbstractControl, FormGroup, ValidatorFn } from "@angular/forms";
+import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 export class ValidatorsTools {
   static equalValueValidator(targetKey: string, toMatchKey: string): ValidatorFn {
@@ -10,9 +10,9 @@ export class ValidatorsTools {
       const isMatch = target.value === toMatch.value;
 
       if (!isMatch && target.valid && toMatch.valid) {
-        toMatch.setErrors({equalValue: targetKey});
+        toMatch.setErrors({ equalValue: targetKey });
         const message = targetKey + ' != ' + toMatchKey;
-        return {'equalValue': message};
+        return { 'equalValue': message };
       }
       if (isMatch && toMatch.hasError('equalValue')) {
         toMatch.setErrors(null);
@@ -20,6 +20,14 @@ export class ValidatorsTools {
 
       return null;
     };
+  }
+
+  static checkValidator(control: AbstractControl): ValidationErrors | null {
+    if (!control.value)
+      return { 'checkValidator': true }
+
+    return null;
+
   }
 
 }
