@@ -30,4 +30,122 @@
   @extend %gc-1fr-1fr-1fr-gr-1fr;
 }
 
+/*  justify-self  */
+%js-s {
+  justify-self: start;
+}
+
+.js-s {
+  @extend %js-s;
+}
+
+%js-e {
+  justify-self: end;
+}
+
+.js-e {
+  @extend %js-e;
+}
+
+%js-c {
+  justify-self: center;
+}
+
+.js-c {
+  @extend %js-c;
+}
+
+/*  justify-content  */
+
+%jc-s {
+  justify-content: start;
+}
+
+.jc-s {
+  @extend %jc-s;
+}
+
+%jc-e {
+  justify-content: end;
+}
+
+.jc-e {
+  @extend %jc-e;
+}
+
+%jc-c {
+  justify-content: center;
+}
+
+.jc-c {
+  @extend %jc-c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  align-self  */
+%as-s {
+  align-self: start;
+}
+
+.as-s {
+  @extend %as-s;
+}
+
+%as-e {
+  align-self: end;
+}
+
+.as-e {
+  @extend %as-e;
+}
+
+%as-c {
+  align-self: center;
+}
+
+.as-c {
+  @extend %as-c;
+}
+
+/*  align-content  */
+
+%ac-s {
+  align-content: start;
+}
+
+.ac-s {
+  @extend %ac-s;
+}
+
+%ac-e {
+  align-content: end;
+}
+
+.ac-e {
+  @extend %ac-e;
+}
+
+%ac-c {
+  align-content: center;
+}
+
+.ac-c {
+  @extend %ac-c;
+}
+
+
+
+
+
+
 

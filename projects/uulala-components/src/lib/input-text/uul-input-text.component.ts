@@ -6,7 +6,9 @@ import { StringTools } from '../utilities/string.tools';
 import { ControlTextTypes } from '../models/types';
 import { InputControlTextConfig } from '../models/configurations';
 import { Subscription } from 'rxjs';
-import { StyleTools } from '../utilities';
+import { uulInputImg } from '../assets/uul-input.img';
+
+
 
 @Component({
   selector: 'uul-input-text',
@@ -32,6 +34,7 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
 
   //local variables
   showPassword: boolean = false;
+  status:string = 'INVALID';
 
   //HTMLElements
   containerElement: HTMLElement;
@@ -41,6 +44,10 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
   // observers
   containerElement$: Subscription;
   value$: Subscription;
+  status$: Subscription;
+
+  // assets
+  inputImages:any = uulInputImg;
 
 
   containerStyles: any = {
@@ -55,6 +62,8 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
 
+
+
   constructor() { }
 
   ngOnInit(): void { }
@@ -63,11 +72,13 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
     this.loadStyles();
     this.validateContent();
     this.loadElements();
-    this.value$ = this.control.valueChanges.subscribe(result => this.validateContent());
+    this.value$ = this.control.valueChanges.subscribe(() => this.validateContent());
+    this.status$ = this.control.statusChanges.subscribe(result => this.status = result);
   }
 
   ngOnDestroy() {
     this.value$.unsubscribe();
+    this.status$.unsubscribe();
   }
 
   loadStyles() {
@@ -89,6 +100,10 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
   validateContent() {
     this.labelStyles['control-label-focus'] = this.control.value != '';
     this.labelStyles['control-label'] = this.control.value == '';
+    setTimeout(() => {
+      if (this.control.value != '') this.status = this.control.status;
+      else this.status = '';
+    }, 100);
   }
 
 }

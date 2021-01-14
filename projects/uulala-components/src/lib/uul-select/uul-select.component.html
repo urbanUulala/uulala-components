@@ -1,6 +1,6 @@
 <div [ngClass]="containerStyles">
   <label [ngClass]="labelStyles">{{ label }}</label>
-  <select [ngClass]="inputStyles">
+  <select [ngClass]="inputStyles" [formControl]="control">
     <option *ngFor="let item of values" value="{{ item.value }}">{{ item.description }}</option>
   </select>
 

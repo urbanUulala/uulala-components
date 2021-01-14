@@ -17,4 +17,6 @@
     </ng-container>
 
   </ng-container>
+  <img [ngClass]="{'img-status': this.type !== 'password','img-status-password': this.type === 'password'}" *ngIf="status === 'VALID'"  [src]="inputImages.paloma" alt="">
+  <img [ngClass]="{'img-status': this.type !== 'password','img-status-password': this.type === 'password'}" *ngIf="status === 'INVALID'" [src]="inputImages.tache" alt="">
 </div>

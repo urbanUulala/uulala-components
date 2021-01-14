@@ -19,6 +19,23 @@
 }
 
 /*** ------------ ***/
+/*  SUCCESS BUTTON  */
+/*** ------------ ***/
+
+%success-button {
+  @extend %button-radius;
+  @extend %white-text;
+  @extend %fs-12;
+  @extend %clickeable;
+  background-color: $color-success-control;
+  height: 22px;
+}
+
+%success-button:disabled {
+  background-color: change-color($color: $color-success-control, $alpha: 0.5);
+}
+
+/*** ------------ ***/
 /*  WELCOME BUTTON NEXT  */
 /*** ------------ ***/
 
@@ -34,7 +51,7 @@
 }
 %shadow-button-next:not([class*=mat-elevation-z]) {
   box-shadow: 0 0px 21px 4px rgb(141, 154, 239),
-  0 1px 1px 0 rgb(141, 154, 239), 
+  0 1px 1px 0 rgb(141, 154, 239),
   0 1px 3px 0 rgb(141, 154, 239);
 }
 %shadow-button-next:disabled {
@@ -287,6 +304,10 @@
 
 .normal-button {
   @extend %normal-button;
+}
+
+.success-button {
+  @extend %success-button;
 }
 
 .rounded-button-back {
