@@ -1,5 +1,5 @@
-<div [ngClass]="containerStyles">
-	<button (click)="onPress" [ngClass]="bgButtonStyles" class="profile__list-menu">
+<div [ngClass]="containerStyles" [ngStyle]="containerCss" >
+	<button (click)="onPress" [ngClass]="bgButtonStyles" [ngStyle]="bgCss" class="profile__list-menu">
 		<div class="profile__green-bar"></div>
 		<img src={{imageButton}}>
 		{{textButton}}

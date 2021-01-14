@@ -16,7 +16,6 @@ export class UulMenuButtonsComponent implements OnInit {
 
   // Tipe la variable como arreglo numerico para guardar los steps
   onPress: any = {};
-
   containerStyles:any = {
     'conatinerButton': true
   }
@@ -33,7 +32,6 @@ export class UulMenuButtonsComponent implements OnInit {
   }
 
   loadStyles() {
-    
     this.containerStyles[this.containerCss] = this.containerCss != '';
     this.bgButtonStyles[this.bgCss] = this.bgCss != '';
   }
