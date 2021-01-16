@@ -39,3 +39,4 @@ export class StringTools {
     return errorString.split('|');
   }
 }
+

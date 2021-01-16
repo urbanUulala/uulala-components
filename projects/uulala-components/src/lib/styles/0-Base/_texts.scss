@@ -56,16 +56,6 @@
   @extend %menu-highlighted-text;
 }
 
-%cut-text {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.cut-text {
-  @extend %cut-text;
-}
-
 /*  FONT WEIGHT  */
 
 %fw-normal {
@@ -269,3 +259,4 @@
 .fs-24 {
   @extend %fs-24;
 }
+
