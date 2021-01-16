@@ -1,0 +1,72 @@
+
+
+%center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  @extend %center;
+}
+
+
+// Flex align
+%fa-s {
+  display: flex;
+  align-items: flex-start;
+}
+
+.fa-s {
+  @extend %fa-s;
+}
+
+%fa-c {
+  display: flex;
+  align-items: center;
+}
+
+.fa-c {
+  @extend %fa-c;
+}
+
+
+%fa-e {
+  display: flex;
+  align-items: flex-end;
+}
+
+.fa-e {
+  @extend %fa-e;
+}
+
+
+
+//flex justify
+%fj-s {
+  display: flex;
+  justify-items: flex-start;
+}
+
+.fj-s {
+  @extend %fj-s;
+}
+
+%fa-c {
+  display: flex;
+  justify-items: center;
+}
+
+.fa-c {
+  @extend %fa-c;
+}
+
+
+%fa-e {
+  display: flex;
+  justify-items: flex-end;
+}
+
+.fa-e {
+  @extend %fa-e;
+}

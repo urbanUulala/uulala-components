@@ -32,7 +32,7 @@
 
 /*  justify-self  */
 %js-s {
-  justify-self: start;
+  justify-self: start !important;
 }
 
 .js-s {
@@ -40,7 +40,7 @@
 }
 
 %js-e {
-  justify-self: end;
+  justify-self: end !important;
 }
 
 .js-e {
@@ -48,7 +48,7 @@
 }
 
 %js-c {
-  justify-self: center;
+  justify-self: center !important;
 }
 
 .js-c {
@@ -58,7 +58,7 @@
 /*  justify-content  */
 
 %jc-s {
-  justify-content: start;
+  justify-content: start !important;
 }
 
 .jc-s {
@@ -66,7 +66,7 @@
 }
 
 %jc-e {
-  justify-content: end;
+  justify-content: end !important;
 }
 
 .jc-e {
@@ -74,7 +74,7 @@
 }
 
 %jc-c {
-  justify-content: center;
+  justify-content: center !important;
 }
 
 .jc-c {
@@ -94,7 +94,7 @@
 
 /*  align-self  */
 %as-s {
-  align-self: start;
+  align-self: start !important;
 }
 
 .as-s {
@@ -102,7 +102,7 @@
 }
 
 %as-e {
-  align-self: end;
+  align-self: end !important;
 }
 
 .as-e {
@@ -110,7 +110,7 @@
 }
 
 %as-c {
-  align-self: center;
+  align-self: center !important;
 }
 
 .as-c {
@@ -120,7 +120,7 @@
 /*  align-content  */
 
 %ac-s {
-  align-content: start;
+  align-content: start !important;
 }
 
 .ac-s {
@@ -128,7 +128,7 @@
 }
 
 %ac-e {
-  align-content: end;
+  align-content: end !important;
 }
 
 .ac-e {
@@ -136,7 +136,7 @@
 }
 
 %ac-c {
-  align-content: center;
+  align-content: center !important;
 }
 
 .ac-c {
