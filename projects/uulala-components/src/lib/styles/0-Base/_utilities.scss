@@ -49,6 +49,29 @@
   border-radius: 4px
 }
 
+%pos-r {
+  position: relative;
+}
+
+.pos-r {
+  @extend %pos-r;
+}
+
+%pos-a {
+  position: absolute;
+}
+
+.pos-a {
+  @extend %pos-a;
+}
+
+%ta-c {
+  text-align: center;
+}
+
+.ta-c {
+  @extend %ta-c;
+}
 
 .border-container {
   @extend %border-container;
