@@ -259,4 +259,10 @@
 .fs-24 {
   @extend %fs-24;
 }
+%fs-32 {
+  font-size: 32px;
+}
+.fs-32 {
+  @extend %fs-32;
+}
 
