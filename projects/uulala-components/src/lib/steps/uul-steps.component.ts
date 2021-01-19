@@ -42,7 +42,6 @@ export class StepsComponent implements OnInit {
   }
 
   loadStyles() {
-    console.log('this.blue',this.blue)
     this.blueState = this.blue ===''? true: false
     this.bgStepStyles = !this.blueState? this.bgStepStyles: this.bgStepStylesBlue;
     this.containerStyles[this.containerCss] = this.containerCss != '';
