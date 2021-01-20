@@ -5,3 +5,12 @@
     @content;
   }
 }
+
+
+@mixin grid-auto-columns($width) {
+  display: grid;
+  grid-auto-columns: $width;
+  grid-template-rows: 1fr;
+
+  grid-auto-flow: column;
+}

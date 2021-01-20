@@ -10,6 +10,10 @@
   @extend %two-fields;
 }
 
+.grid-auto-columns {
+  @include grid-auto-columns(max-content);
+}
+
 %gc-2fr-1fr-gr-1fr {
   display: grid;
   grid-template-columns: 2fr 1fr;
