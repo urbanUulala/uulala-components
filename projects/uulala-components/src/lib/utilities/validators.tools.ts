@@ -7,7 +7,6 @@ export class ValidatorsTools {
     return (group: FormGroup): { [key: string]: string } => {
       const target = group.controls[targetKey];
       const toMatch = group.controls[toMatchKey];
-      console.log('target', target.value, 'To match', toMatch.value);
       const isMatch = target.value === toMatch.value;
 
       if (!isMatch && target.valid && toMatch.valid) {
