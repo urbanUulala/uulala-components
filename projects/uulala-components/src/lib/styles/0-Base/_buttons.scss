@@ -227,7 +227,7 @@
   background-color: transparent;
   width: 100%;
   height: 39px;
-  
+
 }
 
 %profile-button-li:focus {
@@ -254,12 +254,12 @@
   background-color: $color-content-hover;
   color: $color-prof-menu-button-highlighted;
   @extend %border-radius-four;
-  @extend %fs-12;
   @extend %clickeable;
-  
-  min-height: 39px;
+
+  min-height: 36px;
   height: auto;
   margin-inline-start: 3px;
+  font-size: 12px;
 }
 
 %profile-buttons:focus {
@@ -289,7 +289,7 @@
   @extend %clickeable;
   @extend %fs-10;
   @extend %white-text;
-  
+
   width: 180px;
   height: 32px;
 }
