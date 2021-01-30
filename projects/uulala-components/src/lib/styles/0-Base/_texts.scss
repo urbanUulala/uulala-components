@@ -56,6 +56,16 @@
   @extend %menu-highlighted-text;
 }
 
+/*  Legal  */
+%normal-text-legal{
+  color: $color-legal-text-normal;
+  font-weight: 300;
+}
+
+.normal-text-legal {
+  @extend %normal-text-legal;
+}
+
 /*  FONT WEIGHT  */
 
 %fw-normal {
