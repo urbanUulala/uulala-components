@@ -1,4 +1,4 @@
-<div [ngClass]="containerStyles" [id]="config.id + '-container'" (click)="selected()">
+<div [ngClass]="containerStyles" [ngStyle]="containerCss" [id]="config.id + '-container'" (click)="selected()">
   <label [ngClass]="labelStyles" [id]="config.id + '-label'">{{ label }}</label>
   <ng-container [ngSwitch]="type">
 

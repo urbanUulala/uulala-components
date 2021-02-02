@@ -294,6 +294,21 @@
   width: 180px;
   height: 32px;
 }
+%button-file > label{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  @extend %center;
+  @extend %white-text;
+  @extend %fs-12;
+}
+%button-file > input {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
 
 /*** ------------ ***/
 /*  EXPORT CLASSES  */
@@ -341,5 +356,11 @@
 
 .button-complete-profile {
   @extend %button-complete-profile;
+}
+.button-complete-profile {
+  @extend %button-complete-profile;
+}
+.button-file {
+  @extend %button-file;
 }
 
