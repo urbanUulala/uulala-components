@@ -10,6 +10,8 @@ import { StepsComponent} from './steps/uul-steps.component';
 import { UulImgComponent } from './uul-img/uul-img.component';
 import { UulCheckComponent } from './uul-check/uul-check.component';
 import { UulMenuButtonsComponent } from './uul-menu-buttons/uul-menu-buttons.component'
+import { LocalService } from './services/local.service';
+import { MessagesService } from './services/messages.service';
 
 
 
@@ -37,6 +39,10 @@ import { UulMenuButtonsComponent } from './uul-menu-buttons/uul-menu-buttons.com
     UulImgComponent,
     UulCheckComponent,
     UulMenuButtonsComponent
+  ],
+  providers: [
+    LocalService,
+    MessagesService
   ]
 })
 export class UulalaComponentsModule { }
