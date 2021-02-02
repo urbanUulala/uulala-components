@@ -1,6 +1,6 @@
 {
   "name": "uulala-components",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,7 +19,9 @@
     "@angular/platform-browser-dynamic": "~11.0.3",
     "@angular/router": "~11.0.3",
     "jsencrypt": "^3.0.0-rc.1",
+    "ngx-spinner": "^10.0.1",
     "rxjs": "~6.6.0",
+    "sweetalert2": "^10.14.0",
     "ts-md5": "^1.2.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

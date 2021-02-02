@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import Swal, { SweetAlertPosition } from 'sweetalert2';
-import { ErrorModel } from '../models/getters/error.model';
+
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ErrorModel } from '../models/error.model';
 @Injectable({
   providedIn: 'root'
 })
