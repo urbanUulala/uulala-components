@@ -12,6 +12,10 @@ import { UulCheckComponent } from './uul-check/uul-check.component';
 import { UulMenuButtonsComponent } from './uul-menu-buttons/uul-menu-buttons.component'
 import { LocalService } from './services/local.service';
 import { MessagesService } from './services/messages.service';
+import { GraphService } from './services/graph.service';
+import { Apollo } from 'apollo-angular';
+import { GraphQLModule } from './modules/graphql.module';
+
 
 
 
@@ -28,7 +32,8 @@ import { MessagesService } from './services/messages.service';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GraphQLModule
   ],
   exports: [
     UulalaComponentsComponent,
@@ -42,7 +47,9 @@ import { MessagesService } from './services/messages.service';
   ],
   providers: [
     LocalService,
-    MessagesService
+    MessagesService,
+    GraphService,
+    Apollo
   ]
 })
 export class UulalaComponentsModule { }

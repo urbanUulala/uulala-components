@@ -19,7 +19,7 @@ export class MessagesService {
         text: message,
         willClose: functionExecWillClose
       })
-    }, 2000);
+    }, 800);
   }
 
   fireSystemErrorMessage(data: any, functionExecWillClose: any = null) {
@@ -43,21 +43,21 @@ export class MessagesService {
   fireErrorModelMessage(error: ErrorModel) {
     setTimeout(() => {
       this.spinner.hide();
-    }, 2000);
+    }, 800);
     setTimeout(() => {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: error.message
       })
-    }, 2000);
+    }, 800);
 
   }
 
   fireSuccessMessage(title: string, timeSeconds: number = 1.2, position: SweetAlertPosition = 'center') {
     setTimeout(() => {
       this.spinner.hide();
-    }, 2000);
+    }, 800);
     setTimeout(() => {
       Swal.fire({
         position,
@@ -66,7 +66,7 @@ export class MessagesService {
         showConfirmButton: false,
         timer: timeSeconds * 1000
       })
-    }, 2000);
+    }, 800);
 
   }
 }

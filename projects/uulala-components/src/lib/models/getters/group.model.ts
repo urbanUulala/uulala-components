@@ -1,0 +1,27 @@
+export class GroupModel {
+  constructor(
+    public id                     : number,
+    public pathLogo               : string,
+    public name                   : string,
+    public status?                 : number,
+    public activationDate?         : Date,
+    public officeId?               : number,
+    public reference?              : string,
+    public cardFee?                : number,
+    public typeCard?               : number,
+    public paymentCards?           : boolean,
+    public crypto?                 : boolean,
+    public frontCard?              : string,
+    public backCard?               : string,
+    public feePcc?                 : number,
+    public feeVcc?                 : number,
+    public feeChargePcc?           : number,
+    public feePhysicalCard?        : number,
+    public feeVirtualCard?         : number,
+    public feeChargePhysicalCard?  : number,
+    public fhargePayroll?          : number,
+    public statusFeeEmployee?      : boolean,
+    public statusFeePayroll?       : boolean,
+    public externalId?            :string,
+  ) {}
+}
