@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SystemLanguajes } from './languaje.service';
+import { SystemLanguajes } from '../types/system.languages';
 
 export type LocalStorageKeys =
   'token'     |
