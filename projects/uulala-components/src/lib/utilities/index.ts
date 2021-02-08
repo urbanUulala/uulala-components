@@ -3,3 +3,4 @@ export * from './string.tools';
 export * from './cipher.tools';
 export * from './style.tools';
 export * from './validators.tools';
+export * from './object.tools';
