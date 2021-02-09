@@ -14,6 +14,17 @@
   @include grid-auto-columns(max-content);
 }
 
+.grid-table {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 25px;
+}
+
+.grid-row {
+  @include grid-auto-columns(max-content);
+  grid-column-gap: 5px;
+}
+
 %gc-2fr-1fr-gr-1fr {
   display: grid;
   grid-template-columns: 2fr 1fr;
