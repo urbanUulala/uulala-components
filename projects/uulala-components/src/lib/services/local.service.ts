@@ -10,7 +10,8 @@ export type LocalStorageKeys =
   'pin'       |
   'code'      |
   'phone'     |
-  'session';
+  'session'   |
+  'blocked';
 
 
   export type UulalaSites =
@@ -45,11 +46,13 @@ const keyValues = {
   device_id : 'V00003',
   language  : 'V00004',
   uid       : 'V00005',
+  blocked   : 'V00006',
   //Temporal values
   pin       : 'T00001',
   code      : 'T00002',
   phone     : 'T00003',
-  session   : 'T00004'
+  session   : 'T00004',
+
 }
 
 const products = [
@@ -141,9 +144,9 @@ export class LocalService {
     return uulalaUrlSites[site];
   }
 
-  getUrlSesionForSystem(site: UulalaSites) {
+  getUrlSesionForSystem(site: string) {
     switch (site) {
-      case 'payroll':
+      case systemKeyRedirects.payroll:
         return this.getPayrollSesionUrl();
       default:
         break;

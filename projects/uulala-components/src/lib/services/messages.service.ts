@@ -77,7 +77,7 @@ export class MessagesService {
 
   }
 
-  fireTimeOutMessage(title:string,subtitle:string, extraInformation:string,imageTimeOut:any,placeholder:string,titleButton:string) {
+  fireTimeOutMessage(title:string,subtitle:string, extraInformation:string,imageTimeOut:any,placeholder:string,titleButton:string, execFunction:any) {
     return Swal.fire({
         title: "<img src='"+imageTimeOut+"'>",
         input:"password",
@@ -94,8 +94,9 @@ export class MessagesService {
         reverseButtons: false,
         showLoaderOnConfirm:true,
         footer:'<div class="normal-text-legal fs-13"><p><strong>'+extraInformation+'</strong></p></div>',
+        backdrop: 'rgba(255,255,255,1)',
         preConfirm: (value) => {return value}
-      })
+      }).then(execFunction)
   }
 
   fireErrorMessageTimer(title: string, message: string,){
@@ -117,4 +118,5 @@ export class MessagesService {
       timer: 2000
     })
   }
+
 }
