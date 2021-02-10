@@ -88,3 +88,7 @@
 .border-radius-four {
   @extend %border-radius-four;
 }
+
+.clickeable {
+  @extend %clickeable;
+}
