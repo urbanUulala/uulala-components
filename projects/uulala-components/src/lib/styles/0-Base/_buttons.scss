@@ -171,6 +171,18 @@
   width: 14px;
 }
 
+%button-resposive-menu  {
+  background-color: transparent;
+  height: 60px;
+  @extend %white-text;
+  @extend %fs-14;
+  @extend %clickeable;
+}
+%button-resposive-menu:hover {
+  background-color:#7E8DF8;
+}
+
+
 %button-menu > .button-menu-status {
   /*  extends  */
   @extend %border-radius;
@@ -362,4 +374,7 @@
 }
 .button-file {
   @extend %button-file;
+}
+.button-resposive-menu {
+  @extend %button-resposive-menu;
 }
