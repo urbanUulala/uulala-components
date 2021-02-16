@@ -46,6 +46,17 @@ export class UserService {
     )
   }
 
+  getUserByUuid( uuid: string) {
+    return this.graphService.execQuery(
+      userQueries.GET_USER_INFO_UUID,
+      {
+        token: this.localService.getValue( 'token'),
+        uuid
+      }
+    ).pipe(
+      map( result => result.data['getUserInfoUuid'] ))
+  }
+
   getUserDevices() {
     return this.graphService.execQuery(
       userQueries.GET_USERS_DEVICE,

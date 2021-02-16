@@ -96,6 +96,24 @@ export const userQueries = {
         }
     }
   }
+  `,
+  GET_USER_INFO_UUID: gql`
+  query ($token:String!, $uuid:String!){
+    getUserInfoUuid(token:$token, uuid:$uuid){
+        id
+        term
+        status
+        firstName
+        lastName
+        secondLastName
+        avatarImage
+        phoneNumber
+        lada
+        email
+        clientId
+        currency
+    }
+}
   `
 
 }

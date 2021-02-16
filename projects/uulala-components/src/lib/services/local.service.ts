@@ -11,7 +11,8 @@ export type LocalStorageKeys =
   'code'      |
   'phone'     |
   'session'   |
-  'blocked';
+  'blocked'   |
+  'society';
 
 
   export type UulalaSites =
@@ -47,6 +48,8 @@ const keyValues = {
   language  : 'V00004',
   uid       : 'V00005',
   blocked   : 'V00006',
+  society   : 'V00007',
+
   //Temporal values
   pin       : 'T00001',
   code      : 'T00002',
