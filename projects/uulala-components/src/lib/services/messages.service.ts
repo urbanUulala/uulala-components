@@ -4,10 +4,7 @@ import Swal,{ SweetAlertPosition } from 'sweetalert2';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ErrorModel } from '../models/error.model';
 
-//styles
-import "../styles/0-Base/_base-dir.scss"
-import "../styles/1-Components/_components-dir.scss"
-import "../styles/2-Modules/_modules-dir.scss"
+
 
 
 @Injectable({
