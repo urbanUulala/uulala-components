@@ -2,47 +2,45 @@
 /*  COLORS  */
 /***      ***/
 
-$color-back-menu: #E5E9F0;
-$color-content-hover: #EDF1F7;
-$color-profile-menu: #F4F6F9;
-$color-borders: #C1CAD6;
-$color-block-shadow: #B7BDD8;
-$color-text: #43465D;
-$color-highlighted:  #4F5ED5;
-$color-success: #23C9D3;
-$color-error: #E01541;
-$color-warning: #FA9C22;
-$color-white: #FFFFFF;
+$color-back-menu: #e5e9f0;
+$color-content-hover: #edf1f7;
+$color-profile-menu: #f4f6f9;
+$color-borders: #c1cad6;
+$color-block-shadow: #b7bdd8;
+$color-text: #43465d;
+$color-highlighted: #4f5ed5;
+$color-success: #23c9d3;
+$color-error: #e01541;
+$color-warning: #fa9c22;
+$color-white: #ffffff;
 $color-dark-purple: #37458b;
-$color-next-button-welcome: #8E9BFF;
+$color-next-button-welcome: #8e9bff;
 /* PALETA GENERAL */
 
 /* PALETA WELCOME */
-$color-bg-step: #2C366E;
-$color-bg-circle-yellow: #FFBB25;
-$color-btn-rounded-back: #7E8BED;
-$color-btn-sing-up : #FFB715;
+$color-bg-step: #2c366e;
+$color-bg-circle-yellow: #ffbb25;
+$color-btn-rounded-back: #7e8bed;
+$color-btn-sing-up: #ffb715;
 
 /* PALETA PROFILE */
-$color-prof-text-blue: #5867DB;
+$color-prof-text-blue: #5867db;
 $color-prof-text-highlighted: #707498;
-$color-prof-menu-text-highlighted: #5C6087;
-$color-prof-menu-button-highlighted: #5A5E86;
-$color-button-complete-prof:#EBA64B;
+$color-prof-menu-text-highlighted: #5c6087;
+$color-prof-menu-button-highlighted: #5a5e86;
+$color-button-complete-prof: #eba64b;
 
 /* PALETA Legal */
-$color-legal-text-normal: #62657C;
-
+$color-legal-text-normal: #62657c;
 
 /* PALETA UPLOAD FILES */
 
-$color-purple-1: #5867DB;
-$color-purple-2: #4A56B4;
-$color-empty-1: #C3D0DA;
+$color-purple-1: #5867db;
+$color-purple-2: #4a56b4;
+$color-empty-1: #c3d0da;
 
 /*  PALETA COMPONENTS  */
-$color-success-control: #16C39D;
-
+$color-success-control: #16c39d;
 
 /*  SIZES  */
 
@@ -50,14 +48,87 @@ $border-radius: 5px;
 $button-radius: 30px;
 
 .default_uulala_theme {
-  --color-back-menu: #{$color-back-menu};
+    --color-back-menu: #{$color-back-menu};
+  --color-content-hover: #{$color-content-hover};
+  --color-profile-menu: #{$color-profile-menu};
+  --color-borders: #{$color-borders};
+  --color-block-shadow: #{$color-block-shadow};
   --color-text: #{$color-text};
   --color-highlighted: #{$color-highlighted};
+  --color-success: #{$color-success};
+  --color-error: #{$color-error};
+  --color-warning: #{$color-warning};
+  --color-white: #{$color-white};
+  --color-dark-purple: #{$color-dark-purple};
+  --color-next-button-welcome: #{$color-next-button-welcome};
+  /* PALETA GENERAL */
+
+  /* PALETA WELCOME */
+  --color-bg-step: #{$color-bg-step};
+  --color-bg-circle-yellow: #{$color-bg-circle-yellow};
+  --color-btn-rounded-back: #{$color-btn-rounded-back};
+  --color-btn-sing-up: #{$color-btn-sing-up};
+
+  /* PALETA PROFILE */
+  --color-prof-text-blue: #{$color-prof-text-blue};
+  --color-prof-text-highlighted: #{$color-prof-text-highlighted};
+  --color-prof-menu-text-highlighted: #{$color-prof-menu-text-highlighted};
+  --color-prof-menu-button-highlighted: #{$color-prof-menu-button-highlighted};
+  --color-button-complete-prof: #{$color-button-complete-prof};
+
+  /* PALETA Legal */
+  --color-legal-text-normal:#{$color-legal-text-normal};
+
+  /* PALETA UPLOAD FILES */
+
+  --color-purple-1:#{$color-purple-1};
+  --color-purple-2:#{$color-purple-2};
+  --color-empty-1:#{$color-empty-1};
+
+  /*  PALETA COMPONENTS  */
+  --color-success-control:#{$color-success-control};
+
 }
 
-
 .brand_theme_1 {
-  --color-back-menu: #{$color-text};
-  --color-text: #{$color-highlighted};
-  --color-highlighted: #{$color-btn-sing-up};
+  --color-back-menu: #{$color-next-button-welcome};
+  --color-content-hover: #{$color-dark-purple};
+  --color-profile-menu: #{$color-white};
+  --color-borders: #{$color-warning};
+  --color-block-shadow: #{$color-error};
+  --color-text: #{$color-success};
+  --color-highlighted: #{$color-highlighted};
+  --color-success: #{$color-text};
+  --color-error: #{$color-block-shadow};
+  --color-warning: #{$color-borders};
+  --color-white: #{$color-profile-menu};
+  --color-dark-purple: #{$color-content-hover};
+  --color-next-button-welcome: #{$color-back-menu};
+  /* PALETA GENERAL */
+
+  /* PALETA WELCOME */
+  --color-bg-step:  #{$color-btn-sing-up};
+  --color-bg-circle-yellow: #{$color-btn-rounded-back};
+  --color-btn-rounded-back: #{$color-bg-circle-yellow};
+  --color-btn-sing-up: #{$color-bg-step};
+
+  /* PALETA PROFILE */
+  --color-prof-text-blue: #{$color-button-complete-prof};
+  --color-prof-text-highlighted: #{$color-prof-menu-button-highlighted};
+  --color-prof-menu-text-highlighted: #{$color-prof-menu-text-highlighted};
+  --color-prof-menu-button-highlighted: #{$color-prof-text-highlighted};
+  --color-button-complete-prof: #{$color-prof-text-blue};
+
+  /* PALETA Legal */
+  --color-legal-text-normal:#{$color-legal-text-normal};
+
+  /* PALETA UPLOAD FILES */
+
+  --color-purple-1: #{$color-empty-1};
+  --color-purple-2:#{$color-purple-2};
+  --color-empty-1: #{$color-purple-1};
+
+  /*  PALETA COMPONENTS  */
+  --color-success-control:#{$color-success-control};
+
 }
