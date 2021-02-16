@@ -48,3 +48,16 @@ $color-success-control: #16C39D;
 
 $border-radius: 5px;
 $button-radius: 30px;
+
+.default_uulala_theme {
+  --color-back-menu: #{$color-back-menu};
+  --color-text: #{$color-text};
+  --color-highlighted: #{$color-highlighted};
+}
+
+
+.brand_theme_1 {
+  --color-back-menu: #{$color-text};
+  --color-text: #{$color-highlighted};
+  --color-highlighted: #{$color-btn-sing-up};
+}

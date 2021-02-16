@@ -15,6 +15,8 @@ import { MessagesService } from './services/messages.service';
 import { GraphService } from './services/graph.service';
 import { Apollo } from 'apollo-angular';
 import { GraphQLModule } from './modules/graphql.module';
+import { UiService } from './services/ui.service';
+
 
 
 
@@ -49,6 +51,7 @@ import { GraphQLModule } from './modules/graphql.module';
     LocalService,
     MessagesService,
     GraphService,
+    UiService,
     Apollo
   ]
 })
