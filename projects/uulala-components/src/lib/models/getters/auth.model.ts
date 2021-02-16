@@ -5,6 +5,8 @@ export class Auth {
     public user: string,
     public password: string,
     public locked: boolean,
-    public timeOut?: number
+    public timeOut?: number,
+
   ){}
 }
+
