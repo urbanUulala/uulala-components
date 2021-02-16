@@ -1,7 +1,7 @@
 @import 'variables';
 
 %bwc-highlighted {
-  background-color: $color-highlighted;
+  background-color: var(--color-highlighted, #4f5ed5);
 }
 
 .bwc-highlighted {

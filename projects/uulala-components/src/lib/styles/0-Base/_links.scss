@@ -21,11 +21,11 @@
 %link-disabled {
   @extend %fs-11;
   @extend %clickeable;
-  color: change-color($color: $color-text, $alpha: 0.5);
+  color: change-color($color: var(--color-text, #43465d), $alpha: 0.5);
 }
 
 %link-disabled:hover {
-  color: $color-text;
+  color: var(--color-text, #43465d);
   text-decoration: underline
 }
 

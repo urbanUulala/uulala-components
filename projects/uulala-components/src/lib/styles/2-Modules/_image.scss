@@ -28,6 +28,6 @@
   height: 90%;
   font-size: 300%;
   font-weight: bold;
-  color: $color-highlighted;
+  color: var(--color-highlighted, #4f5ed5);
 }
 

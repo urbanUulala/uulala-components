@@ -13,7 +13,7 @@
   /*  shape  */
   height: 40px;
   position: relative;
-  background-color: $color-white;
+  background-color: var(--color-white, #ffffff);
 }
 
 /*  input styles  */
@@ -208,7 +208,7 @@
   @extend %fw-600;
   /*  color  */
   background-color: $color-content-hover;
-  color: $color-text;
+  color: var(--color-text, #43465d);
 
   /*  shape  */
   width: 50px;
@@ -228,7 +228,7 @@
 
 %step-one__container-step-background{
   /*  shape  */
-  background-color: $color-bg-step;
+  background-color: var(--color-bg-step, #2c366e);
   /*  align flexBox  dynamic*/
   display: flex;
   flex-direction: row;
@@ -260,7 +260,7 @@
 }
 
 .step-one__blue-circle{
-  background-color: $color-prof-text-blue;
+  background-color: var(--color-prof-text-blue, #5867db);
   @extend %step__circle;
 }
 
@@ -270,9 +270,9 @@
 }
 
 .step-one__yellow-circle{
-  background-color: $color-bg-circle-yellow;
+  background-color: var(--color-bg-circle-yellow, #ffbb25);
 
-  border: $color-white 0.3px solid;
+  border: var(--color-white, #ffffff) 0.3px solid;
   box-shadow: 0 0px 17px 1px #ffd359,
    0 0px 0px 0 #ffd359,
     0 0px 3px 0 #ffd359;
@@ -282,7 +282,7 @@
 }
 
 .step-one__disable-circle{
-  background-color:$color-next-button-welcome;
+  background-color:var(--color-next-button-welcome, #8e9bff);
   @extend %step__circle;
 
 }

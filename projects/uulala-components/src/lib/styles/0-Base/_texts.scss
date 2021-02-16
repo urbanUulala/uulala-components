@@ -3,7 +3,7 @@
 /*  FONT STYLES  */
 
 %normal-text {
-  color: $color-text;
+  color: var(--color-text, #43465d);
   font-weight: 500;
 }
 
@@ -21,7 +21,7 @@
 }
 
 %white-text {
-  color: $color-white;
+  color: var(--color-white, #ffffff);
   font-weight: 500;
 }
 
@@ -32,7 +32,7 @@
 // PROFILE
 
 %normal-text-profile{
-  color: $color-prof-text-blue;
+  color: var(--color-prof-text-blue, #5867db);
   font-weight: 500;
 }
 .normal-text-profile {
@@ -40,7 +40,7 @@
 }
 
 %highlighted-text-profile {
-  color: $color-prof-text-highlighted;
+  color: var(--color-prof-text-highlighted, #707498);
   font-weight: 300;
 }
 
@@ -49,7 +49,7 @@
 }
 
 %menu-highlighted-text{
-  color: $color-prof-menu-text-highlighted;
+  color: var(--color-prof-menu-text-highlighted, #5c6087);
   font-weight: 500;
 }
 .menu-highlighted-text {
@@ -58,7 +58,7 @@
 
 /*  Legal  */
 %normal-text-legal{
-  color: $color-legal-text-normal;
+  color: var(--color-legal-text-normal, #62657c);
   font-weight: 300;
 }
 

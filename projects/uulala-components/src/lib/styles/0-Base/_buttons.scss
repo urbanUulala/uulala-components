@@ -10,12 +10,12 @@
   @extend %white-text;
   @extend %fs-12;
   @extend %clickeable;
-  background-color: $color-highlighted;
+  background-color: var(--color-highlighted, #4f5ed5);
   height: 22px;
 }
 
 %normal-button:disabled {
-  background-color: change-color($color: $color-highlighted, $alpha: 0.5);
+  background-color: change-color($color: var(--color-highlighted, #4f5ed5), $alpha: 0.5);
 }
 
 /*** ------------ ***/
@@ -27,12 +27,12 @@
   @extend %white-text;
   @extend %fs-12;
   @extend %clickeable;
-  background-color: $color-success-control;
+  background-color: var(--color-success, #23c9d3)-control;
   height: 22px;
 }
 
 %success-button:disabled {
-  background-color: change-color($color: $color-success-control, $alpha: 0.5);
+  background-color: change-color($color: var(--color-success, #23c9d3)-control, $alpha: 0.5);
 }
 
 /*** ------------ ***/
@@ -44,7 +44,7 @@
   @extend %white-text;
   @extend %fs-10;
   @extend %clickeable;
-  background-color: $color-next-button-welcome;
+  background-color: var(--color-next-button-welcome, #8e9bff);
   height: 28px;
   width : 88PX;
 
@@ -55,7 +55,7 @@
   0 1px 3px 0 rgb(141, 154, 239);
 }
 %shadow-button-next:disabled {
-  background-color: change-color($color: $color-next-button-welcome, $alpha: 0.5);
+  background-color: change-color($color: var(--color-next-button-welcome, #8e9bff), $alpha: 0.5);
 }
 %shadow-button-next > img {
   /*  position  */
@@ -70,14 +70,14 @@
   @extend %white-text;
   @extend %clickeable;
   @extend %center;
-  background-color: $color-btn-rounded-back;
+  background-color: var(--color-btn-rounded-back, #7e8bed);
   height: 28px;
   width : 28px;
 
 }
 
 %rounded-button-back:disabled {
-  background-color: change-color($color: $color-btn-rounded-back, $alpha: 0.5);
+  background-color: change-color($color: var(--color-btn-rounded-back, #7e8bed), $alpha: 0.5);
 }
 %rounded-button-back > img {
   /*  position  */
@@ -97,8 +97,8 @@
   @extend %clickeable;
 
   /*  color  */
-  background-color: $color-back-menu;
-  color: $color-highlighted;
+  background-color: var(--color-back-menu, #e5e9f0);
+  color: var(--color-highlighted, #4f5ed5);
 
   /*  shape  */
   width: 100%;
@@ -129,8 +129,8 @@
   height: 32px;
 
   /*  color  */
-  background-color: $color-warning;
-  color: $color-white;
+  background-color: var(--color-warning, #fa9c22);
+  color: var(--color-white, #ffffff);
 }
 
 %warning-button-menu > img {
@@ -155,7 +155,7 @@
 
   /*  color  */
   background-color: transparent;
-  color: $color-text;
+  color: var(--color-text, #43465d);
 
   /*  position  */
   position: relative;
@@ -194,7 +194,7 @@
 
   /*  color  */
   background-color: transparent;
-  background-color: $color-success;
+  background-color: var(--color-success, #23c9d3);
 
   /*  shape  */
   width: 4px;
@@ -207,7 +207,7 @@
 }
 
 .active {
-  background-color: $color-white !important;
+  background-color: var(--color-white, #ffffff) !important;
 }
 
 /*** ----------- ***/
@@ -263,8 +263,8 @@
 
 
 %profile-buttons{
-  background-color: $color-content-hover;
-  color: $color-prof-menu-button-highlighted;
+  background-color: var(--color-content-hover, #edf1f7);
+  color: var(--color-prof-menu-button-highlighted, #5a5e86);
   @extend %border-radius-four;
   @extend %clickeable;
 
@@ -277,12 +277,12 @@
 
 %profile-buttons:focus {
   @extend %white-text;
-  background-color: $color-prof-text-blue;
+  background-color: var(--color-prof-text-blue, #5867db);
 }
 
 %avatar-button {
   background-color: white;
-  border: 1px $color-content-hover solid;
+  border: 1px var(--color-content-hover, #edf1f7) solid;
   @extend %border-radius-circle;
   @extend %clickeable;
 
@@ -297,7 +297,7 @@
 }
 
 %button-complete-profile {
-  background-color: $color-button-complete-prof;
+  background-color: var(--color-button-complete-prof, #eba64b);
   @extend %border-radius-four;
   @extend %clickeable;
   @extend %fs-10;
