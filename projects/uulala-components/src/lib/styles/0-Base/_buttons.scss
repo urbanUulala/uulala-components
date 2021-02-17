@@ -15,7 +15,7 @@
 }
 
 %normal-button:disabled {
-  background-color: change-color($color: var(--color-highlighted, #4f5ed5), $alpha: 0.5);
+  opacity: 0.5;
 }
 
 /*** ------------ ***/
@@ -32,7 +32,7 @@
 }
 
 %success-button:disabled {
-  background-color: change-color($color: var(--color-success, #23c9d3)-control, $alpha: 0.5);
+  opacity: 0.5;
 }
 
 /*** ------------ ***/
@@ -55,7 +55,7 @@
   0 1px 3px 0 rgb(141, 154, 239);
 }
 %shadow-button-next:disabled {
-  background-color: change-color($color: var(--color-next-button-welcome, #8e9bff), $alpha: 0.5);
+  opacity: 0.5;
 }
 %shadow-button-next > img {
   /*  position  */
@@ -77,7 +77,7 @@
 }
 
 %rounded-button-back:disabled {
-  background-color: change-color($color: var(--color-btn-rounded-back, #7e8bed), $alpha: 0.5);
+  opacity: 0.5;
 }
 %rounded-button-back > img {
   /*  position  */

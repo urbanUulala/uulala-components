@@ -21,7 +21,7 @@
 %link-disabled {
   @extend %fs-11;
   @extend %clickeable;
-  color: change-color($color: var(--color-text, #43465d), $alpha: 0.5);
+  opacity: 0.5;
 }
 
 %link-disabled:hover {
