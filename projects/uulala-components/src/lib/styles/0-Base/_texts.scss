@@ -20,6 +20,15 @@
   @extend %highlighted-text;
 }
 
+%success-text {
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.success-text {
+  @extend %success-text;
+}
+
 %white-text {
   color: var(--color-white, #ffffff);
   font-weight: 500;

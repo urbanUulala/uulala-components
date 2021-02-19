@@ -5,6 +5,7 @@ export type LocalStorageKeys =
   'token'     |
   'user'      |
   'device_id' |
+  'device_id_rsa' |
   'language'  |
   'uid'       |
   'pin'       |
@@ -42,19 +43,20 @@ const defaultLanguajeValues = {
   }
 }
 const keyValues = {
-  token     : 'V00001',
-  user      : 'V00002',
-  device_id : 'V00003',
-  language  : 'V00004',
-  uid       : 'V00005',
-  blocked   : 'V00006',
-  society   : 'V00007',
+  token         : 'V00001',
+  user          : 'V00002',
+  device_id     : 'V00003',
+  language      : 'V00004',
+  uid           : 'V00005',
+  blocked       : 'V00006',
+  society       : 'V00007',
+  device_id_rsa : 'V00008',
 
   //Temporal values
-  pin       : 'T00001',
-  code      : 'T00002',
-  phone     : 'T00003',
-  session   : 'T00004',
+  pin           : 'T00001',
+  code          : 'T00002',
+  phone         : 'T00003',
+  session       : 'T00004',
 
 }
 

@@ -9,6 +9,7 @@ export class DeviceModel {
     public register     : string,
     public browserName  : string = '',
     public soName       : string = '',
-    public productName      : string = ''
+    public productName      : string = '',
+    public isCurrentDevice: boolean
   ){}
 }

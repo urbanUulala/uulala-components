@@ -17,7 +17,7 @@
 .grid-table {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 25px;
+  grid-auto-rows: 25px;
 }
 
 .grid-row {

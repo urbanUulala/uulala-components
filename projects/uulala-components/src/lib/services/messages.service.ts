@@ -3,6 +3,7 @@ import Swal,{ SweetAlertPosition } from 'sweetalert2';
 
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ErrorModel } from '../models/error.model';
+import { ConfirmationMessage } from '../interfaces/swal/confirmation.swal';
 
 
 
@@ -114,6 +115,10 @@ export class MessagesService {
       showConfirmButton: false,
       timer: 2000
     })
+  }
+
+  fireConfirmationMessage(config: ConfirmationMessage, actionFunction:any ) {
+    Swal.fire(config).then(actionFunction)
   }
 
 }
