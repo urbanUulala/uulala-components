@@ -2,3 +2,8 @@
   <div class="image-img" [id]="config.id + '-img'" *ngIf="url != ''"></div>
   <div *ngIf="url == ''" class="image-text"> {{ name.substring(0, 2) | uppercase }}</div>
 </div>
+
+<div [id]="config.id + '-container'" class="image-container border-radius  bwc-white" *ngIf="type == 'company-image'">
+  <div class="image-img" [id]="config.id + '-img'" *ngIf="url != ''"></div>
+  <div *ngIf="url == ''" class="image-text"> {{ name.substring(0, 2) | uppercase }}</div>
+</div>

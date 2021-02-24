@@ -6,3 +6,75 @@
 .normal-border {
   @extend %normal-border;
 }
+
+
+%border-container {
+  border: 1px solid var(--color-borders, #c1cad6);
+}
+
+.border-container {
+  @extend %border-container;
+}
+
+%border-container-left {
+  border-left: 1px solid var(--color-borders, #c1cad6);
+}
+
+.border-container-left {
+  @extend %border-container-left;
+}
+
+
+%border-container-right {
+  border-right: 1px solid var(--color-borders, #c1cad6);
+}
+
+.border-container-right {
+  @extend %border-container-right;
+}
+
+%border-container-top {
+  border-top: 1px solid var(--color-borders, #c1cad6);
+}
+
+.border-container-top {
+  @extend %border-container-top;
+}
+
+%border-container-bottom {
+  border-bottom: 1px solid var(--color-borders, #c1cad6);
+}
+
+.border-container-bottom {
+  @extend %border-container-bottom;
+}
+
+
+%border-radius {
+  border-radius: $border-radius;
+}
+
+%border-radius-circle {
+  border-radius: 50%
+}
+
+%border-radius-buttons-menu {
+  border-radius: 2px
+}
+
+%border-radius-four {
+  border-radius: 4px
+}
+
+
+.border-radius {
+  @extend %border-radius;
+}
+
+.border-radius-buttons-menu {
+  @extend %border-radius-buttons-menu;
+}
+
+.border-radius-four {
+  @extend %border-radius-four;
+}

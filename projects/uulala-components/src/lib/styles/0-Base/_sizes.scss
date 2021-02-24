@@ -106,6 +106,14 @@
   @extend %w-80;
 }
 
+%w-85 {
+  width: 85px !important;
+}
+
+.w-85 {
+  @extend %w-85;
+}
+
 %w-88 {
   width: 88px !important;
 }
@@ -797,6 +805,14 @@
 
 .h-80 {
   @extend %h-80;
+}
+
+%h-85 {
+  height: 85px !important;
+}
+
+.h-85 {
+  @extend %h-85;
 }
 
 %h-90 {

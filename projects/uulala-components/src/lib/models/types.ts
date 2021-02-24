@@ -5,4 +5,5 @@ export type ControlTextTypes =
   'number';
 
 export type ImageTypes =
-  'user-image';
+  'user-image' |
+  'company-image';

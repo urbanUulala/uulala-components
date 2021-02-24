@@ -26,6 +26,8 @@ export class UulImgComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    console.log('on init image ', this.type)
   }
 
   ngAfterViewInit() {

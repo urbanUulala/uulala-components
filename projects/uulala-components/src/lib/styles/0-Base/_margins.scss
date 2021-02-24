@@ -1,0 +1,19 @@
+/*  Margin left  */
+
+%ml-15 {
+  margin-left: 15px !important;
+}
+
+.ml-15 {
+  @extend %ml-15;
+}
+
+/*  Margin right  */
+
+%mr-15 {
+  margin-right: 15px !important;
+}
+
+.mr-15 {
+  @extend %mr-15;
+}
