@@ -7,3 +7,8 @@ export type ControlTextTypes =
 export type ImageTypes =
   'user-image' |
   'company-image';
+
+
+export type SelectTypes =
+  'form' |
+  'session';

@@ -21,7 +21,7 @@
 }
 
 %white-text {
-  color: var(--color-white, #ffffff);
+  color: var(--color-white, #ffffff) !important;
   font-weight: 500;
 }
 

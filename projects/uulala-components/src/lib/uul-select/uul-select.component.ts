@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
+
 import { SelectListItem } from '../models/configurations';
+import { SelectTypes } from '../models/types';
 
 @Component({
   selector: 'uul-select',
@@ -12,6 +14,8 @@ export class UulSelectComponent implements OnInit {
   // control config
   @Input() label: string = '';
   @Input() values: SelectListItem[];
+  @Input() type: SelectTypes = 'form';
+
 
   //reactive form
   @Input() control: AbstractControl = new FormControl();

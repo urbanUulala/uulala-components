@@ -1,7 +1,14 @@
-<div [ngClass]="containerStyles">
+<div [ngClass]="containerStyles" *ngIf="type === 'form'">
   <label [ngClass]="labelStyles">{{ label }}</label>
   <select [ngClass]="inputStyles" [formControl]="control">
     <option *ngFor="let item of values" value="{{ item.value }}">{{ item.description }}</option>
   </select>
-
 </div>
+
+<div class="control-container bwc-highlighted" *ngIf="type === 'session'">
+  <label class="control-label-select white-text">{{ label }}</label>
+  <select class="control-select white-text" [formControl]="control">
+    <option class="normal-text"  *ngFor="let item of values" value="{{ item.value }}">{{ item.description }}</option>
+  </select>
+</div>
+
