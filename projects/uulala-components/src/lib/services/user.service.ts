@@ -3,6 +3,7 @@ import { GraphService } from './graph.service';
 import { LocalService } from './local.service';
 import { userQueries } from '../queries/user.queries'
 import { map } from 'rxjs/operators';
+import { CompanyModel } from '../models/getters/company.model';
 
 
 
@@ -76,6 +77,17 @@ export class UserService {
       {
         token: this.localService.getValue( 'token'),
         id
+      }
+    )
+  }
+
+
+  getUserCompanies(filter: string = '')  {
+    return this.graphService.execQuery(
+      userQueries.DELETE_USER_DEVICE,
+      {
+        token: this.localService.getValue( 'token' ),
+        filter
       }
     )
   }

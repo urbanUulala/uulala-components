@@ -8,7 +8,7 @@ export const userQueries = {
     }
   }
   `,
-  GET_USERS_DEVICE: gql `
+  GET_USERS_DEVICE: gql`
   query($token:String!,$field:String!,$id:String!){
     getUsersByField(token:$token,field:$field,id:$id){
       devices {
@@ -112,6 +112,37 @@ export const userQueries = {
         email
         clientId
         currency
+    }
+}
+  `,
+
+  GET_USER_COMPANIES: gql`
+  query($token:String!, $filter:String!){
+    getUserCompanies(token:$token, filter:$filter){
+        company{
+            number
+            name
+            totalBranch
+            totalArea
+            totalDepto
+            totalEmployess
+            totalActiveEmployess
+            totalDesactiveEmployess
+            totalPayrollTypes
+            totalPayrollPeriods
+            pathLogo
+            balanza {
+              year
+              account
+              deposit
+              withdrawal
+              total
+              currency
+            }
+            aditionalDescription
+            idUulalaGroup
+        }
+
     }
 }
   `
