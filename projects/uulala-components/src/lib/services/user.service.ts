@@ -84,11 +84,19 @@ export class UserService {
 
   getUserCompanies(filter: string = '')  {
     return this.graphService.execQuery(
-      userQueries.DELETE_USER_DEVICE,
+      userQueries.GET_USER_COMPANIES,
       {
         token: this.localService.getValue( 'token' ),
         filter
       }
+    ).pipe(
+      map(result => {
+        let companies: CompanyModel[] = [];
+        result.data['getUserCompanies'].forEach(company => {
+          companies.push(company.company)
+        });
+        return companies;
+      })
     )
   }
 }
