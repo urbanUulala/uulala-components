@@ -1,7 +1,7 @@
 import { BalanceModel } from "./balance.model";
 
 export interface CompanyModel {
-  number: string;
+  number: number;
   name: string;
   rfc?: string;
   address1?: string;
@@ -18,14 +18,14 @@ export interface CompanyModel {
   isEmployerInBranch?: string;
   countryNumber?: string;
   aditionalDescription? : string;
-  totalBranch: string;
-  totalArea: string;
-  totalDepto: string;
-  totalEmployess: string;
-  totalActiveEmployess: string;
-  totalDesactiveEmployess: string;
-  totalPayrollTypes: string;
-  totalPayrollPeriods: string;
+  totalBranch: number;
+  totalArea: number;
+  totalDepto: number;
+  totalEmployess: number;
+  totalActiveEmployess: number;
+  totalDesactiveEmployess: number;
+  totalPayrollTypes: number;
+  totalPayrollPeriods: number;
   idUulalaGroup: string;
   balanza: BalanceModel;
 }

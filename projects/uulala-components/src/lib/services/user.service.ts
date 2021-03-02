@@ -99,4 +99,18 @@ export class UserService {
       })
     )
   }
+
+
+  getPayrollTypes(filter: string = '') {
+    return this.graphService.execQuery(
+      userQueries.GET_PAYROLL_TYPES_USER,
+      {
+        token: this.localService.getValue( 'token' ),
+        filter
+      }
+    ).pipe(
+      map(result => result.data['getPayrollTypes'])
+    )
+
+  }
 }

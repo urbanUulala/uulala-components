@@ -27,12 +27,16 @@ export class UulImgComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
-    console.log('on init image ', this.type)
+    setTimeout(() => {
+
+      console.log('on init image ', this.type, this.url)
+      this.loadStyles();
+    }, 1000);
   }
 
   ngAfterViewInit() {
     this.loadElements();
-    this.loadStyles();
+
   }
 
   loadElements() {
@@ -52,6 +56,6 @@ export class UulImgComponent implements OnInit, AfterViewInit {
       });
     }
 
-    if (this.url != '') this.imgElement.style.backgroundImage = `url("${this.url}")`;
+    if (this.url != '' && this.url !== null) this.imgElement.style.backgroundImage = `url("${this.url}")`;
   }
 }

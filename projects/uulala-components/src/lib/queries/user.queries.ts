@@ -145,6 +145,24 @@ export const userQueries = {
 
     }
 }
+  `,
+  GET_PAYROLL_TYPES_USER: gql`
+    query($token:String!,$filter:String!){
+        getPayrollTypes(token:$token, filter:$filter){
+            number
+            description
+            filter
+            periodicity
+            isMasterGrouper
+            handlesSecialSecurity
+            leaveSalaryZero
+            fiscalRegimeSat
+            details {
+              number
+              grouperNumber
+            }
+        }
+    }
   `
 
 }
