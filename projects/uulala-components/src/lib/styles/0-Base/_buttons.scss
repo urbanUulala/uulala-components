@@ -1,39 +1,58 @@
 @import "texts";
 @import "utilities";
 
+
+/*** -------------- ***/
+/*  BUTTON STRUCTURE  */
+/*** -------------- ***/
+
+%button-structure {
+  @extend %button-radius;
+  @extend %white-text;
+  @extend %fs-12;
+  @extend %fw-semibold;
+  
+  height: 36px;
+  padding-left: 30px;
+  padding-right: 30px;
+  opacity: 0.85;
+}
+
+%button-structure:disabled {
+  opacity: 0.5;
+}
+
+%button-structure:not(:disabled) {
+  @extend %clickeable;
+}
+
+%button-structure:not(:disabled):hover {
+  
+  opacity: 1;
+}
+
 /*** ------------ ***/
 /*  NORMAL BUTTON  */
 /*** ------------ ***/
 
 %normal-button {
-  @extend %button-radius;
-  @extend %white-text;
-  @extend %fs-12;
-  @extend %clickeable;
+  @extend %button-structure;
   background-color: var(--color-highlighted, #4f5ed5);
-  height: 22px;
 }
 
-%normal-button:disabled {
-  opacity: 0.5;
-}
+
 
 /*** ------------ ***/
 /*  SUCCESS BUTTON  */
 /*** ------------ ***/
 
 %success-button {
-  @extend %button-radius;
-  @extend %white-text;
-  @extend %fs-12;
-  @extend %clickeable;
+  @extend %button-structure;
   background-color: var(--color-success, #23c9d3);
-  height: 22px;
+
 }
 
-%success-button:disabled {
-  opacity: 0.5;
-}
+
 
 /*** ------------ ***/
 /*  WELCOME BUTTON NEXT  */
@@ -54,9 +73,7 @@
   0 1px 1px 0 rgb(141, 154, 239),
   0 1px 3px 0 rgb(141, 154, 239);
 }
-%shadow-button-next:disabled {
-  opacity: 0.5;
-}
+
 %shadow-button-next > img {
   /*  position  */
  padding: 5px
@@ -76,9 +93,7 @@
 
 }
 
-%rounded-button-back:disabled {
-  opacity: 0.5;
-}
+
 %rounded-button-back > img {
   /*  position  */
   width : 8px;
@@ -321,6 +336,47 @@
   height: 0.1px;
   position: absolute;
 }
+
+/*** ---------------- ***/
+/*  GRID ACTION BUTTON  */
+/*** ---------------- ***/
+
+
+%grid-button-structure {
+  @extend %button-radius;
+  @extend %normal-text;
+  @extend %fs-8;
+  @extend %fw-semibold;
+  @extend %border-grid-button;
+
+  background-color: var(--color-white);
+  
+  height: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  opacity: 0.85;
+}
+
+
+
+%grid-button-structure:disabled {
+  opacity: 0.5;
+}
+
+%grid-button-structure:not(:disabled) {
+  @extend %clickeable;
+}
+
+%grid-button-structure:not(:disabled):hover {
+  opacity: 1;
+  background-color: var(--color-text);
+  color: var(--color-white);
+}
+
+.grid-button {
+  @extend %grid-button-structure;
+}
+
 
 /*** ------------ ***/
 /*  EXPORT CLASSES  */

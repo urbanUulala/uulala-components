@@ -15,14 +15,72 @@
 }
 
 .grid-table {
+  /*  extends  */
+  @extend %border-container;
+  @extend %border-radius;
+
+  /*  grid  */
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 25px;
+  grid-template-rows: 35px auto;
+  grid-row-gap: 2px;
+}
+
+.grid-rows {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 26px;
+  grid-row-gap: 2px;
+}
+
+.grid-row-header {
+  /*  extends  */
+  @extend %h-35;
+  @extend %fs-10;
+  @extend %highlighted-text;
+  @extend %js-c;
+
+  /*  include mixins  */
+  @include grid-auto-columns(max-content);
+
+  /*  grid  */
+  grid-column-gap: 5px;
 }
 
 .grid-row {
+  /*  extends  */
+  @extend %h-26;
+  @extend %js-c;
+  @extend %pos-r;
+
   @include grid-auto-columns(max-content);
+
   grid-column-gap: 5px;
+  max-width: calc(100% - 10px);
+  
+
+}
+
+.grid-row-controls {
+  @extend %pos-a;
+  @extend %ph-15;
+  right: 5px;
+  top: 5px;
+  background-color: var(--color-content-hover);
+  opacity: 0;
+}
+
+.grid-row:hover {
+  @extend %border-radius;
+  background-color: var(--color-content-hover);
+}
+
+.grid-row:hover > .grid-row-controls {
+ opacity: 1
+}
+
+.grid-row > div  {
+  @extend %as-c;
 }
 
 %gc-2fr-1fr-gr-1fr {

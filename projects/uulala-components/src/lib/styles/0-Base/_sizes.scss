@@ -759,12 +759,36 @@
   @extend %h-22;
 }
 
+%h-25 {
+  height: 25px !important;
+}
+
+.h-25 {
+  @extend %h-25;
+}
+
+%h-26 {
+  height: 26px !important;
+}
+
+.h-26 {
+  @extend %h-26;
+}
+
 %h-30 {
   height: 30px !important;
 }
 
 .h-30 {
   @extend %h-30;
+}
+
+%h-35 {
+  height: 35px !important;
+}
+
+.h-35 {
+  @extend %h-35;
 }
 
 %h-40 {

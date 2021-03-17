@@ -66,6 +66,16 @@
   @extend %normal-text-legal;
 }
 
+%overflow-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.overflow-text {
+  @extend %overflow-text;
+}
+
 /*  FONT WEIGHT  */
 
 %fw-normal {

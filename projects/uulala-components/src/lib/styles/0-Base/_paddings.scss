@@ -5,3 +5,13 @@
 .pl-15 {
   @extend %pl-15;
 }
+
+/*  horizontal padding  */
+%ph-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.ph-15 {
+  @extend %ph-15;
+}

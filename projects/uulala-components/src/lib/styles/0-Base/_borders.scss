@@ -49,6 +49,10 @@
   @extend %border-container-bottom;
 }
 
+%border-grid-button {
+  border: 1px solid var(--color-text);
+}
+
 
 %border-radius {
   border-radius: $border-radius;
@@ -67,6 +71,12 @@
 }
 
 
+%button-radius {
+  border-radius: $button-radius;
+}
+
+
+
 .border-radius {
   @extend %border-radius;
 }
@@ -77,4 +87,62 @@
 
 .border-radius-four {
   @extend %border-radius-four;
+}
+
+/*  OVERFLOWS  */
+
+%of-x-a {
+  overflow-x: hidden;
+}
+
+%of-x-a:hover {
+  overflow-x: auto;
+}
+
+.of-x-a {
+  @extend %of-x-a;
+}
+
+%of-x-h {
+  overflow-x: hidden;
+}
+
+.of-x-h {
+  @extend %of-x-h;
+}
+
+%of-y-a {
+  overflow-y: auto;
+}
+
+.of-y-a {
+  @extend %of-y-a;
+}
+
+%of-y-h {
+  overflow-y: hidden;
+}
+
+.of-y-h {
+  @extend %of-y-h;
+}
+
+%of-xy-a {
+  overflow: hidden;
+}
+
+%of-xy-a:hover {
+  overflow: auto;
+}
+
+.of-xy-a {
+  @extend %of-xy-a;
+}
+
+%of-xy-h {
+  overflow: hidden;
+}
+
+.of-xy-h {
+  @extend %of-xy-h;
 }
