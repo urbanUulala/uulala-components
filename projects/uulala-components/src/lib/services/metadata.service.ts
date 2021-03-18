@@ -1,11 +1,25 @@
 import { Injectable } from "@angular/core";
+
+// Rxjs
 import { map } from "rxjs/operators";
+
+// Model
+import { SelectListItem } from "../models/configurations";
+import { MetadataFieldModel } from "../models/getters/metadata-field.model";
 import { MetadataGridColumnModel } from "../models/getters/metadata-grid-column.model";
 import { MetadataGridRowModel } from "../models/getters/metadata-grid-row.model";
+import { MetadataModalModel } from "../models/getters/metadata-modal.model";
 import { MetadataGridRowDataModel } from "../models/getters/metadata-row-data.model";
+import { MetadataTabModel } from "../models/getters/metadata-tab.model";
+import { MetadataValueModal } from "../models/getters/metadata-value.model";
 
+// Queries
 import { metadataQueries } from "../queries/metadata.queries";
-import { ArrayTools } from "../utilities";
+
+// Utilities
+import { ArrayTools, StringTools } from "../utilities";
+
+// Services
 import { GraphService } from "./graph.service";
 import { LocalService } from "./local.service";
 
@@ -29,7 +43,8 @@ export class MetadataService {
     getId(key: MetadataModules) {
         return metadataIds[key];
     }
-
+    
+    // Grid functions
     getDataFromCatalogGrid(catalogId: number, filter: string = '') {
         return this.graphService.execQuery(
             metadataQueries.GET_DATA_FROM_GRID,
@@ -44,7 +59,7 @@ export class MetadataService {
         )
     }
 
-    processData(dataGrid:any) {
+    private processData(dataGrid:any) {
         // Get all columns 
         let columns: MetadataGridColumnModel[] = this.getColumnsForGrid(dataGrid);
         
@@ -62,12 +77,11 @@ export class MetadataService {
             tableId: dataGrid.tableId,
             table: dataGrid.table,
             columns: columns.filter( column => column.isVisible ),
-            keys,
             dataColumns
         }
     }
 
-    getColumnsForGrid(data: any) {
+    private getColumnsForGrid(data: any) {
         let gridJson: any = JSON.parse(data.gridJson);
 
         let gridData: MetadataGridColumnModel[] = [];
@@ -95,11 +109,9 @@ export class MetadataService {
 
     }
 
-    getColumnKeys(columns: MetadataGridColumnModel[]) {
-        columns.filter(column => column.primaryKey)
-    }
 
-    getDataForGrid(dataGrid: any, columns: MetadataGridColumnModel[], keys: MetadataGridColumnModel[]) {
+
+    private getDataForGrid(dataGrid: any, columns: MetadataGridColumnModel[], keys: MetadataGridColumnModel[]) {
         let returnData: MetadataGridRowModel[] = [];
         let gridData: any = JSON.parse(dataGrid.propertiesJson);
         // console.log('propertiesJson', gridData);
@@ -116,7 +128,7 @@ export class MetadataService {
         return returnData;
     }
 
-    getDataForGridColumns(data:any[], columns: MetadataGridColumnModel[]) {
+    private getDataForGridColumns(data:any[], columns: MetadataGridColumnModel[]) {
         let returnData: MetadataGridRowDataModel[] = [];
         columns.forEach(element => {
             let columnSelected: any = data.filter( filterElement => filterElement.FieldId === element.id)[0] || null;
@@ -131,5 +143,99 @@ export class MetadataService {
         });
 
         return returnData;
+    }
+
+
+    // Modal functions
+
+    // Grid functions
+    getDataFromCatalogModal(catalogId: number, inputKeys: MetadataGridRowDataModel[]) {
+        let keys: MetadataValueModal[] = [];
+        inputKeys.forEach(key => {
+            keys.push({
+                fieldId: key.fieldId,
+                valueQl: key.valueQl
+            })
+        });
+
+        return this.graphService.execQuery(
+            metadataQueries.GET_DATA_FROM_MODAL,
+            {
+                token: this.localService.getValue( 'token' ),
+                table: catalogId.toString(),
+                keys
+            },
+            "no-cache"
+        ).pipe(
+            map(result => ( this.processDataModal(result.data['getData'], catalogId)))
+        )
+    }
+
+    processDataModal(datamodal:any, catalogId: number) : MetadataModalModel {
+        // console.log('data modal ', datamodal);
+
+        console.log('panelDataJson',datamodal, JSON.parse(datamodal.panelDataJson).Tabs[0]);
+        return {
+            catalogId,
+            dataTabs: this.getDataTabs(JSON.parse(datamodal.panelDataJson)),
+            isNew: false,
+            keys: [],
+            table: ''
+        };
+    }
+
+    getDataTabs(datamodal:any) : MetadataTabModel[] {
+        let tabs: MetadataTabModel[] = [];
+
+        datamodal.Tabs.forEach(tab => {
+            tabs.push({
+                id: `${StringTools.generateNewRandomString(4)}-${StringTools.generateNewRandomString(3)}`,
+                description: tab.Description,
+                text: tab.Text,
+                tooltip: tab.ToolTip,
+                fields: this.getFields(tab.PropertiesUI)
+            })
+        });
+        return tabs;
+    }
+
+    getFields(tabFields: string) : MetadataFieldModel[] {
+        let returnFields: MetadataFieldModel[] = [];
+        if(tabFields.length === 0) return [];
+        
+        let tabDefinitions: any[] = JSON.parse(tabFields);
+
+        tabDefinitions.forEach(field => {
+            returnFields.push({
+                controlType: field.ControlType,
+                description: field.Description,
+                enabled: field.Enabled,
+                id: field.Id,
+                labelText: field.LabelDefinition.Text,
+                required: field.Required,
+                text: field.Text,
+                toUpper: field.ToUpper,
+                tooltip: field.ToolTip,
+                validation: field.Validation,
+                value: field.Value,
+                virtual: field.Virtual,
+                visible: field.Visible,
+                values: field.Values ? this.getValuesField(field.Values) : []
+            })
+        });
+
+        return returnFields;
+
+    }
+
+    getValuesField(values: any[]): SelectListItem[] {
+        let selectItems: SelectListItem[] = [];
+        values.forEach(value => {
+            selectItems.push({
+                value: value.Value,
+                description: value.Description
+            })
+        });
+        return selectItems;
     }
 }

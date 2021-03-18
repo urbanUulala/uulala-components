@@ -1,12 +1,9 @@
-// Models
-import { MetadataGridColumnModel } from "./metadata-grid-column.model";
-import { MetadataGridRowModel } from "./metadata-grid-row.model";
+import { SocietiesModel } from "./societies.model";
 
-
-export interface MetadataGridModel {
-    tableId: number;
-    table: string;
-    columns: MetadataGridColumnModel[];
-    keys: MetadataGridColumnModel[];
-    dataColumns: MetadataGridRowModel[];
+export class PayrollSession {
+  constructor(
+    public token:string,
+    timeOut: number,
+    societies: SocietiesModel
+  ){}
 }

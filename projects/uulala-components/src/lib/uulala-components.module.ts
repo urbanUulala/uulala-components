@@ -16,6 +16,7 @@ import { GraphService } from './services/graph.service';
 import { Apollo } from 'apollo-angular';
 import { GraphQLModule } from './modules/graphql.module';
 import { UiService } from './services/ui.service';
+import { UulModalComponent } from './uul-modal/uul-modal.component';
 
 
 
@@ -30,7 +31,8 @@ import { UiService } from './services/ui.service';
     StepsComponent,
     UulImgComponent,
     UulCheckComponent,
-    UulMenuButtonsComponent
+    UulMenuButtonsComponent,
+    UulModalComponent
   ],
   imports: [
     CommonModule,

@@ -15,7 +15,8 @@ import { authQueries } from '../queries/auth.queries';
 
 // Models
 import { Auth } from '../models/getters/auth.model';
-import { PayrollSession } from '../models/getters/payrollSession.model copy';
+import { PayrollSession } from '../models/getters/payrollSession.model';
+
 
 @Injectable({
   providedIn: 'root'

@@ -12,5 +12,15 @@ export const metadataQueries = {
         }
         
     }
+    `,
+    GET_DATA_FROM_MODAL: gql`
+    query ($token:String!, $table:String!, $keys:[ColumnInputType]!){
+        getData(token:$token, id:$table, keys:$keys){
+           tableId
+           table
+           panelDataJson
+           propertiesUIJson
+        }
+    }
     `
 }

@@ -1,4 +1,7 @@
+// ngrx
 import { createAction, props } from '@ngrx/store';
+
+// Models
 import { AccountModel } from '../../models/getters/account.model';
 import { Auth } from '../../models/getters/auth.model';
 import { CompanyModel } from '../../models/getters/company.model';
