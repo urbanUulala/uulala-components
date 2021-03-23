@@ -377,6 +377,59 @@
   @extend %grid-button-structure;
 }
 
+/*** ---------------- ***/
+/*  ICON BUTTON */
+/*** ---------------- ***/
+
+
+%icon-button-structure {
+  @extend %button-radius;
+
+  
+
+  background-color: var(--color-white);
+  
+  width: 26px;
+  height: 26px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border: 1px solid var(--color-text);
+
+  padding: 0px;
+
+}
+
+
+
+%icon-button-structure:disabled {
+  opacity: 0.5;
+}
+
+%icon-button-structure:not(:disabled) {
+  @extend %clickeable;
+}
+
+%icon-button-structure:not(:disabled):hover {
+  opacity: 1;
+  background-color: var(--color-text);
+  color: var(--color-white);
+}
+
+%close-icon-button {
+  @extend %icon-button-structure;
+  background-image: url(https://uulala-public.s3-us-west-2.amazonaws.com/uulala-components/icons/dark-x.svg);
+}
+
+%close-icon-button:not(:disabled):hover {
+  background-image: url(https://uulala-public.s3-us-west-2.amazonaws.com/uulala-components/icons/white-x-btn.svg)
+}
+
+.close-icon-button {
+  @extend %close-icon-button;
+}
+
 
 /*** ------------ ***/
 /*  EXPORT CLASSES  */

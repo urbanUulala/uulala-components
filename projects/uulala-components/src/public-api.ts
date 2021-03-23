@@ -21,6 +21,7 @@ export * from './lib/steps/uul-steps.component';
 export * from './lib/uul-img/uul-img.component';
 export * from './lib/uul-check/uul-check.component';
 export * from './lib/uul-menu-buttons/uul-menu-buttons.component';
+export * from './lib/uul-modal/uul-modal.component';
 export * from './lib/store/actions';
 export * from './lib/store/effects';
 export * from './lib/store/reducers';

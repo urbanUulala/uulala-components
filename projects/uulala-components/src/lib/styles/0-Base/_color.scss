@@ -16,6 +16,16 @@
   @extend %bwc-content-hover
 }
 
+%bwc-profile-menu {
+  background-color: var(--color-profile-menu, #f4f6f9);
+}
+
+.bwc-profile-menu {
+  @extend %bwc-profile-menu
+}
+
+
+
 
 %bwc-white {
   background-color: var(--color-white);

@@ -13,6 +13,7 @@ export class UulMenuButtonsComponent implements OnInit {
   @Input() textButton: string = '';
   @Input() imageButton: string = '';
 
+ 
 
   // Tipe la variable como arreglo numerico para guardar los steps
   onPress: any = {};

@@ -12,3 +12,7 @@ export type ImageTypes =
 export type SelectTypes =
   'form' |
   'session';
+
+  export type ModalTypes = 
+  'form' |
+  'alert';

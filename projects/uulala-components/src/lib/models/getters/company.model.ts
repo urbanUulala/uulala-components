@@ -1,4 +1,6 @@
+
 import { BalanceModel } from "./balance.model";
+import { GroupModel } from "./group.model";
 
 export interface CompanyModel {
   number: number;
@@ -28,4 +30,5 @@ export interface CompanyModel {
   totalPayrollPeriods: number;
   idUulalaGroup: string;
   balanza: BalanceModel;
+  groupCore: GroupModel;
 }

@@ -1,0 +1,86 @@
+@import '../styles/0-Base/base-dir';
+@import '../styles/2-Modules/modules-dir';
+
+/* MODAL STYLES
+-------------------------------*/
+
+.uul-modal {
+    @extend %center;
+    /* modal container fixed across whole screen */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* z-index must be higher than .uul-modal-background */
+    z-index: 10101;
+    
+    /* enables scrolling for tall modals */
+    overflow: auto;
+
+    .uul-modal-body {
+        @extend %border-radius;
+        @extend %pos-r;
+        
+        background: #fff;
+        
+        /* margin exposes part of the modal background */
+        margin: 40px;
+
+        .uul-modal-btn-close {
+            @extend %pos-a;
+            
+            right: 5px;
+            top: 5px;
+        }
+    }
+}
+
+.uul-modal-form {
+    width:  833px;
+}
+
+.uul-modal-background {
+    /* modal background fixed across whole screen */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* semi-transparent black  */
+    background-color: var(--color-text);
+    opacity: 0.5;
+    
+    /* z-index must be below .uul-modal and above everything else  */
+    z-index: 10100;
+}
+
+body.uul-modal-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
+}
+
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes salida {
+    from {
+
+        opacity: 1;
+    }
+
+    to {
+    
+        opacity: 0;
+    }
+}

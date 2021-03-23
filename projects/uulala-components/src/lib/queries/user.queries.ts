@@ -130,7 +130,6 @@ export const userQueries = {
             totalDesactiveEmployess
             totalPayrollTypes
             totalPayrollPeriods
-            pathLogo
             balanza {
               year
               account
@@ -138,6 +137,11 @@ export const userQueries = {
               withdrawal
               total
               currency
+            }
+            groupCore{
+              id
+              pathLogo
+              name
             }
             aditionalDescription
             idUulalaGroup

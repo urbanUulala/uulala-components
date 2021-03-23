@@ -35,7 +35,7 @@
   /*  transition  */
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  z-index: 1;
+
 
   /*  responsive  */
   @include media-query(720px) {
@@ -65,7 +65,6 @@
   position: absolute;
   top: 12px;
   left: 15px;
-  z-index: 2;
 
   /*  transition  */
   -webkit-transition: 0.4s;
@@ -105,7 +104,7 @@
   position: absolute;
   top: 3px;
   left: 15px;
-  z-index: 2;
+
 
   /*  transition  */
   -webkit-transition: 0.4s;
@@ -122,7 +121,7 @@
   position: absolute;
   top: 12px;
   left: 15px;
-  z-index: 2;
+
 
   /*  transition  */
   -webkit-transition: 0.4s;
@@ -171,7 +170,6 @@
   height: 22px;
   right: 10px;
   top: 8px;
-  z-index: 2;
 
   /*  shape  */
   background-image: url(/assets/img/icons/password-off.svg);
@@ -189,7 +187,6 @@
   height: 22px;
   right: 10px;
   top: 8px;
-  z-index: 2;
 
   /*  shape  */
   background-image: url(/assets/img/icons/password-on.svg);

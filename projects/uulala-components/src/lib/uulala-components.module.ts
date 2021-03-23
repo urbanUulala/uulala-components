@@ -47,7 +47,8 @@ import { UulModalComponent } from './uul-modal/uul-modal.component';
     StepsComponent,
     UulImgComponent,
     UulCheckComponent,
-    UulMenuButtonsComponent
+    UulMenuButtonsComponent,
+    UulModalComponent
   ],
   providers: [
     LocalService,
