@@ -7,4 +7,5 @@ export interface MetadataTabModel {
     text: string;
     tooltip: string;
     fields: MetadataFieldModel[];
+    selected?: boolean;
 }

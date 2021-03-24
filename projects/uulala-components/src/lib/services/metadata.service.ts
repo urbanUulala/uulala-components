@@ -205,7 +205,8 @@ export class MetadataService {
                 description: tab.Description,
                 text: tab.Text,
                 tooltip: tab.ToolTip,
-                fields: this.getFields(tab.PropertiesUI)
+                fields: this.getFields(tab.PropertiesUI),
+                selected: false
             })
         });
         return tabs;

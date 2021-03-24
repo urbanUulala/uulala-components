@@ -68,7 +68,7 @@ export class UulModalComponent implements OnInit, AfterViewInit {
   open(): void {
     this.element.style.display = 'block';
     this.element.style.animationName = 'entrada';
-    this.element.style.animationDuration = '0.5s';
+    this.element.style.animationDuration = '0.3s';
     this.element.style.animationFillMode = 'forwards';
     document.body.classList.add('uul-modal-open');
   }

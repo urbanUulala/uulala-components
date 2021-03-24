@@ -5,5 +5,7 @@ export class ObjectTools {
     return JSON.stringify(obj) === '{}' || obj === undefined;
   }
 
-
+  static getWritableObject<T>(obj:T): T {
+    return JSON.parse(JSON.stringify(obj))
+  }
 }
