@@ -1,5 +1,5 @@
 <div  [id]="config.id + '-container'" class="image-container" *ngIf="type == 'user-image'">
-  <div class="image-img" [id]="config.id + '-img'" *ngIf="url != ''" [ngStyle]="{'background-image': 'url(' + url + ')'}"></div>
+  <div class="image-img border-radius-circle" [id]="config.id + '-img'" *ngIf="url != ''" [ngStyle]="{'background-image': 'url(' + url + ')'}"></div>
   <div *ngIf="url == ''" class="image-text border-container border-radius-circle"> {{ name?.substring(0, 2) | uppercase }}</div>
 </div>
 

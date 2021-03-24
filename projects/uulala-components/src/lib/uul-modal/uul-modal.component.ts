@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ModalTypes } from '../models/types';
 import { ModalService } from '../services/modal.services';
 
@@ -13,9 +13,14 @@ import { ModalService } from '../services/modal.services';
 })
 export class UulModalComponent implements OnInit, AfterViewInit {
 
+  // Inputs
   @Input() id: string;
   @Input() type: ModalTypes = 'form';
   @Input() autoClose: boolean = true;
+
+  // Outputs
+  @Output() closeEvent:EventEmitter<boolean> = new EventEmitter<boolean>();
+
   private element: any;
 
 
@@ -74,6 +79,7 @@ export class UulModalComponent implements OnInit, AfterViewInit {
     this.element.style.animationName = 'salida';
     this.element.style.animationDuration = '0.3s';
     this.element.style.animationFillMode = 'forwards';
+    this.closeEvent.emit(true);
     document.body.classList.remove('uul-modal-open');
   }
 

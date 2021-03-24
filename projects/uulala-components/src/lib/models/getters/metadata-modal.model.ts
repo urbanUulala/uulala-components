@@ -1,11 +1,13 @@
-import { MetadataGridColumnModel } from "./metadata-grid-column.model";
+import { MetadataValueModal } from "./metadata-value.model";
 import { MetadataTabModel } from "./metadata-tab.model";
+import { MetadataLevelInfoModel } from "./metadata-level.model";
 
 
 export interface MetadataModalModel {
     catalogId: number;
     table: string;
-    keys: MetadataGridColumnModel[];
+    keys: MetadataValueModal[];
     dataTabs: MetadataTabModel[];
     isNew: boolean;
+    levels: MetadataLevelInfoModel[]
 }

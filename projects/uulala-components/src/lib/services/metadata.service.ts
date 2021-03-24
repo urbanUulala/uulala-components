@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 // Rxjs
 import { map } from "rxjs/operators";
 
-// Model
+// Models
 import { SelectListItem } from "../models/configurations";
 import { MetadataFieldModel } from "../models/getters/metadata-field.model";
 import { MetadataGridColumnModel } from "../models/getters/metadata-grid-column.model";
@@ -11,7 +11,11 @@ import { MetadataGridRowModel } from "../models/getters/metadata-grid-row.model"
 import { MetadataModalModel } from "../models/getters/metadata-modal.model";
 import { MetadataGridRowDataModel } from "../models/getters/metadata-row-data.model";
 import { MetadataTabModel } from "../models/getters/metadata-tab.model";
+import { MetadataLevelInfoModel } from "../models/getters/metadata-level.model";
 import { MetadataValueModal } from "../models/getters/metadata-value.model";
+import { AccountModel } from "../models/getters/account.model";
+import { CompanyModel } from "../models/getters/company.model";
+
 
 // Queries
 import { metadataQueries } from "../queries/metadata.queries";
@@ -22,6 +26,10 @@ import { ArrayTools, StringTools } from "../utilities";
 // Services
 import { GraphService } from "./graph.service";
 import { LocalService } from "./local.service";
+import { UserService } from "./user.service";
+
+// Constants
+import { metadataConstants } from "../constants/metadata.constants";
 
 export type MetadataModules =
     'employees';
@@ -35,9 +43,11 @@ const metadataIds = {
     providedIn: 'root'
 })
 export class MetadataService {
+
     constructor(
         private graphService: GraphService,
         private localService: LocalService,
+        private userService: UserService
     ) { }
 
     getId(key: MetadataModules) {
@@ -167,21 +177,23 @@ export class MetadataService {
             },
             "no-cache"
         ).pipe(
-            map(result => ( this.processDataModal(result.data['getData'], catalogId)))
+            map(result => ( this.processDataModal(result.data['getData'], catalogId, keys)))
         )
     }
 
-    processDataModal(datamodal:any, catalogId: number) : MetadataModalModel {
-        // console.log('data modal ', datamodal);
+    processDataModal(datamodal:any, catalogId: number, keys: MetadataValueModal[]) : MetadataModalModel {
+         console.log('data modal ', datamodal);
 
-        console.log('panelDataJson',datamodal, JSON.parse(datamodal.panelDataJson).Tabs[0]);
+        console.log('panelDataJson',datamodal, JSON.parse(datamodal.propertiesUIJson));
         return {
             catalogId,
             dataTabs: this.getDataTabs(JSON.parse(datamodal.panelDataJson)),
             isNew: false,
-            keys: [],
-            table: ''
+            keys,
+            table: '',
+            levels: JSON.parse(datamodal.propertiesUIJson)
         };
+        
     }
 
     getDataTabs(datamodal:any) : MetadataTabModel[] {
@@ -238,4 +250,8 @@ export class MetadataService {
         });
         return selectItems;
     }
+
+
+
+    
 }
