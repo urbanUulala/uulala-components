@@ -97,7 +97,7 @@ $button-radius: 3px;
   --color-borders: #{$color-warning};
   --color-block-shadow: #{$color-error};
   --color-text: #{$color-success};
-  --color-highlighted: #{$color-highlighted};
+  --color-highlighted: #{$color-block-shadow};
   --color-success: #{$color-text};
   --color-error: #{$color-block-shadow};
   --color-warning: #{$color-borders};

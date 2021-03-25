@@ -1,3 +1,4 @@
+import { FormGroup } from "@angular/forms";
 import { MetadataFieldModel } from "./metadata-field.model";
 
 
@@ -8,4 +9,5 @@ export interface MetadataTabModel {
     tooltip: string;
     fields: MetadataFieldModel[];
     selected?: boolean;
+    formObject?: FormGroup;
 }

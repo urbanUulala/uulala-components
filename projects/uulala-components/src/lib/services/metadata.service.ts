@@ -30,6 +30,7 @@ import { UserService } from "./user.service";
 
 // Constants
 import { metadataConstants } from "../constants/metadata.constants";
+import { FormBuilder, Validators } from "@angular/forms";
 
 export type MetadataModules =
     'employees';
@@ -47,7 +48,8 @@ export class MetadataService {
     constructor(
         private graphService: GraphService,
         private localService: LocalService,
-        private userService: UserService
+        private userService: UserService,
+        private fb: FormBuilder
     ) { }
 
     getId(key: MetadataModules) {
@@ -182,12 +184,15 @@ export class MetadataService {
     }
 
     processDataModal(datamodal:any, catalogId: number, keys: MetadataValueModal[]) : MetadataModalModel {
-         console.log('data modal ', datamodal);
+         //console.log('data modal ', datamodal);
 
-        console.log('panelDataJson',datamodal, JSON.parse(datamodal.propertiesUIJson));
+        //console.log('panelDataJson',datamodal, JSON.parse(datamodal.propertiesUIJson));
+        let dataTabs: MetadataTabModel[] = this.getDataTabs(JSON.parse(datamodal.panelDataJson));
+        this.createTabForms(dataTabs);
+        //console.log('data tabs constructions', dataTabs);
         return {
             catalogId,
-            dataTabs: this.getDataTabs(JSON.parse(datamodal.panelDataJson)),
+            dataTabs,
             isNew: false,
             keys,
             table: '',
@@ -201,7 +206,7 @@ export class MetadataService {
 
         datamodal.Tabs.forEach(tab => {
             tabs.push({
-                id: `${StringTools.generateNewRandomString(4)}-${StringTools.generateNewRandomString(3)}`,
+                id: `${StringTools.generateNewRandomString(4)}${StringTools.generateNewRandomString(3)}`,
                 description: tab.Description,
                 text: tab.Text,
                 tooltip: tab.ToolTip,
@@ -252,6 +257,33 @@ export class MetadataService {
         return selectItems;
     }
 
+
+    // Form builder
+
+    createTabForms(tabsData: MetadataTabModel[]) {
+        tabsData.forEach(tab => {
+            tab.formObject = this.getFormTab(tab.fields)
+        });
+    }
+    getFormTab(fields: MetadataFieldModel[]) {
+        let formObject: any = {};
+        fields.forEach(field => {
+            formObject[field.id.toString()] = [field.value, this.getValidationsForm(field)];
+        });
+
+        console.log('form object', formObject);
+        return formObject;
+    }
+
+    getValidationsForm(field: MetadataFieldModel) {
+        let validations:any[] = [];
+
+        if(!field.visible) return validations;
+        
+        if(field.required) validations.push(Validators.required);
+        if(field.validation !== '') validations.push(Validators.pattern(field.validation));
+        return validations;
+    }
 
 
     
