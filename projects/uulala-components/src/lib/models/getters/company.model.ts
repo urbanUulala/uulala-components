@@ -29,6 +29,6 @@ export interface CompanyModel {
   totalPayrollTypes: number;
   totalPayrollPeriods: number;
   idUulalaGroup: string;
-  balanza: BalanceModel;
+  balance: BalanceModel;
   groupCore: GroupModel;
 }

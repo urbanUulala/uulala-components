@@ -130,7 +130,7 @@ export const userQueries = {
             totalDesactiveEmployess
             totalPayrollTypes
             totalPayrollPeriods
-            balanza {
+            balance {
               year
               account
               deposit

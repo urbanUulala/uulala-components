@@ -1,6 +1,6 @@
 {
   "name": "uulala-components",
-  "version": "0.0.72",
+  "version": "0.0.77",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

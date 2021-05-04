@@ -3,7 +3,7 @@ export interface MenuModel {
   parent: string;
   description: string;
   level: string;
-  url: string;
+  urlV2: string;
   imgUrl: string;
   childs?: MenuModel[];
   allChilds?: MenuModel[];
