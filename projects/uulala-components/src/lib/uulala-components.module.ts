@@ -17,6 +17,8 @@ import { Apollo } from 'apollo-angular';
 import { GraphQLModule } from './modules/graphql.module';
 import { UiService } from './services/ui.service';
 import { UulModalComponent } from './uul-modal/uul-modal.component';
+import { UulUserComponent } from './uul-user/uul-user.component';
+import { UulToggleButtonComponent } from './uul-toggle-button/uul-toggle-button.component';
 
 
 
@@ -32,7 +34,9 @@ import { UulModalComponent } from './uul-modal/uul-modal.component';
     UulImgComponent,
     UulCheckComponent,
     UulMenuButtonsComponent,
-    UulModalComponent
+    UulModalComponent,
+    UulUserComponent,
+    UulToggleButtonComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +52,9 @@ import { UulModalComponent } from './uul-modal/uul-modal.component';
     UulImgComponent,
     UulCheckComponent,
     UulMenuButtonsComponent,
-    UulModalComponent
+    UulModalComponent,
+    UulUserComponent,
+    UulToggleButtonComponent
   ],
   providers: [
     LocalService,

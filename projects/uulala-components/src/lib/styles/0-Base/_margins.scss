@@ -19,3 +19,30 @@
 }
 
 
+/*  Margin top  */
+
+%mt-3 {
+  margin-top: 3px !important;
+}
+
+.mt-3 {
+  @extend %mt-3;
+}
+
+%mt-7 {
+  margin-top: 7px !important;
+}
+
+.mt-7 {
+  @extend %mt-7;
+}
+
+%mt-10 {
+  margin-top: 10px !important;
+}
+
+.mt-10 {
+  @extend %mt-10;
+}
+
+

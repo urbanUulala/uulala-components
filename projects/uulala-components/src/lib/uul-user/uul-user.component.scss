@@ -1,0 +1,21 @@
+@import '../styles/0-Base/base-dir';
+@import '../styles/2-Modules/modules-dir';
+
+.user {
+    display: grid;
+    grid-template-columns: calc(100% - 10px);
+    grid-auto-rows: auto;
+    
+
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+
+    position: relative;
+}
+
+.button-show {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

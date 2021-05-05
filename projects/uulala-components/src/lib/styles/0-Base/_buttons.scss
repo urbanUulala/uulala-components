@@ -52,6 +52,182 @@
 
 }
 
+/*** ------------ ***/
+/*  DARK BUTTON  */
+/*** ------------ ***/
+
+%dark-button {
+  @extend %button-structure;
+  background-color: var(--color-text, #43465d);
+}
+
+
+/*** ------------ ***/
+/*  EXPORT CLASSES  */
+/*** ------------ ***/
+
+.normal-button {
+  @extend %normal-button;
+}
+
+.success-button {
+  @extend %success-button;
+}
+
+.dark-button {
+  @extend %dark-button;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*** -------------------- ***/
+/*  TABLE BUTTON STRUCTURE  */
+/*** -------------------- ***/
+
+%table-button-structure {
+  @extend %button-radius;
+  @extend %normal-text;
+  @extend %fs-8;
+  @extend %fw-semibold;
+
+  border: 1px solid var(--color-text, #43465d);  
+  height: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+  opacity: 0.85;
+}
+
+%table-button-structure:disabled {
+  opacity: 0.5;
+}
+
+%table-button-structure:not(:disabled) {
+  @extend %clickeable;
+}
+
+%table-button-structure:not(:disabled):hover {
+  opacity: 1;
+  background-color: var(--color-text, #43465d);
+  color: var(--color-white, #ffffff);
+}
+
+
+/*** ------------ ***/
+/*  EXPORT CLASSES  */
+/*** ------------ ***/
+
+.normal-table-button {
+  @extend %table-button-structure;
+}
+
+
+
+
+
+
+
+/*** -------------------- ***/
+/*  ICON BUTTON STRUCTURE  */
+/*** -------------------- ***/
+
+%icon-button-structure {
+  @extend %button-radius;
+  @extend %normal-text;
+  @extend %fs-8;
+  @extend %fw-semibold;
+
+  border: 1px solid var(--color-text, #43465d);  
+  height: 26px;
+  width: 26px;
+  opacity: 0.85;
+}
+
+%icon-button-structure:disabled {
+  opacity: 0.5;
+}
+
+%icon-button-structure:not(:disabled) {
+  @extend %clickeable;
+}
+
+%icon-button-structure:not(:disabled):hover {
+  opacity: 1;
+  background-color: var(--color-text, #43465d);
+  color: var(--color-white, #ffffff);
+}
+
+
+/*** --------------------- ***/
+/*  TOGGLE BUTTON STRUCTURE  */
+/*** --------------------- ***/
+
+%toggle-button-structure {
+  @extend %button-radius;
+  @extend %normal-text;
+  @extend %fs-8;
+  @extend %fw-semibold;
+  @extend %clickeable;
+
+   
+  height: 16px;
+  width: 16px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+%toggle-button-structure:not(:disabled):hover{
+  background-color: var(--color-text, #43465d);
+  background-image: url('https://uulala-public.s3-us-west-2.amazonaws.com/Payroll/images/down-simple-arrow-white.png');
+}
+
+%toggle-button-structure:disabled:hover {
+  background-color: var(--color-text, #43465d);
+  background-image: url('https://uulala-public.s3-us-west-2.amazonaws.com/Payroll/images/up-simple-arrow-white.png');
+}
+
+%toggle-button-structure:disabled {
+  background-image: url('https://uulala-public.s3-us-west-2.amazonaws.com/Payroll/images/up-simple-arrow.png');
+}
+
+%toggle-button-structure:not(:disabled) {
+  border: 1px solid var(--color-text, #43465d); 
+  background-image: url('https://uulala-public.s3-us-west-2.amazonaws.com/Payroll/images/down-simple-arrow.png');
+}
+
+.toggle-button {
+  @extend %toggle-button-structure;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*** ------------ ***/
@@ -439,13 +615,6 @@
   @extend %exit-button;
 }
 
-.normal-button {
-  @extend %normal-button;
-}
-
-.success-button {
-  @extend %success-button;
-}
 
 .rounded-button-back {
   @extend %rounded-button-back;
