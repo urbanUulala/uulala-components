@@ -56,7 +56,6 @@
   @extend %menu-highlighted-text;
 }
 
-/*  Legal  */
 %normal-text-legal{
   color: var(--color-legal-text-normal, #62657c);
   font-weight: 300;
@@ -74,6 +73,31 @@
 
 .overflow-text {
   @extend %overflow-text;
+}
+
+/*  Align text  */
+%ta-center {
+  text-align: center;
+}
+
+.ta-center {
+  @extend %ta-center;
+}
+
+%ta-left {
+  text-align: left;
+}
+
+.ta-left {
+  @extend %ta-left;
+}
+
+%ta-right {
+  text-align: right;
+}
+
+.ta-right {
+  @extend %ta-right;
 }
 
 /*  FONT WEIGHT  */
