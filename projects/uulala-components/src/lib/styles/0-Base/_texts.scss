@@ -56,7 +56,6 @@
   @extend %menu-highlighted-text;
 }
 
-/*  Legal  */
 %normal-text-legal{
   color: var(--color-legal-text-normal, #62657c);
   font-weight: 300;
@@ -101,7 +100,6 @@
 .ta-right {
   @extend %ta-right;
 }
-
 
 /*  FONT WEIGHT  */
 
