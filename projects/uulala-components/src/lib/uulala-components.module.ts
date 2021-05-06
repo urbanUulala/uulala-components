@@ -17,7 +17,9 @@ import { Apollo } from 'apollo-angular';
 import { GraphQLModule } from './modules/graphql.module';
 import { UiService } from './services/ui.service';
 import { UulModalComponent } from './uul-modal/uul-modal.component';
-import { UulImgBackgroundComponent } from 'uulala-components/projects/uulala-components/src/lib/uul-img-background/uul-img-background.component';
+import { UulUserComponent } from './uul-user/uul-user.component';
+import { UulToggleButtonComponent } from './uul-toggle-button/uul-toggle-button.component';
+import { UulImgBackgroundComponent } from './uul-img-background/uul-img-background.component';
 
 
 
@@ -34,6 +36,8 @@ import { UulImgBackgroundComponent } from 'uulala-components/projects/uulala-com
     UulCheckComponent,
     UulMenuButtonsComponent,
     UulModalComponent,
+    UulUserComponent,
+    UulToggleButtonComponent,
     UulImgBackgroundComponent
   ],
   imports: [
@@ -51,6 +55,8 @@ import { UulImgBackgroundComponent } from 'uulala-components/projects/uulala-com
     UulCheckComponent,
     UulMenuButtonsComponent,
     UulModalComponent,
+    UulUserComponent,
+    UulToggleButtonComponent,
     UulImgBackgroundComponent
   ],
   providers: [

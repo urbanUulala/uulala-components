@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { StringTools } from 'uulala-components/projects/uulala-components/src/lib/utilities';
-import { InputControlImgConfig } from 'uulala-components/projects/uulala-components/src/lib/models/configurations';
-import { ImageTypes } from 'uulala-components/projects/uulala-components/src/lib/models/types';
-
+import { InputControlImgConfig } from '../models/configurations';
+import { ImageTypes } from '../models/types';
+import { StringTools } from '../utilities';
 @Component({
   selector: 'uul-img-background',
   templateUrl: './uul-img-background.component.html',
