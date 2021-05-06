@@ -76,6 +76,33 @@
   @extend %overflow-text;
 }
 
+/*  Align text  */
+
+%ta-center {
+  text-align: center;
+}
+
+.ta-center {
+  @extend %ta-center;
+}
+
+%ta-left {
+  text-align: left;
+}
+
+.ta-left {
+  @extend %ta-left;
+}
+
+%ta-right {
+  text-align: right;
+}
+
+.ta-right {
+  @extend %ta-right;
+}
+
+
 /*  FONT WEIGHT  */
 
 %fw-normal {

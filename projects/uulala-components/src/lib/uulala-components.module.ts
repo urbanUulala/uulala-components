@@ -19,6 +19,7 @@ import { UiService } from './services/ui.service';
 import { UulModalComponent } from './uul-modal/uul-modal.component';
 import { UulUserComponent } from './uul-user/uul-user.component';
 import { UulToggleButtonComponent } from './uul-toggle-button/uul-toggle-button.component';
+import { UulImgBackgroundComponent } from './uul-img-background/uul-img-background.component';
 
 
 
@@ -36,7 +37,8 @@ import { UulToggleButtonComponent } from './uul-toggle-button/uul-toggle-button.
     UulMenuButtonsComponent,
     UulModalComponent,
     UulUserComponent,
-    UulToggleButtonComponent
+    UulToggleButtonComponent,
+    UulImgBackgroundComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +56,8 @@ import { UulToggleButtonComponent } from './uul-toggle-button/uul-toggle-button.
     UulMenuButtonsComponent,
     UulModalComponent,
     UulUserComponent,
-    UulToggleButtonComponent
+    UulToggleButtonComponent,
+    UulImgBackgroundComponent
   ],
   providers: [
     LocalService,

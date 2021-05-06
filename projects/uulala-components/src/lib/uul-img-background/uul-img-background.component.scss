@@ -1,0 +1,7 @@
+@import '../styles/0-Base/base-dir';
+@import '../styles/2-Modules/modules-dir';
+.background-images{
+	background-size: cover;
+  background-position: 50% 50%;
+	@extend %border-radius-four;
+}

@@ -1,0 +1,5 @@
+<div [ngStyle]="{'width': imgWidth, height: imgHeight}">
+	<div class="background-images" [id]="config.id + '-img'" *ngIf="url != ''"  [ngStyle]="getSideNavBarStyle()">
+		<ng-content></ng-content>
+	</div>
+</div>
