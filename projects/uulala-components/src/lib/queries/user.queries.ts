@@ -167,6 +167,46 @@ export const userQueries = {
             }
         }
     }
+  `,
+  GET_USER_PHYSICAL_CARDS: gql`
+  query($token:String!,$field:String!,$id:String!){
+    getUsersByField(token:$token,field:$field,id:$id)
+    {
+      physicalCards {
+        id
+        physicalId
+        numberCard
+        proxyKey
+        retreivalRefNo
+        createdAt
+        statusRequestCard
+        statusActivation
+        bulkId
+        typeCardId
+        frontCard
+        backCard
+        redesign
+        status
+        statusUulala
+      }
+    }
+  }
+  `,
+  GET_USER_VIRTUAL_CARDS: gql`
+  query($token:String!,$field:String!,$id:String!){
+    getUsersByField(token:$token,field:$field,id:$id)
+    {
+      physicalCards {
+        id
+        customerId
+        redemptionLink
+        status
+        transactionId
+        expirationDate
+        createdAt
+      }
+    }
+  }
   `
 
 }

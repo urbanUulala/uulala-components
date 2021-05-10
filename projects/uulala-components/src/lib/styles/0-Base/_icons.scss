@@ -1,0 +1,31 @@
+
+%circle-icon-structure {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-block-shadow);
+}
+
+%circle-icon-inactive {
+    @extend %circle-icon-structure;
+}
+
+%circle-icon-success {
+    @extend %circle-icon-structure;
+    background-color: var(--color-success);
+}
+
+%circle-icon-error {
+    @extend %circle-icon-structure;
+    background-color: var(--color-error);
+}
+
+.circle-icon-inactive {
+    @extend %circle-icon-inactive;
+}
+.circle-icon-success {
+    @extend %circle-icon-success;
+}
+.circle-icon-error {
+    @extend %circle-icon-error;
+}

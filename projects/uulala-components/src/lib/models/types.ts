@@ -6,7 +6,8 @@ export type ControlTextTypes =
 
 export type ImageTypes =
   'user-image' |
-  'company-image';
+  'company-image' | 
+  'card-image';
 
 
 export type SelectTypes =

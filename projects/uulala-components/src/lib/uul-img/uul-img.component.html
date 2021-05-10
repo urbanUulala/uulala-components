@@ -7,3 +7,8 @@
   <div class="image-img" [id]="config.id + '-img'" *ngIf="url != ''" [ngStyle]="{'background-image': 'url(' + url + ')'}"></div>
   <div *ngIf="url == ''" class="image-text border-container border-radius"> {{ name?.substring(0, 2) | uppercase }}</div>
 </div>
+
+<div [id]="config.id + '-container'" class="image-container border-radius  bwc-white" *ngIf="type == 'card-image'">
+  <div class="image-img" [id]="config.id + '-img'" *ngIf="url != ''" [ngStyle]="{'background-image': 'url(' + url + ')'}"></div>
+  <div *ngIf="url == ''" class="image-text border-container border-radius"> {{ name?.substring(0, 2) | uppercase }}</div>
+</div>

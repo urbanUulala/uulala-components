@@ -25,7 +25,7 @@
  export * from './lib/uul-user/uul-user.component';
  export * from './lib/uul-toggle-button/uul-toggle-button.component';
  export * from './lib/uul-img-background/uul-img-background.component';
- export * from './lib/uul-card-slider/uul-card-slider.component';
+
  export * from './lib/store/actions';
  export * from './lib/store/effects';
  export * from './lib/store/reducers';

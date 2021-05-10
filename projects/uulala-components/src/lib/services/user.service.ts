@@ -6,6 +6,9 @@ import { map } from 'rxjs/operators';
 import { CompanyModel } from '../models/getters/company.model';
 
 
+export type InfoModuleUser = 'general' | 'physical_cards' | 'virtual_cards';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +20,7 @@ export class UserService {
     private localService  : LocalService
   ) { }
 
-  getUserByField(field: string, id: string) {
+  getUserByField(field: string, id: string ) {
     return this.graphService.execQuery(
       userQueries.GET_USER_BY_FIELD,
       {
@@ -45,6 +48,43 @@ export class UserService {
         }
       }))
     )
+  }
+
+  getUserByFieldModule( infoModule: InfoModuleUser = 'general' )  {
+    return this.graphService.execQuery(
+      this.getUserQuery(infoModule),
+      {
+        token: this.localService.getValue( 'token'),
+        field: 'id',
+        id: this.localService.getValue('uid')
+      }
+    ).pipe(
+      map( result => (this.getResultObjectModule(infoModule, result)))
+    )
+  }
+
+  getResultObjectModule(infoModule: InfoModuleUser, result:any) {
+    console.log('physical cards', result);
+    switch (infoModule) {
+      case 'physical_cards':
+        return result.data['getUsersByField'][0].physicalCards
+      case 'virtual_cards':
+        return result.data['getUsersByField'][0].virtualCards
+      default:
+        break;
+    }
+    
+  }
+
+  private getUserQuery(infoModule: InfoModuleUser) {
+    switch (infoModule) {
+      case 'physical_cards':
+        return userQueries.GET_USER_PHYSICAL_CARDS
+      case 'virtual_cards':
+        return userQueries.GET_USER_VIRTUAL_CARDS
+      default:
+        return userQueries.GET_USER_BY_FIELD;
+    }
   }
 
   getUserByUuid( uuid: string) {
