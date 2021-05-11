@@ -6,7 +6,11 @@ import { map } from 'rxjs/operators';
 import { CompanyModel } from '../models/getters/company.model';
 
 
-export type InfoModuleUser = 'general' | 'physical_cards' | 'virtual_cards';
+export type InfoModuleUser =
+  'general' |
+  'physical_cards' |
+  'virtual_cards' |
+  'all_cards';
 
 
 
@@ -16,32 +20,32 @@ export type InfoModuleUser = 'general' | 'physical_cards' | 'virtual_cards';
 export class UserService {
 
   constructor(
-    private graphService  : GraphService,
-    private localService  : LocalService
+    private graphService: GraphService,
+    private localService: LocalService
   ) { }
 
-  getUserByField(field: string, id: string ) {
+  getUserByField(field: string, id: string) {
     return this.graphService.execQuery(
       userQueries.GET_USER_BY_FIELD,
       {
-        token: this.localService.getValue( 'token'),
+        token: this.localService.getValue('token'),
         field,
         id
       }
     ).pipe(
-      map( result => ({
+      map(result => ({
         ...result.data['getUsersByField'][0],
         usersProfile: {
           ...result.data['getUsersByField'][0].usersProfile[0],
-          accounts:{
+          accounts: {
             ...result.data['getUsersByField'][0].usersProfile[0].accounts,
             address: {
               ...result.data['getUsersByField'][0].usersProfile[0].accounts.address[0]
             },
-            kyc:{
+            kyc: {
               ...result.data['getUsersByField'][0].usersProfile[0].accounts.kyc[0]
             },
-            bankInformation:{
+            bankInformation: {
               ...result.data['getUsersByField'][0].usersProfile[0].accounts.bankInformation[0]
             }
           }
@@ -50,30 +54,35 @@ export class UserService {
     )
   }
 
-  getUserByFieldModule( infoModule: InfoModuleUser = 'general' )  {
+  getUserByFieldModule(infoModule: InfoModuleUser = 'general') {
     return this.graphService.execQuery(
       this.getUserQuery(infoModule),
       {
-        token: this.localService.getValue( 'token'),
+        token: this.localService.getValue('token'),
         field: 'id',
         id: this.localService.getValue('uid')
       }
     ).pipe(
-      map( result => (this.getResultObjectModule(infoModule, result)))
+      map(result => (this.getResultObjectModule(infoModule, result)))
     )
   }
 
-  getResultObjectModule(infoModule: InfoModuleUser, result:any) {
+  getResultObjectModule(infoModule: InfoModuleUser, result: any) {
     console.log('physical cards', result);
     switch (infoModule) {
       case 'physical_cards':
         return result.data['getUsersByField'][0].physicalCards
       case 'virtual_cards':
         return result.data['getUsersByField'][0].virtualCards
+      case 'all_cards':
+        return {
+          physical: result.data['getUsersByField'][0].physicalCards,
+          virtual: result.data['getUsersByField'][0].virtualCards
+        }
       default:
         break;
     }
-    
+
   }
 
   private getUserQuery(infoModule: InfoModuleUser) {
@@ -82,29 +91,31 @@ export class UserService {
         return userQueries.GET_USER_PHYSICAL_CARDS
       case 'virtual_cards':
         return userQueries.GET_USER_VIRTUAL_CARDS
+      case 'all_cards':
+        return userQueries.GET_ALL_CARDS
       default:
         return userQueries.GET_USER_BY_FIELD;
     }
   }
 
-  getUserByUuid( uuid: string) {
+  getUserByUuid(uuid: string) {
     return this.graphService.execQuery(
       userQueries.GET_USER_INFO_UUID,
       {
-        token: this.localService.getValue( 'token'),
+        token: this.localService.getValue('token'),
         uuid
       }
     ).pipe(
-      map( result => result.data['getUserInfoUuid'] ))
+      map(result => result.data['getUserInfoUuid']))
   }
 
   getUserDevices() {
     return this.graphService.execQuery(
       userQueries.GET_USERS_DEVICE,
       {
-        token: this.localService.getValue( 'token'),
+        token: this.localService.getValue('token'),
         field: 'id',
-        id: this.localService.getValue( 'uid' )
+        id: this.localService.getValue('uid')
       }
     ).pipe(
       map(result => result.data['getUsersByField'][0].devices)
@@ -115,18 +126,18 @@ export class UserService {
     return this.graphService.execQuery(
       userQueries.DELETE_USER_DEVICE,
       {
-        token: this.localService.getValue( 'token'),
+        token: this.localService.getValue('token'),
         id
       }
     )
   }
 
 
-  getUserCompanies(filter: string = '')  {
+  getUserCompanies(filter: string = '') {
     return this.graphService.execQuery(
       userQueries.GET_USER_COMPANIES,
       {
-        token: this.localService.getValue( 'token' ),
+        token: this.localService.getValue('token'),
         filter
       }
     ).pipe(
@@ -145,7 +156,7 @@ export class UserService {
     return this.graphService.execQuery(
       userQueries.GET_PAYROLL_TYPES_USER,
       {
-        token: this.localService.getValue( 'token' ),
+        token: this.localService.getValue('token'),
         filter
       }
     ).pipe(

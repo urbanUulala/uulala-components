@@ -196,7 +196,7 @@ export const userQueries = {
   query($token:String!,$field:String!,$id:String!){
     getUsersByField(token:$token,field:$field,id:$id)
     {
-      physicalCards {
+      virtualCards {
         id
         customerId
         redemptionLink
@@ -207,6 +207,41 @@ export const userQueries = {
       }
     }
   }
+  `,
+  GET_ALL_CARDS: gql`
+  query($token:String!,$field:String!,$id:String!){
+    getUsersByField(token:$token,field:$field,id:$id)
+    {
+      virtualCards {
+        id
+        customerId
+        redemptionLink
+        status
+        transactionId
+        expirationDate
+        createdAt
+      }
+      physicalCards {
+        id
+        physicalId
+        numberCard
+        proxyKey
+        retreivalRefNo
+        createdAt
+        statusRequestCard
+        statusActivation
+        bulkId
+        typeCardId
+        frontCard
+        backCard
+        redesign
+        status
+        statusUulala
+      }
+    }
+  }
   `
+
+  
 
 }
