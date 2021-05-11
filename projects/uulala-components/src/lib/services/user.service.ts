@@ -35,8 +35,12 @@ export class UserService {
     ).pipe(
       map(result => ({
         ...result.data['getUsersByField'][0],
+        clients: {
+          ...result.data['getUsersByField'][0].clients[0]
+        },
         usersProfile: {
           ...result.data['getUsersByField'][0].usersProfile[0],
+          
           accounts: {
             ...result.data['getUsersByField'][0].usersProfile[0].accounts,
             address: {

@@ -6,4 +6,5 @@ export interface VirtualCardsModel {
     transactionId: string;
     expirationDate: string;
     createdAt: string;
+    type?: string;
 }

@@ -31,6 +31,38 @@ export const userQueries = {
         email
         phoneNumber
         lada
+        clients {
+          id
+          externalId
+          status
+          activationDate
+          officeId
+          firstName
+          middleName
+          lastName
+          fullName
+          displayName
+          mobileNo
+          dateOfBirth
+          emailAddress
+          statusPayroll 
+          account {
+            id
+            accountNo
+            externalId
+            clientId
+            groupId
+            currencyCode
+            balance {
+              year
+              account
+              deposit
+              withdrawal
+              total
+              currency
+            }
+          }
+        }
         usersProfile
         {
             userID

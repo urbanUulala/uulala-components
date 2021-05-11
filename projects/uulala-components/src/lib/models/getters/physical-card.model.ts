@@ -5,8 +5,8 @@ export interface PhysicalCardsModel {
     proxyKey: string;
     retreivalRefNo: string;
     createdAt: Date;
-    statusRequestCard: boolean;
-    statusActivation: boolean;
+    statusRequestCard: boolean; // Es para solicitar la tarjeta
+    statusActivation: boolean; // este es saber si la tarjeta esta activa o no
     bulkId: string;
     typeCardId: number;
     frontCard: string;
@@ -14,4 +14,5 @@ export interface PhysicalCardsModel {
     redesign: boolean;
     status: number;
     statusUulala: number;
+    type?:string;
 }

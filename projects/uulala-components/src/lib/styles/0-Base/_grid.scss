@@ -40,10 +40,10 @@
 
 .grid-row-header {
   /*  extends  */
-  @extend %h-35;
   @extend %fs-10;
   @extend %highlighted-text;
   @extend %js-c;
+  @extend %as-c;
 
   /*  include mixins  */
   @include grid-auto-columns(max-content);
