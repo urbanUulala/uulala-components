@@ -20,6 +20,7 @@ import { UulModalComponent } from './uul-modal/uul-modal.component';
 import { UulUserComponent } from './uul-user/uul-user.component';
 import { UulToggleButtonComponent } from './uul-toggle-button/uul-toggle-button.component';
 import { UulImgBackgroundComponent } from './uul-img-background/uul-img-background.component';
+import { UulSwitchComponent } from './uul-switch/uul-switch.component';
 
 
 
@@ -39,7 +40,8 @@ import { UulImgBackgroundComponent } from './uul-img-background/uul-img-backgrou
     UulModalComponent,
     UulUserComponent,
     UulToggleButtonComponent,
-    UulImgBackgroundComponent
+    UulImgBackgroundComponent,
+    UulSwitchComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +60,8 @@ import { UulImgBackgroundComponent } from './uul-img-background/uul-img-backgrou
     UulModalComponent,
     UulUserComponent,
     UulToggleButtonComponent,
-    UulImgBackgroundComponent
+    UulImgBackgroundComponent,
+    UulSwitchComponent
   ],
   providers: [
     LocalService,

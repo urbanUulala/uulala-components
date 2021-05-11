@@ -2,6 +2,7 @@ export interface PhysicalCardsModel {
     id: number;
     physicalId: number;
     numberCard: string;
+    numberCardOf?: string;
     proxyKey: string;
     retreivalRefNo: string;
     createdAt: Date;

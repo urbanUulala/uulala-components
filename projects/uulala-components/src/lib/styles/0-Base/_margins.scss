@@ -1,4 +1,11 @@
 /*  Margin left  */
+%ml-5 {
+  margin-left: 5px !important;
+}
+
+.ml-5 {
+  @extend %ml-5;
+}
 
 %ml-15 {
   margin-left: 15px !important;
@@ -51,6 +58,14 @@
 
 .mt-10 {
   @extend %mt-10;
+}
+
+%mt-15 {
+  margin-top: 15px !important;
+}
+
+.mt-15 {
+  @extend %mt-15;
 }
 
 %mt-20 {

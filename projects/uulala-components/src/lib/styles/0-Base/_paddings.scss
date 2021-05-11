@@ -10,6 +10,14 @@
 
 /*  padding top  */
 
+%pt-15 {
+  padding-top: 15px !important;
+}
+
+.pt-15 {
+  @extend %pt-15;
+}
+
 %pt-25 {
   padding-top: 25px !important;
 }
@@ -17,6 +25,25 @@
 .pt-25 {
   @extend %pt-25;
 }
+
+/*  padding bottom  */
+
+%pb-15 {
+  padding-bottom: 15px !important;
+}
+
+.pb-15 {
+  @extend %pb-15;
+}
+
+%pb-25 {
+  padding-bottom: 25px !important;
+}
+
+.pb-25 {
+  @extend %pb-25;
+}
+
 
 /*  horizontal padding  */
 %ph-15 {
