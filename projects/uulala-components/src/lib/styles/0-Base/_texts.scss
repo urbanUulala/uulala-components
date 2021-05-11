@@ -29,6 +29,17 @@
   @extend %white-text;
 }
 
+%disabled-text {
+  color: var(--color-block-shadow, #b7bdd8) !important;
+  font-weight: 500;
+}
+
+.disabled-text {
+  @extend %disabled-text;
+}
+
+
+
 // PROFILE
 
 %normal-text-profile{

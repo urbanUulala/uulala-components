@@ -1,9 +1,21 @@
+/*  padding left  */
+
 %pl-15 {
   padding-left: 15px !important;
 }
 
 .pl-15 {
   @extend %pl-15;
+}
+
+/*  padding top  */
+
+%pt-25 {
+  padding-top: 25px !important;
+}
+
+.pt-25 {
+  @extend %pt-25;
 }
 
 /*  horizontal padding  */

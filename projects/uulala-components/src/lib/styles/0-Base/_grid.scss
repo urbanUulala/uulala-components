@@ -3,12 +3,17 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  column-gap: 10px;
 }
 
 .two-fields {
   @extend %two-fields;
+  column-gap: 10px;
 }
+
+.two-fields-g-0 {
+  @extend %two-fields;
+}
+
 
 .grid-auto-columns {
   @include grid-auto-columns(max-content);
