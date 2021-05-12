@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { GraphService } from 'uulala-components/projects/uulala-components/src/lib/services/graph.service';
-import { restQueries } from 'uulala-components/projects/uulala-components/src/lib/queries/rest.queries'
+import { restQueries } from '../queries/rest.queries';
+import { GraphService } from './graph.service';
+
 
 
 @Injectable({

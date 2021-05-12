@@ -53,6 +53,16 @@
 }
 
 /*** ------------ ***/
+/*  WARNING BUTTON  */
+/*** ------------ ***/
+
+%warning-button {
+  @extend %button-structure;
+  background-color: var(--color-warning, #fa9c22);
+
+}
+
+/*** ------------ ***/
 /*  DARK BUTTON  */
 /*** ------------ ***/
 
@@ -72,6 +82,10 @@
 
 .success-button {
   @extend %success-button;
+}
+
+.warning-button {
+  @extend %warning-button;
 }
 
 .dark-button {
