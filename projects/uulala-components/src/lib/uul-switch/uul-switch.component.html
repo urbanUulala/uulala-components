@@ -1,1 +1,10 @@
-<p>uul-check-blocked works!</p>
+
+<div class="littleswitch__switch">
+    <img class="imageleft" [src]="assetsImage.lockImagePurple" alt="">
+    <img class="imagerigth" [src]="assetsImage.openImagePurple" alt="">
+    <label class="little-switch little-switch-person">
+        <input type="checkbox" (change)="change()" [formControl]="control">
+        <span  [className]="'little-switch__slider round'">
+        </span>
+    </label>
+</div>

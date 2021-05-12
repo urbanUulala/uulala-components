@@ -11,6 +11,24 @@
   @extend %normal-text;
 }
 
+%success-text {
+  color: var(--color-success, #23c9d3);
+  font-weight: 500;
+}
+
+.success-text {
+  @extend %success-text;
+}
+
+%error-text {
+  color: var(--color-error, #e01541);
+  font-weight: 500;
+}
+
+.error-text {
+  @extend %error-text;
+}
+
 %highlighted-text {
   color: var(--color-highlighted);
   font-weight: 500;
