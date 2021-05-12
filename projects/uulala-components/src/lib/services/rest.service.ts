@@ -37,5 +37,27 @@ export class RestService {
 			});
 	}
 
+	restApiTokenPut(url: string, method: string, inputs: string) {
+		return this.graphService.execQuery(restQueries.REST_API,
+			{
+				url,
+				token: this.localService.getValue('token'),
+				method,
+				inputs,
+				methodtype: 2
+			});
+	}
+
+	restApiTokenDelete(url: string, method: string, inputs: string) {
+		return this.graphService.execQuery(restQueries.REST_API,
+			{
+				url,
+				token: this.localService.getValue('token'),
+				method,
+				inputs,
+				methodtype: 3
+			});
+	}
+
 }
 
