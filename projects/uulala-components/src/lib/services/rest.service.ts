@@ -1,28 +1,39 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { restQueries } from '../queries/rest.queries';
 import { GraphService } from './graph.service';
+import { LocalService } from './local.service';
 
 
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class RestService {
 
-  constructor(
+	constructor(
 		private graphService: GraphService,
-  ) { }
+		private localService: LocalService
+	) { }
 
-  restApiCrypto(method:string, inputs:string, methodtype:number,url:string,user:string,key:string ) {
+	restApiTokenGet(url: string, method: string, inputs: string) {
 		return this.graphService.execQuery(restQueries.REST_API,
 			{
-					url: url,
-					user: user,
-					key: key,
-					method,
-					inputs,
-					methodtype
+				url,
+				token: this.localService.getValue('token'),
+				method,
+				inputs,
+				methodtype: 0
+			});
+	}
+
+	restApiTokenPost(url: string, method: string, inputs: string) {
+		return this.graphService.execQuery(restQueries.REST_API,
+			{
+				url,
+				token: this.localService.getValue('token'),
+				method,
+				inputs,
+				methodtype: 1
 			});
 	}
 
