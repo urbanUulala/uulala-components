@@ -340,3 +340,11 @@
   @extend %fs-32;
 }
 
+%fs-35 {
+  font-size: 35px !important;
+}
+.fs-35 {
+  @extend %fs-35;
+}
+
+
