@@ -28,22 +28,22 @@ export type UulalaEnvironments = 'dev' | 'test' | 'prod';
 
 const uulalaUrlSitesDev = {
   bank: 'http://localhost:4200/access',
-  panel: 'V00002',
-  wallet: 'V00003',
-  payroll: 'http://localhost:58760/access'
+  panel: 'http://localhost:4200/access',
+  wallet: 'wallet',
+  payroll: 'http://localhost:4200/access'
 }
 
 const uulalaUrlSitesTest = {
   bank: 'http://localhost:4200/access',
-  panel: 'V00002',
-  wallet: 'V00003',
+  panel: 'https://payroll-demo.apps-uulala.io/access',
+  wallet: 'wallet',
   payroll: 'http://localhost:58760/access'
 }
 
 const uulalaUrlSitesProd = {
-  bank: 'http://localhost:4200/access',
-  panel: 'V00002',
-  wallet: 'V00003',
+  bank: 'https://bank.apps-uulala.io/access',
+  panel: 'https://payroll.apps-uulala.io/access',
+  wallet: 'wallet',
   payroll: 'http://localhost:58760/access'
 }
 

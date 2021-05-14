@@ -799,6 +799,14 @@
   @extend %h-40;
 }
 
+%h-45 {
+  height: 45px !important;
+}
+
+.h-45 {
+  @extend %h-45;
+}
+
 %h-50 {
   height: 50px !important;
 }
