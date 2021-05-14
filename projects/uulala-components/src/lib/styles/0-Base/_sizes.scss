@@ -2852,3 +2852,24 @@
   @extend %hp-100;
 }
 
+
+/***             ***/
+/*  WIDTH CONTENT  */
+/***             ***/
+
+
+%w-content-20 {
+  width: calc(100% - 20px);
+}
+
+.w-content-20 {
+  @extend %w-content-20;
+}
+
+%w-content-40 {
+  width: calc(100% - 40px);
+}
+
+.w-content-40 {
+  @extend %w-content-40;
+}

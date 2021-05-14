@@ -670,3 +670,19 @@
 .button-resposive-menu {
   @extend %button-resposive-menu;
 }
+
+
+
+/* POSITION BUTTONS */
+
+.button-pos-left {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+.button-pos-rigth {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}

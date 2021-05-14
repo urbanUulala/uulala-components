@@ -8,6 +8,14 @@
   @extend %pl-15;
 }
 
+%pl-20 {
+  padding-left: 20px !important;
+}
+
+.pl-20 {
+  @extend %pl-20;
+}
+
 /*  padding top  */
 
 %pt-15 {
