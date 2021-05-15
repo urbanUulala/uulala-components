@@ -61,6 +61,25 @@ export const userQueries = {
               total
               currency
             }
+            transactions{
+              id
+              accountId 
+              transactionDate
+              type
+              amount
+              finalBalance
+              currencyCode
+              exchageRate
+              createdDate
+              note{
+                id
+                clientId
+                groupId
+                accountId
+                transactionId
+                noteDescription
+              }
+            }
           }
         }
         usersProfile

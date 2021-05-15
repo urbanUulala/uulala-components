@@ -1,4 +1,5 @@
 import { ClientAccountModel } from "./clientAccount.model";
+import { TransactionsModel } from './transactions.model';
 
 
 export interface ClientModel {
@@ -17,4 +18,5 @@ export interface ClientModel {
     emailAddress: string;
     statusPayroll : string;
     account: ClientAccountModel;
+    transactions: TransactionsModel; 
 }
