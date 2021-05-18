@@ -1,27 +1,26 @@
-export class GroupModel {
-  constructor(
-    public id                     : number,
-    public pathLogo               : string,
-    public name                   : string,
-    public status?                 : number,
-    public activationDate?         : Date,
-    public officeId?               : number,
-    public reference?              : string,
-    public cardFee?                : number,
-    public typeCard?               : number,
-    public paymentCards?           : boolean,
-    public crypto?                 : boolean,
-    public frontCard?              : string,
-    public backCard?               : string,
-    public feePcc?                 : number,
-    public feeVcc?                 : number,
-    public feeChargePcc?           : number,
-    public feePhysicalCard?        : number,
-    public feeVirtualCard?         : number,
-    public feeChargePhysicalCard?  : number,
-    public fhargePayroll?          : number,
-    public statusFeeEmployee?      : boolean,
-    public statusFeePayroll?       : boolean,
-    public externalId?            :string,
-  ) {}
+export interface GroupModel {
+
+  id                     : number;
+  pathLogo               : string;
+  name                   : string;
+  status?                 : number;
+  activationDate?         : Date;
+  officeId?               : number;
+  reference?              : string;
+  cardFee?                : number;
+  typeCard?               : number;
+  paymentCards?           : boolean;
+  crypto?                 : boolean;
+  frontCard?              : string;
+  backCard?               : string;
+  feePcc?                 : number;
+  feeVcc?                 : number;
+  feeChargePcc?           : number;
+  feePhysicalCard?        : number;
+  feeVirtualCard?         : number;
+  feeChargePhysicalCard?  : number;
+  fhargePayroll?          : number;
+  statusFeeEmployee?      : boolean;
+  statusFeePayroll?       : boolean;
+  externalId?            :string;
 }

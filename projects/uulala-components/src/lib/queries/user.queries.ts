@@ -80,6 +80,12 @@ export const userQueries = {
                 noteDescription
               }
             }
+            company {
+              id 
+              pathLogo 
+              name 
+              feePhysicalCard
+            }
           }
         }
         usersProfile

@@ -33,7 +33,9 @@ export class UserService {
         id
       }
     ).pipe(
-      map(result => ({
+      map(result => {
+          console.log('user result', result);
+        return {
         ...result.data['getUsersByField'][0],
         clients: {
           ...result.data['getUsersByField'][0].clients[0]
@@ -54,7 +56,7 @@ export class UserService {
             }
           }
         }
-      }))
+      }})
     )
   }
 

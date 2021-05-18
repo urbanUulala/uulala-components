@@ -1,12 +1,20 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { FormatCardTypes } from '../models/types';
+
 
 @Pipe({
   name: 'formatCard'
 })
 export class FormatCardPipe implements PipeTransform {
 
-  transform(cardNumber: string, ...args: unknown[]): unknown {
-    return `${cardNumber.substring(0,4)}-${cardNumber.substring(4,8)}-${cardNumber.substring(8,12)}-${cardNumber.substring(12,16)}`;
+  transform(cardNumber: string, type:FormatCardTypes = 'all', separator:string = ' '): string {
+    
+    switch (type) {
+      case 'four-last':
+        return `****${separator}****${separator}****${separator}${cardNumber.substring(12,16)}`;  
+      case 'all':
+        return `${cardNumber.substring(0,4)}${separator}${cardNumber.substring(4,8)}${separator}${cardNumber.substring(8,12)}${separator}${cardNumber.substring(12,16)}`;
+    }
   }
 
 }

@@ -17,3 +17,8 @@ export type SelectTypes =
   export type ModalTypes = 
   'form' |
   'alert';
+
+
+export type FormatCardTypes = 
+'four-last' | 
+'all';

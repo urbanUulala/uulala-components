@@ -47,11 +47,11 @@ export class ValidatorsTools {
       let dateCard: string = (cardForm.controls[fieldKey].value as string);
       let regex: RegExp = new RegExp('^[0-9]{4}$');
 
-      console.log(`date card value ${dateCard} - #${dateCard.replace(/\//g, "")}#`);
-      if(dateCard.length === 2) cardForm.get('date').setValue(dateCard + '/');
+      //console.log(`date card value ${dateCard} - #${dateCard.replace(/\//g, "")}#`);
+      if(dateCard.length === 2) cardForm.controls[fieldKey].setValue(dateCard + '/');
 
       if(!regex.test(dateCard.replace(/\//g, ""))) {
-        console.log(`Regex with error`);
+        //console.log(`Regex with error`);
         cardForm.controls[fieldKey].setErrors({ cardDate: fieldKey});
         return { 'cardDate': fieldKey };
       }

@@ -63,7 +63,8 @@ import { FormatCardPipe } from './pipes/format-card.pipe';
     UulUserComponent,
     UulToggleButtonComponent,
     UulImgBackgroundComponent,
-    UulSwitchComponent
+    UulSwitchComponent,
+    FormatCardPipe
   ],
   providers: [
     LocalService,
