@@ -1,4 +1,6 @@
+
 import { BalanceModel } from "./balance.model";
+import { TransactionsModel } from "./transactions.model";
 
 
 export interface ClientAccountModel {
@@ -9,4 +11,5 @@ export interface ClientAccountModel {
     groupId:string;
     currencyCode:string;
     balance: BalanceModel;
+    transactions: TransactionsModel;
 }

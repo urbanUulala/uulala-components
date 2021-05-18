@@ -10,6 +10,7 @@ import { LocalService } from '../services/local.service';
 export class UulUserComponent implements OnInit {
 
   @Input() userProfile: AccountModel;
+  @Input() urlAccounts: string;
   showDetail:boolean = true;
   userId:string;
 
@@ -23,6 +24,10 @@ export class UulUserComponent implements OnInit {
 
   changeToggle(event) {
     this.showDetail = event;
+  }
+
+  goToAccounts() {
+    this.localService.redirectToAccounts(this.urlAccounts);
   }
 
 }

@@ -21,6 +21,7 @@ import { UulUserComponent } from './uul-user/uul-user.component';
 import { UulToggleButtonComponent } from './uul-toggle-button/uul-toggle-button.component';
 import { UulImgBackgroundComponent } from './uul-img-background/uul-img-background.component';
 import { UulSwitchComponent } from './uul-switch/uul-switch.component';
+import { FormatCardPipe } from './pipes/format-card.pipe';
 
 
 
@@ -41,7 +42,8 @@ import { UulSwitchComponent } from './uul-switch/uul-switch.component';
     UulUserComponent,
     UulToggleButtonComponent,
     UulImgBackgroundComponent,
-    UulSwitchComponent
+    UulSwitchComponent,
+    FormatCardPipe
   ],
   imports: [
     CommonModule,
