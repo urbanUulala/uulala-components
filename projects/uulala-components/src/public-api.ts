@@ -34,3 +34,8 @@
 
  //Utilities
  export * from './lib/utilities';
+
+ // Pipes
+ export * from './lib/pipes';
+
+
