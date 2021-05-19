@@ -20,5 +20,6 @@ export type SelectTypes =
 
 
 export type FormatCardTypes = 
-'four-last' | 
+'last-four-off' | 
+'last-four' |
 'all';
