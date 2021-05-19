@@ -66,7 +66,8 @@ import { FormatCardDatePipe } from './pipes/format-card-date.pipe';
     UulToggleButtonComponent,
     UulImgBackgroundComponent,
     UulSwitchComponent,
-    FormatCardPipe
+    FormatCardPipe,
+    FormatCardDatePipe
   ],
   providers: [
     LocalService,
