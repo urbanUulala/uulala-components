@@ -22,6 +22,7 @@ import { UulToggleButtonComponent } from './uul-toggle-button/uul-toggle-button.
 import { UulImgBackgroundComponent } from './uul-img-background/uul-img-background.component';
 import { UulSwitchComponent } from './uul-switch/uul-switch.component';
 import { FormatCardPipe } from './pipes/format-card.pipe';
+import { FormatCardDatePipe } from './pipes/format-card-date.pipe';
 
 
 
@@ -43,7 +44,8 @@ import { FormatCardPipe } from './pipes/format-card.pipe';
     UulToggleButtonComponent,
     UulImgBackgroundComponent,
     UulSwitchComponent,
-    FormatCardPipe
+    FormatCardPipe,
+    FormatCardDatePipe
   ],
   imports: [
     CommonModule,

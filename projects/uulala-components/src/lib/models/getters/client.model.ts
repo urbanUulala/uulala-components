@@ -1,5 +1,6 @@
 import { ClientAccountModel } from "./clientAccount.model";
 import { TransactionsModel } from './transactions.model';
+import { GroupModel } from "./group.model";
 
 
 export interface ClientModel {
@@ -19,4 +20,5 @@ export interface ClientModel {
     statusPayroll : string;
     account: ClientAccountModel;
     transactions: TransactionsModel; 
+    companies: GroupModel[];
 }

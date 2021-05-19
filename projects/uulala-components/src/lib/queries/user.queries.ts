@@ -79,13 +79,13 @@ export const userQueries = {
                 transactionId
                 noteDescription
               }
-            }
-            company {
-              id 
-              pathLogo 
-              name 
-              feePhysicalCard
-            }
+            } 
+          }
+          companies {
+            id 
+            pathLogo 
+            name 
+            feePhysicalCard
           }
         }
         usersProfile
