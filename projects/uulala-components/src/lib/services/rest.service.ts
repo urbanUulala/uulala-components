@@ -15,13 +15,13 @@ export class RestService {
 		private localService: LocalService
 	) { }
 
-	restApiTokenGet(url: string, method: string, inputs: string) {
+	restApiTokenGet(url: string, method: string) {
 		return this.graphService.execQuery(restQueries.REST_API,
 			{
 				url,
 				token: this.localService.getValue('token'),
 				method,
-				inputs,
+				inputs: '',
 				methodtype: 0
 			});
 	}
