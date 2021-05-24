@@ -11,6 +11,7 @@ export class UulUserComponent implements OnInit {
 
   @Input() userProfile: AccountModel;
   @Input() urlAccounts: string;
+  @Input() buttonText: string = 'My account';
   showDetail:boolean = true;
   userId:string;
 

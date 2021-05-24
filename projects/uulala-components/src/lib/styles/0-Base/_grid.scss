@@ -20,9 +20,7 @@
 }
 
 .grid-table {
-  /*  extends  */
-  @extend %border-container;
-  @extend %border-radius;
+
 
   /*  grid  */
   display: grid;

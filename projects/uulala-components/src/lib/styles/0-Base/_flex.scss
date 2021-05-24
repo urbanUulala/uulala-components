@@ -70,3 +70,12 @@
 .fa-e {
   @extend %fa-e;
 }
+
+
+%flex-gap{
+  display: flex;
+  gap: 10px;
+}
+.flex-gap{ 
+  @extend %flex-gap;
+}

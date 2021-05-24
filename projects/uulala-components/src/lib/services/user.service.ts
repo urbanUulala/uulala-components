@@ -10,7 +10,8 @@ export type InfoModuleUser =
   'general' |
   'physical_cards' |
   'virtual_cards' |
-  'all_cards';
+  'all_cards' |
+  'basic';
 
 
 
@@ -34,29 +35,22 @@ export class UserService {
       }
     ).pipe(
       map(result => {
-          console.log('user result', result);
-        return {
-        ...result.data['getUsersByField'][0],
-        clients: {
-          ...result.data['getUsersByField'][0].clients[0]
-        },
-        usersProfile: {
-          ...result.data['getUsersByField'][0].usersProfile[0],
-          
-          accounts: {
-            ...result.data['getUsersByField'][0].usersProfile[0].accounts,
-            address: {
-              ...result.data['getUsersByField'][0].usersProfile[0].accounts.address[0]
-            },
-            kyc: {
-              ...result.data['getUsersByField'][0].usersProfile[0].accounts.kyc[0]
-            },
-            bankInformation: {
-              ...result.data['getUsersByField'][0].usersProfile[0].accounts.bankInformation[0]
-            }
-          }
-        }
-      }})
+
+        return this.getResultObjectModule('general', result);
+      })
+    )
+  }
+
+  getUserByFieldModuleAndId(id: string, infoModule: InfoModuleUser = 'general') {
+    return this.graphService.execQuery(
+      this.getUserQuery(infoModule),
+      {
+        token: this.localService.getValue('token'),
+        field: 'id',
+        id
+      }
+    ).pipe(
+      map(result => (this.getResultObjectModule(infoModule, result)))
     )
   }
 
@@ -85,7 +79,33 @@ export class UserService {
           physical: result.data['getUsersByField'][0].physicalCards,
           virtual: result.data['getUsersByField'][0].virtualCards
         }
+      case 'basic':
+        return {
+          ...result.data['getUsersByField'][0].usersProfile[0].accounts
+        }
       default:
+        return {
+          ...result.data['getUsersByField'][0],
+          clients: {
+            ...result.data['getUsersByField'][0].clients[0]
+          },
+          usersProfile: {
+            ...result.data['getUsersByField'][0].usersProfile[0],
+
+            accounts: {
+              ...result.data['getUsersByField'][0].usersProfile[0].accounts,
+              address: {
+                ...result.data['getUsersByField'][0].usersProfile[0].accounts.address[0]
+              },
+              kyc: {
+                ...result.data['getUsersByField'][0].usersProfile[0].accounts.kyc[0]
+              },
+              bankInformation: {
+                ...result.data['getUsersByField'][0].usersProfile[0].accounts.bankInformation[0]
+              }
+            }
+          }
+        }
         break;
     }
 
@@ -99,6 +119,8 @@ export class UserService {
         return userQueries.GET_USER_VIRTUAL_CARDS
       case 'all_cards':
         return userQueries.GET_ALL_CARDS
+      case 'basic':
+        return userQueries.GET_USER_BASIC_INFO
       default:
         return userQueries.GET_USER_BY_FIELD;
     }

@@ -297,6 +297,40 @@ export const userQueries = {
       }
     }
   }
+  `,
+  GET_USER_BASIC_INFO: gql`
+  query($token:String!,$field:String!,$id:String!){
+    getUsersByField(token:$token,field:$field,id:$id)
+    {
+        usersProfile
+        {
+          accounts
+          {
+            id
+            term
+            status
+            firstName
+            avatarImage
+            lastName
+            secondLastName
+            phoneNumber
+            middleName
+            email
+            clientId
+            currency
+            gender
+            alias
+            birthday
+            nationalId
+            otherNationalId
+            countryCode
+            externalId
+            customerId
+          }
+
+        }
+    }
+  }
   `
 
   

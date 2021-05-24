@@ -3,7 +3,7 @@ import { NumberTools } from './number.tools';
 
 export class StringTools {
 
-  static generateNewRandomString(length: number) : string {
+  static generateNewRandomString(length: number): string {
     let result: string = '';
     let characters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let charactersLength: number = characters.length;
@@ -13,33 +13,33 @@ export class StringTools {
     return result;
   }
 
-  static generateNewIdString() : string {
+  static generateNewIdString(): string {
     let length = NumberTools.generateRandomNumber(NumberTools.generateRandomNumber(100000))
     return StringTools.generateNewRandomString(length);
   }
 
-  static generateNewHashString() : string {
+  static generateNewHashString(): string {
     return Md5.hashStr(StringTools.generateNewIdString()).toString()
   }
 
-  static getGraphErrorMessage(error: string) : string{
+  static getGraphErrorMessage(error: string): string {
     let errorString: string = error.replace('GraphQL.ExecutionError: ', '');
     errorString = errorString.substring(0, errorString.length - 1);
 
     let errors: string[] = errorString.split('|');
 
-    if(errors.length !== 0) return errors[0];
+    if (errors.length !== 0) return errors[0];
     else return '';
   }
 
-  static getGraphErrorMessageList(error: string) : string[] {
+  static getGraphErrorMessageList(error: string): string[] {
     let errorString: string = error.replace('GraphQL.ExecutionError: ', '');
     errorString = errorString.substring(0, errorString.length - 1);
 
     return errorString.split('|');
   }
 
-  static formatDateCard(date:string, separator:string = '/') {
+  static formatDateCard(date: string, separator: string = '/') {
     let dateLeft: string = date.split('/')[0];
     let dateRigth: string = date.split('/')[1];
     // console.log('data in date format', dateLeft, dateRigth);
@@ -66,6 +66,20 @@ export class StringTools {
     }
 
     return output;
+  }
+
+  static copyTextToClipboard(value: string) {
+    let selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = value;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
   }
 }
 
