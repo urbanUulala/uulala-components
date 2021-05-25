@@ -715,6 +715,16 @@
   @extend %w-700;
 }
 
+
+%w-900 {
+  width: 900px !important;
+}
+
+.w-900 {
+  @extend %w-900;
+}
+
+
 /***     ***/
 /*  HEIGTH  */
 /***     ***/

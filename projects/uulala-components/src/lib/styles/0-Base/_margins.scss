@@ -107,6 +107,22 @@
   @extend %mt-30;
 }
 
+%mt-35 {
+  margin-top: 35px !important;
+}
+
+.mt-35 {
+  @extend %mt-35;
+}
+
+%mt-40 {
+  margin-top: 40px !important;
+}
+
+.mt-40 {
+  @extend %mt-40;
+}
+
 /*  Margin bottom  */
 
 
