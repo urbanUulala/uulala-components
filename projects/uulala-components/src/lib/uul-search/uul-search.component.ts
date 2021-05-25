@@ -9,7 +9,7 @@ import { AbstractControl, FormControl } from '@angular/forms';
 })
 export class UulSearchComponent implements OnInit {
 
-  @Input() label:string = 'Search';
+  @Input() label:string = '';
   assetsImage:any = uulInputImg;
 
   //reactive form
