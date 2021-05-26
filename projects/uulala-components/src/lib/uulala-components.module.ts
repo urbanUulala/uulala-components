@@ -24,6 +24,7 @@ import { UulSwitchComponent } from './uul-switch/uul-switch.component';
 import { FormatCardPipe } from './pipes/format-card.pipe';
 import { FormatCardDatePipe } from './pipes/format-card-date.pipe';
 import { UulSearchComponent } from './uul-search/uul-search.component';
+import { FilterMovs } from './pipes/filter-movs.pipe'; 
 
 
 
@@ -47,7 +48,8 @@ import { UulSearchComponent } from './uul-search/uul-search.component';
     UulSwitchComponent,
     FormatCardPipe,
     FormatCardDatePipe,
-    UulSearchComponent
+    UulSearchComponent,
+    FilterMovs
   ],
   imports: [
     CommonModule,
@@ -70,7 +72,8 @@ import { UulSearchComponent } from './uul-search/uul-search.component';
     UulSwitchComponent,
     FormatCardPipe,
     FormatCardDatePipe,
-    UulSearchComponent
+    UulSearchComponent,
+    FilterMovs
   ],
   providers: [
     LocalService,

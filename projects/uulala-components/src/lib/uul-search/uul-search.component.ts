@@ -13,7 +13,7 @@ export class UulSearchComponent implements OnInit {
   assetsImage:any = uulInputImg;
 
   //reactive form
-  @Input() control: AbstractControl = new FormControl();
+  @Input() search: AbstractControl = new FormControl();
 
   constructor() { }
 
