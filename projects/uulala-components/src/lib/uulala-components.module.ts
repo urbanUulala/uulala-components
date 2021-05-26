@@ -23,7 +23,8 @@ import { UulImgBackgroundComponent } from './uul-img-background/uul-img-backgrou
 import { UulSwitchComponent } from './uul-switch/uul-switch.component';
 import { FormatCardPipe } from './pipes/format-card.pipe';
 import { FormatCardDatePipe } from './pipes/format-card-date.pipe';
-
+import { UulSearchComponent } from './uul-search/uul-search.component';
+import { FilterMovs } from './pipes/filter-movs.pipe'; 
 
 
 
@@ -45,7 +46,9 @@ import { FormatCardDatePipe } from './pipes/format-card-date.pipe';
     UulImgBackgroundComponent,
     UulSwitchComponent,
     FormatCardPipe,
-    FormatCardDatePipe
+    FormatCardDatePipe,
+    UulSearchComponent,
+    FilterMovs
   ],
   imports: [
     CommonModule,
@@ -67,7 +70,9 @@ import { FormatCardDatePipe } from './pipes/format-card-date.pipe';
     UulImgBackgroundComponent,
     UulSwitchComponent,
     FormatCardPipe,
-    FormatCardDatePipe
+    FormatCardDatePipe,
+    UulSearchComponent,
+    FilterMovs
   ],
   providers: [
     LocalService,
