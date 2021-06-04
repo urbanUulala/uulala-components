@@ -173,4 +173,14 @@ export class AuthService {
       map(result => result.data['getUserMenus'])
     )
   }
+   //Redirections
+   getUrlAccounts(environment:string,company:number) {
+    console.log(environment,company);
+    return this.graphService.execQuery(
+      authQueries.GETURLACCOUNTS,
+      {environment,company}
+    ).pipe(
+      map( result => result.data['getUrlAccounts'])
+    )
+  }
 }

@@ -28,9 +28,7 @@ import { FilterMovs } from './pipes/filter-movs.pipe';
 import { SystemBalance } from './pipes/balance.pipe';
 import { ValueEditorInputDirective } from './directives';
 import { ParametersService } from './services';
-
-
-
+import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.component';
 
 
 
@@ -55,7 +53,9 @@ import { ParametersService } from './services';
     UulSearchComponent,
     FilterMovs,
     SystemBalance,
-    ValueEditorInputDirective
+    ValueEditorInputDirective,
+    UulUploadFileComponent
+
   ],
   imports: [
     CommonModule,
@@ -81,7 +81,9 @@ import { ParametersService } from './services';
     UulSearchComponent,
     FilterMovs,
     SystemBalance,
-    ValueEditorInputDirective
+    ValueEditorInputDirective,
+    UulUploadFileComponent
+
   ],
   providers: [
     LocalService,

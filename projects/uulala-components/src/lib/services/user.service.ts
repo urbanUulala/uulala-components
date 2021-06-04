@@ -192,4 +192,16 @@ export class UserService {
     )
 
   }
+  setFile(filename:string, base64:string){
+    return this.graphService.execMutation(userQueries.SETFILE,{
+      token: this.localService.getValue('token'),
+      fileName: filename,
+      file64: base64
+    }).pipe(
+      map((result)=>{
+        return result.data['setFile'];
+      }
+      )
+    );
+  }
 }

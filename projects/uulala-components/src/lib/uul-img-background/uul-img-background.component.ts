@@ -14,8 +14,8 @@ export class UulImgBackgroundComponent implements OnInit, AfterViewInit {
   };
   @Input() url: string = '';
   @Input() children: string = '';
-  @Input() imgWidth: string = '280';
-  @Input() imgHeight: string = '120';
+  @Input() imgWidth: string = '';
+  @Input() imgHeight: string = '';
   imgElement: HTMLElement;
 
   constructor() { }
@@ -35,9 +35,10 @@ export class UulImgBackgroundComponent implements OnInit, AfterViewInit {
 
 
   getSideNavBarStyle() {
+    console.log()
     let imageBgStyle: any = {};
-    imageBgStyle.width = this.imgWidth + 'px';
-    imageBgStyle.height = this.imgHeight + 'px';
+    imageBgStyle.width = this.imgWidth? this.imgWidth + 'px':'100%';
+    imageBgStyle.height = this.imgHeight? this.imgHeight + 'px':'100%';
     imageBgStyle.background= this.url
     return imageBgStyle;
   }

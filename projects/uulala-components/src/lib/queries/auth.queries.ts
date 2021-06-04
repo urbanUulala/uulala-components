@@ -91,5 +91,12 @@ export const authQueries = {
       }
     }  
   }
-  `
+  `,
+  
+  GETURLACCOUNTS: gql`
+  query ($environment:String!,$company:Int!){
+    getUrlAccounts(environment:$environment,company:$company){                
+      value
+    }
+  }`
 }
