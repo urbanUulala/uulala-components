@@ -331,8 +331,11 @@ export const userQueries = {
         }
     }
   }
-  `
-
+  `,
+  SETFILE: gql`
+	mutation($token:String!,$fileName:String!,$file64:String!){
+    setFile(token:$token,fileName:$fileName,file64:$file64)
+  }`,
   
 
 }

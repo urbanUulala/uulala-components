@@ -1,0 +1,35 @@
+@import '../styles/0-Base/base-dir';
+@import '../styles/2-Modules/modules-dir';
+.container__upload{
+	@extend %border-radius;
+	@extend %border-container;
+	@extend %highlighted-text-profile;
+	@extend %h-40;
+	@extend %fs-14;	
+	display: grid;
+  grid-template-columns: 1fr 0fr 0fr;
+	background: #fff;
+	align-items: center;
+  justify-content: center;
+	padding-left: 10px;
+}
+
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.file-input label {
+	@extend %h-40;
+	@extend %white-text;
+	@extend %fs-12;
+  display: block;
+  position: relative;
+  background-color: var(--color-text,#43465d); 
+  border-radius: 0px 2px 2px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
