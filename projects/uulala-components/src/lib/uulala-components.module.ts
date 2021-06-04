@@ -26,6 +26,9 @@ import { FormatCardDatePipe } from './pipes/format-card-date.pipe';
 import { UulSearchComponent } from './uul-search/uul-search.component';
 import { FilterMovs } from './pipes/filter-movs.pipe'; 
 import { SystemBalance } from './pipes/balance.pipe';
+import { ValueEditorInputDirective } from './directives';
+import { ParametersService } from './services';
+
 
 
 
@@ -51,7 +54,8 @@ import { SystemBalance } from './pipes/balance.pipe';
     FormatCardDatePipe,
     UulSearchComponent,
     FilterMovs,
-    SystemBalance
+    SystemBalance,
+    ValueEditorInputDirective
   ],
   imports: [
     CommonModule,
@@ -76,13 +80,15 @@ import { SystemBalance } from './pipes/balance.pipe';
     FormatCardDatePipe,
     UulSearchComponent,
     FilterMovs,
-    SystemBalance
+    SystemBalance,
+    ValueEditorInputDirective
   ],
   providers: [
     LocalService,
     MessagesService,
     GraphService,
     UiService,
+    ParametersService,
     Apollo
   ]
 })

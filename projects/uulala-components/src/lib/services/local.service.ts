@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SystemLanguajes } from '../types/system.languages';
+import { SystemSitesType } from '../types/systemSites.type';
 
 export type LocalStorageKeys =
   'token' |
@@ -188,6 +189,16 @@ export class LocalService {
       default:
         break;
     }
+  }
+
+  getSystemByKey(key:string) : SystemSitesType {
+    switch (key) {
+      case systemKeyRedirects.payroll:
+        return 'panel'
+        case systemKeyRedirects.bank:
+        return 'bank'
+    }
+   
   }
 
   getPayrollSesionUrl(environment: UulalaEnvironments) {

@@ -75,7 +75,7 @@ export class MessagesService {
 
   }
 
-  fireTimeOutMessage(title: string, subtitle: string, extraInformation: string, imageTimeOut: any, placeholder: string, titleButton: string, execFunction: any) {
+  fireTimeOutMessage(title: string, subtitle: string, extraInformation: string, imageTimeOut: any, placeholder: string, titleButton: string,cancelButtonText:string, execFunction: any ) {
     return Swal.fire({
       title: "<img src='" + imageTimeOut + "'>",
       input: "password",
@@ -86,6 +86,8 @@ export class MessagesService {
       showConfirmButton: true,
       confirmButtonText: titleButton,
       confirmButtonColor: '#5867DB',
+      showCancelButton: true,
+      cancelButtonText: cancelButtonText,
       allowOutsideClick: false,
       allowEscapeKey: false,
       allowEnterKey: false,

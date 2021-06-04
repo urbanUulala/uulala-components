@@ -38,4 +38,7 @@
  // Pipes
  export * from './lib/pipes';
 
+ // Directives
+ export * from './lib/directives';
+
 

@@ -3,6 +3,8 @@
   <select [ngClass]="inputStyles" [formControl]="control">
     <option *ngFor="let item of values" value="{{ item.value }}">{{ item.description }}</option>
   </select>
+  <img [ngClass]="{ 'img-status': true }" *ngIf="status === 'VALID'"  [src]="inputImages.paloma" alt="">
+  <img [ngClass]="{ 'img-status': true }" *ngIf="status === 'INVALID'" [src]="inputImages.tache" alt="">
 </div>
 
 <div class="control-container bwc-highlighted pos-r" *ngIf="type === 'session'">
@@ -11,4 +13,3 @@
     <option class="normal-text"  *ngFor="let item of values" value="{{ item.value }}">{{ item.description }}</option>
   </select>
 </div>
-

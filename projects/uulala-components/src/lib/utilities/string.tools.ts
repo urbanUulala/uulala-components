@@ -81,5 +81,13 @@ export class StringTools {
     document.execCommand('copy');
     document.body.removeChild(selBox);
   }
+
+  static capitalizeFirstLetter(value: string) : string {
+    return value.toLowerCase().replace(/^\w/, (c) => c.toUpperCase());
+  }
+
+  static capitalizeFirstLetterEachWord(value: string) : string {
+    return value.toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+  }
 }
 

@@ -117,6 +117,7 @@ export const userQueries = {
                 otherNationalId
                 countryCode
                 externalId
+                pin
                 customerId
                   address
                   {
