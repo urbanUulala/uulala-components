@@ -15,7 +15,7 @@ export class MessagesService {
   constructor(
     private spinner: NgxSpinnerService) { }
 
-  fireErrorMessage(tittle: string, message: string, functionExecWillClose: any = null) {
+  fireErrorMessage(tittle: string, message: string, functionExecWillClose: any = null, time:number = 0) {
     this.hidePreloader();
     setTimeout(() => {
       Swal.fire({
@@ -24,7 +24,7 @@ export class MessagesService {
         text: message,
         willClose: functionExecWillClose
       })
-    }, 2000);
+    }, time);
   }
 
   fireSystemErrorMessage(data: any, functionExecWillClose: any = null) {
@@ -43,10 +43,10 @@ export class MessagesService {
     this.spinner.show();
   }
 
-  hidePreloader() {
+  hidePreloader(time:number = 0) {
     setTimeout(() => {
       this.spinner.hide();
-    }, 1000);
+    }, time);
   }
 
   fireErrorModelMessage(error: ErrorModel) {
@@ -61,7 +61,7 @@ export class MessagesService {
 
   }
 
-  fireSuccessMessage(title: string, timeSeconds: number = 1.2, position: SweetAlertPosition = 'center', timeToFire: number = 2000) {
+  fireSuccessMessage(title: string, timeSeconds: number = 1.2, position: SweetAlertPosition = 'center', timeToFire: number = 0) {
     this.hidePreloader();
     setTimeout(() => {
       Swal.fire({

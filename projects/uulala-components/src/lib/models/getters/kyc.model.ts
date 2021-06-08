@@ -7,4 +7,5 @@ export interface kycModel {
 	id: string;
 	kycid: string;
 	status: number;
+	isComplete: boolean;
 }

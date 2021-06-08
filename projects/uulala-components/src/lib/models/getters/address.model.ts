@@ -1,15 +1,13 @@
-export class AddressModel {
-	constructor(
-		public id: string,
-		public city: string,
-		public suburb: string,
-		public country: string,
-		public state: string,
-		public street: string,
-		public number: number,
-		public zipCode: string,
-		public typeAddress: string,
-		public shortName: string
-	){}
-	
+export interface AddressModel {
+	id: string;
+	city: string;
+	suburb: string;
+	country: string;
+	state: string;
+	street: string;
+	number: number;
+	zipCode: string;
+	typeAddress: string;
+	shortName: string;
+	isComplete: boolean;
 }

@@ -28,6 +28,7 @@ export interface AccountModel {
   address: AddressModel;
   kyc: kycModel;
   bankInformation: bankInformationModel;
+  isComplete: boolean;
 }
 
  

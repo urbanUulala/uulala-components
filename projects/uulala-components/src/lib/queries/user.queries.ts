@@ -119,19 +119,21 @@ export const userQueries = {
                 externalId
                 pin
                 customerId
-                  address
-                  {
-                      id
-                      city
-                      suburb
-                      country
-                      state
-                      street
-                      number
-                      typeAddress
-                      zipCode
-                      shortName
-                  }
+                isComplete
+                address
+                {
+                    id
+                    city
+                    suburb
+                    country
+                    state
+                    street
+                    number
+                    typeAddress
+                    zipCode
+                    shortName
+                    isComplete
+                }
                   kyc{
                     id
                     typeIdentification
@@ -141,6 +143,7 @@ export const userQueries = {
                     faceId
                     documentId
                     status
+                    isComplete
                   }
                   bankInformation
                   {
