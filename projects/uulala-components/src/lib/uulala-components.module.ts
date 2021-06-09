@@ -26,6 +26,7 @@ import { FormatCardDatePipe } from './pipes/format-card-date.pipe';
 import { UulSearchComponent } from './uul-search/uul-search.component';
 import { FilterMovs } from './pipes/filter-movs.pipe'; 
 import { SystemBalance } from './pipes/balance.pipe';
+import { FilterCryptoPipe } from './pipes/filter-crypto.pipe';
 import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.component';
 
 
@@ -50,7 +51,8 @@ import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.compon
     UulSearchComponent,
     FilterMovs,
     SystemBalance,
-    UulUploadFileComponent
+    UulUploadFileComponent,
+    FilterCryptoPipe
   ],
   imports: [
     CommonModule,
@@ -76,7 +78,8 @@ import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.compon
     UulSearchComponent,
     FilterMovs,
     SystemBalance,
-    UulUploadFileComponent
+    UulUploadFileComponent,
+    FilterCryptoPipe
   ],
   providers: [
     LocalService,
