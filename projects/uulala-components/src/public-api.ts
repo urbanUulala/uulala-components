@@ -28,6 +28,7 @@
  export * from './lib/uul-switch/uul-switch.component';
  export * from './lib/uul-search/uul-search.component';
  export * from './lib/uul-upload-file/uul-upload-file.component';
+ export * from './lib/line-chart/line-chart.component';
 
  export * from './lib/store/actions';
  export * from './lib/store/effects';
@@ -42,4 +43,8 @@
  // Directives
  export * from './lib/directives';
 
+
+ // Modules
+
+export { NgxChartsModule } from '@swimlane/ngx-charts';
 

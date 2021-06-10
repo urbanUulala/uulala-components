@@ -29,6 +29,9 @@ import { SystemBalance } from './pipes/balance.pipe';
 import { ValueEditorInputDirective } from './directives';
 import { ParametersService } from './services';
 import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.component';
+import { UtilsChartService } from './services/utilsChart.service';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 
 
@@ -54,13 +57,14 @@ import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.compon
     FilterMovs,
     SystemBalance,
     ValueEditorInputDirective,
-    UulUploadFileComponent
-
+    UulUploadFileComponent,
+    LineChartComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    GraphQLModule
+    GraphQLModule,
+    NgxChartsModule
   ],
   exports: [
     UulalaComponentsComponent,
@@ -82,8 +86,9 @@ import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.compon
     FilterMovs,
     SystemBalance,
     ValueEditorInputDirective,
-    UulUploadFileComponent
-
+    UulUploadFileComponent,
+    LineChartComponent,
+    NgxChartsModule
   ],
   providers: [
     LocalService,
@@ -91,6 +96,7 @@ import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.compon
     GraphService,
     UiService,
     ParametersService,
+    UtilsChartService,
     Apollo
   ]
 })

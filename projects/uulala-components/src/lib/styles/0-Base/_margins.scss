@@ -7,6 +7,14 @@
   @extend %ml-5;
 }
 
+%ml-10 {
+  margin-left: 10px !important;
+}
+
+.ml-10 {
+  @extend %ml-10;
+}
+
 %ml-15 {
   margin-left: 15px !important;
 }
@@ -24,6 +32,13 @@
 }
 
 /*  Margin right  */
+%mr-10 {
+  margin-right: 10px !important;
+}
+
+.mr-10 {
+  @extend %mr-10;
+}
 
 %mr-15 {
   margin-right: 15px !important;
