@@ -28,6 +28,7 @@ import { FilterMovs } from './pipes/filter-movs.pipe';
 import { SystemBalance } from './pipes/balance.pipe';
 import { ValueEditorInputDirective } from './directives';
 import { ParametersService } from './services';
+import { FilterCryptoPipe } from './pipes/filter-crypto.pipe';
 import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.component';
 import { UtilsChartService } from './services/utilsChart.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -56,9 +57,11 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     UulSearchComponent,
     FilterMovs,
     SystemBalance,
+
     ValueEditorInputDirective,
     UulUploadFileComponent,
-    LineChartComponent
+    LineChartComponent,
+    FilterCryptoPipe
   ],
   imports: [
     CommonModule,
@@ -88,7 +91,8 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     ValueEditorInputDirective,
     UulUploadFileComponent,
     LineChartComponent,
-    NgxChartsModule
+    NgxChartsModule,
+    FilterCryptoPipe
   ],
   providers: [
     LocalService,
