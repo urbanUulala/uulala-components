@@ -33,6 +33,7 @@ import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.compon
 import { UtilsChartService } from './services/utilsChart.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { LineChartComponent } from './line-chart/line-chart.component';
+import { UulTransactionsComponent } from './uul-transactions/uul-transactions.component';
 
 
 
@@ -61,7 +62,8 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     ValueEditorInputDirective,
     UulUploadFileComponent,
     LineChartComponent,
-    FilterCryptoPipe
+    FilterCryptoPipe,
+    UulTransactionsComponent
   ],
   imports: [
     CommonModule,
@@ -92,7 +94,8 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     UulUploadFileComponent,
     LineChartComponent,
     NgxChartsModule,
-    FilterCryptoPipe
+    FilterCryptoPipe,
+    UulTransactionsComponent
   ],
   providers: [
     LocalService,

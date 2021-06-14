@@ -1,0 +1,52 @@
+<div class="normal-text fs-11 h-30">
+    {{ config.tittle}}
+</div>
+<div class="movements">
+    <div class="grid-table border-radius border-container">
+        <div class="grid-row-header">
+            <div *ngFor="let header of config.headers" [ngStyle]="{'width': header.width + 'px'}">{{ header.text }}</div>
+        </div>
+
+        <ng-container *ngIf="config.data.length === 0">
+            <div class="grid-rows">
+                <div class="empty center mt-30">
+                    <div>
+                        <div class="disabled-text fs-24">
+                            {{ config.empty.tittle }}.
+                        </div>
+                        <div class="disabled-text fs-16 mt-20">
+                            {{ config.empty.description  }}.
+                        </div>
+                    </div>
+                    <div class="center">
+                        <img src="https://uulala-public.s3.us-west-2.amazonaws.com/Payroll/images/empty.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="config.data.length !== 0">
+            <ng-scrollbar #metadataGridScroll track="vertical" [visibility]="'hover'" [appearance]="'compact'">
+                <div class="grid-rows">
+                    <div class="grid-row normal-text fs-11" *ngFor="let data of config.data ">
+                        <div *ngFor="let header of config.headers; let idx = index" [ngStyle]="{'width': header.width + 'px'}">
+
+                            <ng-container [ngSwitch]="header.typeColumn">
+                                <ng-container *ngSwitchCase="'string'">
+                                    {{ data[idx] }}
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'date'">
+                                    {{ data[idx] | date }}
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'amount'">
+                                    {{ data[idx] | currency }}
+                                </ng-container>
+                            </ng-container>
+                            
+                        </div>
+                    </div>
+                </div>
+            </ng-scrollbar>
+        </ng-container>
+    </div>
+</div>
