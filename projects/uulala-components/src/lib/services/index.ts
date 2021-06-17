@@ -6,5 +6,4 @@ export * from './metadata.service';
 export * from './modal.services';
 export * from './rest.service';
 export * from './parameters.service';
-export * from './utilsChart.service';
-
+export * from './contact.service';
