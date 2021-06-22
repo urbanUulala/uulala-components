@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UiService {
-  private css_theme_class$ = new BehaviorSubject('default_uulala_theme');
+  private css_theme_class$ = new BehaviorSubject(null);
 
   constructor(
 

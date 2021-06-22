@@ -34,6 +34,7 @@ import { UtilsChartService } from './services/utilsChart.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { UulTransactionsComponent } from './uul-transactions/uul-transactions.component';
+import { IconImageComponent } from './icon-image/icon-image.component';
 
 
 
@@ -63,7 +64,8 @@ import { UulTransactionsComponent } from './uul-transactions/uul-transactions.co
     UulUploadFileComponent,
     LineChartComponent,
     FilterCryptoPipe,
-    UulTransactionsComponent
+    UulTransactionsComponent,
+    IconImageComponent
   ],
   imports: [
     CommonModule,
@@ -95,7 +97,8 @@ import { UulTransactionsComponent } from './uul-transactions/uul-transactions.co
     LineChartComponent,
     NgxChartsModule,
     FilterCryptoPipe,
-    UulTransactionsComponent
+    UulTransactionsComponent,
+    IconImageComponent
   ],
   providers: [
     LocalService,

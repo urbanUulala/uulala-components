@@ -385,7 +385,8 @@
   position: relative;
 }
 
-%exit-button > img {
+%exit-button > img,
+%exit-button > .button-image {
   /*  position  */
   position: absolute;
   left: 20px;
@@ -448,6 +449,23 @@
 
   /*  shape  */
   width: 14px;
+}
+
+
+%button-menu > img,
+%button-menu > .button-image {
+  /*  position  */
+  position: absolute;
+  left: 15px;
+  top: 13px;
+
+  /*  shape  */
+  width: 14px;
+}
+
+.button-image {
+  width: 13px;
+  height: 13px;
 }
 
 %button-resposive-menu  {
@@ -556,7 +574,7 @@
 
 %profile-buttons:focus {
   @extend %white-text;
-  background-color: var(--color-prof-text-blue, #5867db);
+  background-color: var(--color-highlighted, #5867db);
 }
 
 %avatar-button {

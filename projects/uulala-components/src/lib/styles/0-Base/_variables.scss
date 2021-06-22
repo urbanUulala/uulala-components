@@ -132,3 +132,46 @@ $button-radius: 2px;
   --color-success-control:#{$color-success-control};
 
 }
+
+.brand_theme_lurra {
+  --color-back-menu: #{$color-back-menu};
+  --color-content-hover: #{$color-content-hover};
+  --color-profile-menu: #{$color-profile-menu};
+  --color-borders: #{$color-borders};
+  --color-block-shadow: #{$color-block-shadow};
+  --color-text: #{$color-text};
+  --color-highlighted: #E86447;
+  --color-success: #{$color-success};
+  --color-error: #{$color-error};
+  --color-warning: #{$color-warning};
+  --color-white: #{$color-white};
+  --color-dark-purple: #{$color-dark-purple};
+  --color-next-button-welcome: #{$color-next-button-welcome};
+  /* PALETA GENERAL */
+
+  /* PALETA WELCOME */
+  --color-bg-step: #{$color-bg-step};
+  --color-bg-circle-yellow: #{$color-bg-circle-yellow};
+  --color-btn-rounded-back: #{$color-btn-rounded-back};
+  --color-btn-sing-up: #{$color-btn-sing-up};
+
+  /* PALETA PROFILE */
+  --color-prof-text-blue: #{$color-prof-text-blue};
+  --color-prof-text-highlighted: #{$color-prof-text-highlighted};
+  --color-prof-menu-text-highlighted: #{$color-prof-menu-text-highlighted};
+  --color-prof-menu-button-highlighted: #{$color-prof-menu-button-highlighted};
+  --color-button-complete-prof: #{$color-button-complete-prof};
+
+  /* PALETA Legal */
+  --color-legal-text-normal:#{$color-legal-text-normal};
+
+  /* PALETA UPLOAD FILES */
+
+  --color-purple-1:#{$color-purple-1};
+  --color-purple-2:#{$color-purple-2};
+  --color-empty-1:#{$color-empty-1};
+
+  /*  PALETA COMPONENTS  */
+  --color-success-control:#{$color-success-control};
+
+}

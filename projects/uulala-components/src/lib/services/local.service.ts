@@ -217,6 +217,11 @@ export class LocalService {
     return url;
   }
 
+  getDeviceId() {
+    let device_id: string = this.getValue('device_id');
+    return device_id.replace('/', 'diagonal');
+  }
+
   getSiteKey(site: UulalaSites) {
     return systemKeyRedirects[site];
   }
