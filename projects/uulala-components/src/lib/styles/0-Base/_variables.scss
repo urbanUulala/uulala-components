@@ -47,14 +47,14 @@ $color-success-control: #16c39d;
 $border-radius: 2px;
 $button-radius: 2px;
 
-.default_uulala_theme {
+%default_uulala_theme {
   --color-back-menu: #{$color-back-menu};
   --color-content-hover: #{$color-content-hover};
   --color-profile-menu: #{$color-profile-menu};
   --color-borders: #{$color-borders};
   --color-block-shadow: #{$color-block-shadow};
   --color-text: #{$color-text};
-  --color-highlighted: #{$color-highlighted};
+  
   --color-success: #{$color-success};
   --color-error: #{$color-error};
   --color-warning: #{$color-warning};
@@ -90,88 +90,18 @@ $button-radius: 2px;
 
 }
 
-.brand_theme_1 {
-  --color-back-menu: #{$color-next-button-welcome};
-  --color-content-hover: #{$color-dark-purple};
-  --color-profile-menu: #{$color-white};
-  --color-borders: #{$color-warning};
-  --color-block-shadow: #{$color-error};
-  --color-text: #{$color-success};
-  --color-highlighted: #{$color-block-shadow};
-  --color-success: #{$color-text};
-  --color-error: #{$color-block-shadow};
-  --color-warning: #{$color-borders};
-  --color-white: #{$color-profile-menu};
-  --color-dark-purple: #{$color-content-hover};
-  --color-next-button-welcome: #{$color-back-menu};
-  /* PALETA GENERAL */
-
-  /* PALETA WELCOME */
-  --color-bg-step:  #{$color-btn-sing-up};
-  --color-bg-circle-yellow: #{$color-btn-rounded-back};
-  --color-btn-rounded-back: #{$color-bg-circle-yellow};
-  --color-btn-sing-up: #{$color-bg-step};
-
-  /* PALETA PROFILE */
-  --color-prof-text-blue: #{$color-button-complete-prof};
-  --color-prof-text-highlighted: #{$color-prof-menu-button-highlighted};
-  --color-prof-menu-text-highlighted: #{$color-prof-menu-text-highlighted};
-  --color-prof-menu-button-highlighted: #{$color-prof-text-highlighted};
-  --color-button-complete-prof: #{$color-prof-text-blue};
-
-  /* PALETA Legal */
-  --color-legal-text-normal:#{$color-legal-text-normal};
-
-  /* PALETA UPLOAD FILES */
-
-  --color-purple-1: #{$color-empty-1};
-  --color-purple-2:#{$color-purple-2};
-  --color-empty-1: #{$color-purple-1};
-
-  /*  PALETA COMPONENTS  */
-  --color-success-control:#{$color-success-control};
-
+.default_uulala_theme {
+  @extend %default_uulala_theme;
+  --color-highlighted: #{$color-highlighted};
 }
 
 .brand_theme_lurra {
-  --color-back-menu: #{$color-back-menu};
-  --color-content-hover: #{$color-content-hover};
-  --color-profile-menu: #{$color-profile-menu};
-  --color-borders: #{$color-borders};
-  --color-block-shadow: #{$color-block-shadow};
-  --color-text: #{$color-text};
+  @extend %default_uulala_theme;
   --color-highlighted: #E86447;
-  --color-success: #{$color-success};
-  --color-error: #{$color-error};
-  --color-warning: #{$color-warning};
-  --color-white: #{$color-white};
-  --color-dark-purple: #{$color-dark-purple};
-  --color-next-button-welcome: #{$color-next-button-welcome};
-  /* PALETA GENERAL */
+ 
+}
 
-  /* PALETA WELCOME */
-  --color-bg-step: #{$color-bg-step};
-  --color-bg-circle-yellow: #{$color-bg-circle-yellow};
-  --color-btn-rounded-back: #{$color-btn-rounded-back};
-  --color-btn-sing-up: #{$color-btn-sing-up};
-
-  /* PALETA PROFILE */
-  --color-prof-text-blue: #{$color-prof-text-blue};
-  --color-prof-text-highlighted: #{$color-prof-text-highlighted};
-  --color-prof-menu-text-highlighted: #{$color-prof-menu-text-highlighted};
-  --color-prof-menu-button-highlighted: #{$color-prof-menu-button-highlighted};
-  --color-button-complete-prof: #{$color-button-complete-prof};
-
-  /* PALETA Legal */
-  --color-legal-text-normal:#{$color-legal-text-normal};
-
-  /* PALETA UPLOAD FILES */
-
-  --color-purple-1:#{$color-purple-1};
-  --color-purple-2:#{$color-purple-2};
-  --color-empty-1:#{$color-empty-1};
-
-  /*  PALETA COMPONENTS  */
-  --color-success-control:#{$color-success-control};
-
+.brand_theme_novatech {
+  @extend %default_uulala_theme;
+  --color-highlighted: #00687F;
 }

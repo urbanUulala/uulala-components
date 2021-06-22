@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class IconImageComponent implements OnInit {
   @Input() inputImage:string;
+  @Input() widthSvg: number = 13;
 
   constructor() { }
 
