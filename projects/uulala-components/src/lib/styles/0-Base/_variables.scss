@@ -105,3 +105,8 @@ $button-radius: 2px;
   @extend %default_uulala_theme;
   --color-highlighted: #00687F;
 }
+
+.brand_theme_digital_profit {
+  @extend %default_uulala_theme;
+  --color-highlighted: #{$color-highlighted};
+}

@@ -40,6 +40,15 @@ export class ArrayTools {
 
     }
 
+    static orderArrayDateFieldAny(data: any[], field: string, type: orderArrayTypes) {
+        let resultArray: any[];
+        type === 'asc' ? 
+            resultArray = data.slice().sort((a, b) => new Date(a[field]).getTime() - new Date(b[field]).getTime()) :
+            resultArray = data.slice().sort((a, b) => new Date(b[field]).getTime() - new Date(a[field]).getTime());
+
+        return resultArray;
+    }
+
     static orderArrayDateField<T>(data: T[], field: string, type: orderArrayTypes) {
         let resultArray: T[];
         type === 'asc' ? 
