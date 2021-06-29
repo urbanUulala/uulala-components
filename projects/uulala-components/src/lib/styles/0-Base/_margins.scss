@@ -48,6 +48,14 @@
   @extend %mr-15;
 }
 
+%mr-20 {
+  margin-right: 20px !important;
+}
+
+.mr-20 {
+  @extend %mr-20;
+}
+
 %mr-100 {
   margin-right: 100px !important;
 }

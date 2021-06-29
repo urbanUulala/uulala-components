@@ -560,10 +560,11 @@
 
 
 %profile-buttons{
-  background-color: var(--color-content-hover, #edf1f7);
-  color: var(--color-prof-menu-button-highlighted, #5a5e86);
-  @extend %border-radius-four;
+  background-color: var(--color-white, #edf1f7);
+  color: var(--color-text, #5a5e86);
+  @extend %border-radius;
   @extend %clickeable;
+  border: 1px solid var(--color-text);
 
   min-height: 26px;
 

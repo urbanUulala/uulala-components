@@ -98,15 +98,39 @@ $button-radius: 2px;
 .brand_theme_lurra {
   @extend %default_uulala_theme;
   --color-highlighted: #E86447;
- 
+  --color-content-hover: #F0F0F0;
+  --color-back-menu: #F0F0F0;
 }
 
 .brand_theme_novatech {
   @extend %default_uulala_theme;
   --color-highlighted: #00687F;
+  --color-content-hover: #E5E9F0;
+  --color-back-menu: #E5E9F0;
 }
 
 .brand_theme_digital_profit {
   @extend %default_uulala_theme;
-  --color-highlighted: #{$color-highlighted};
+  --color-highlighted: #5867DB;
+  --color-content-hover: #F2F8FD;
+  --color-back-menu: #E1E8EE;
 }
+
+
+.brand_theme_auto_insurance {
+  @extend %default_uulala_theme;
+  --color-highlighted: #5867DB;
+  --color-content-hover: #EBEEF5;
+  --color-back-menu: #EBEEF5;
+}
+
+.brand_theme_iot_basics {
+  @extend %default_uulala_theme;
+  --color-highlighted: #3298DB;
+  --color-content-hover: #F5F5F5;
+  --color-back-menu: #E3E7EC;
+}
+
+
+
+

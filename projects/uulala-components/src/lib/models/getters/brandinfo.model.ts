@@ -8,4 +8,6 @@ export interface BrandInfoModel {
     address: string;
     iconCardSend: string;
     iconCardBus: string;
+    imgCompanyLoginHeight: number,
+    imgCompanyDashboardHeight: number,
 }

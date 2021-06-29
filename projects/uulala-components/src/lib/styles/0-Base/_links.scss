@@ -36,6 +36,25 @@
   @extend %link-white;
 }
 
+
+%link-base-dark {
+  @extend %normal-text;
+  @extend %fs-11;
+  @extend %clickeable;
+  
+
+  text-decoration: underline;
+}
+
+%link-base-dark:hover {
+  @extend %highlighted-text;
+  text-decoration: none;
+}
+
+.link-base-dark {
+  @extend %link-base-dark;
+}
+
 %link-disabled {
   @extend %fs-11;
   cursor: not-allowed;
