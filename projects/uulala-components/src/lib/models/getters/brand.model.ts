@@ -4,4 +4,5 @@ export interface BrandModel {
     id: string;
     name: string;
     brandeo: BrandInfoModel
+    totalCards: number;
 }
