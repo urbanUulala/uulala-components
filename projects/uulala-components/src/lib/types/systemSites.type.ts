@@ -1,2 +1,2 @@
-export type SystemSitesType = 'panel' | 'bank' | 'accounts' ;
+export type SystemSitesType = 'panel' | 'bank' | 'accounts' | 'batched' ;
 

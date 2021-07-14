@@ -22,7 +22,8 @@ export type UulalaSites =
   'bank' |
   'panel' |
   'wallet' |
-  'payroll';
+  'payroll' | 
+  'batched';
 
 
 export type UulalaEnvironments = 'dev' | 'test' | 'prod';
@@ -50,7 +51,8 @@ const uulalaUrlSitesProd = {
 
 const systemKeyRedirects = {
   payroll: '96D0205A001056DEA02F06B11533F4AA',
-  bank: 'bd5af1f610a12434c9128e4a399cef8a'
+  bank: 'bd5af1f610a12434c9128e4a399cef8a',
+  batched: 'D2F6520849A4F012D0AF6BBD2854B0C7'
 }
 const defaultLanguajeValues = {
   es: {
@@ -197,6 +199,8 @@ export class LocalService {
         return 'panel'
         case systemKeyRedirects.bank:
         return 'bank'
+        case systemKeyRedirects.batched:
+        return 'batched'
     }
    
   }
