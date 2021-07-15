@@ -131,6 +131,16 @@ $button-radius: 2px;
   --color-back-menu: #E3E7EC;
 }
 
+.brand_theme_batched {
+  @extend %default_uulala_theme;
+  --color-content-hover: #161B30;
+  --color-borders: #6785FF;
+
+  --color-text: white;
+  --color-highlighted: #00A9FF;
+  
+}
+
 
 
 
