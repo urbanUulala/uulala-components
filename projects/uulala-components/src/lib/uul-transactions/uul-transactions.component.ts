@@ -9,6 +9,9 @@ import { TransactionsConfig } from '../models/config/transactionsConfig.model';
 export class UulTransactionsComponent implements OnInit {
 
   @Input() config: TransactionsConfig; 
+  @Input() showBorder: boolean = true;
+  @Input() showTittle: boolean = true;
+  @Input() setHeigth:number;
 
   constructor() { }
 

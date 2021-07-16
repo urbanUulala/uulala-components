@@ -32,6 +32,14 @@
 }
 
 /*  Margin right  */
+%mr-5 {
+  margin-right: 5px !important;
+}
+
+.mr-5 {
+  @extend %mr-5;
+}
+
 %mr-10 {
   margin-right: 10px !important;
 }

@@ -1,8 +1,8 @@
-<div class="normal-text fs-11 h-30">
+<div class="normal-text fs-11 h-30" *ngIf="showTittle">
     {{ config.tittle}}
 </div>
-<div class="movements">
-    <div class="grid-table border-radius border-container">
+<div class="movements" >
+    <div  [ngClass]="{'grid-table': true, 'border-radius': true, 'border-container': showBorder}">
         <div class="grid-row-header">
             <div *ngFor="let header of config.headers" [ngStyle]="{'width': header.width + 'px'}">{{ header.text }}</div>
         </div>
@@ -11,7 +11,7 @@
             <div class="grid-rows">
                 <div class="empty center mt-30">
                     <div>
-                        <div class="disabled-text fs-24">
+                        <div class="disabled-text fs-24" >
                             {{ config.empty.tittle }}.
                         </div>
                         <div class="disabled-text fs-16 mt-20">
@@ -26,27 +26,29 @@
         </ng-container>
 
         <ng-container *ngIf="config.data.length !== 0">
-            <ng-scrollbar #metadataGridScroll track="vertical" [visibility]="'hover'" [appearance]="'compact'">
-                <div class="grid-rows">
-                    <div class="grid-row normal-text fs-11" *ngFor="let data of config.data ">
-                        <div *ngFor="let header of config.headers; let idx = index" [ngStyle]="{'width': header.width + 'px'}">
-
-                            <ng-container [ngSwitch]="header.typeColumn">
-                                <ng-container *ngSwitchCase="'string'">
-                                    {{ data[idx] }}
+            <div [ngStyle]="{'height': setHeigth + 'px'}">
+                <ng-scrollbar #metadataGridScroll track="vertical" [visibility]="'hover'" [appearance]="'compact'">
+                    <div class="grid-rows">
+                        <div class="grid-row normal-text fs-11" *ngFor="let data of config.data ">
+                            <div *ngFor="let header of config.headers; let idx = index" [ngStyle]="{'width': header.width + 'px'}">
+    
+                                <ng-container [ngSwitch]="header.typeColumn">
+                                    <ng-container *ngSwitchCase="'string'">
+                                        {{ data[idx] }}
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'date'">
+                                        {{ data[idx] | date }}
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'amount'">
+                                        {{ data[idx] | currency }}
+                                    </ng-container>
                                 </ng-container>
-                                <ng-container *ngSwitchCase="'date'">
-                                    {{ data[idx] | date }}
-                                </ng-container>
-                                <ng-container *ngSwitchCase="'amount'">
-                                    {{ data[idx] | currency }}
-                                </ng-container>
-                            </ng-container>
-                            
+                                
+                            </div>
                         </div>
                     </div>
-                </div>
-            </ng-scrollbar>
+                </ng-scrollbar>
+            </div>
         </ng-container>
     </div>
 </div>

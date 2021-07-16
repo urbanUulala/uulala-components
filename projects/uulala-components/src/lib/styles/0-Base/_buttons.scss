@@ -779,3 +779,121 @@
   right: 20px;
   bottom: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+/*** ----------------------- ***/
+/*   LINEAR BUTTON STRUCTURE   */
+/*** ----------------------- ***/
+
+%linear-button-structure {
+  @extend %button-radius;
+  @extend %fs-12;
+  @extend %fw-semibold;
+  
+  height: 26px;
+  padding-left: 30px;
+  padding-right: 30px;
+  opacity: 0.85;
+  background-color: var(--color-content-hover);
+}
+
+/*** ------------------ ***/
+/*  NORMAL LINEAR BUTTON  */
+/*** ------------------ ***/
+
+%normal-linear-button {
+  @extend %linear-button-structure;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+}
+
+%normal-linear-button:disabled {
+  opacity: 0.5;
+}
+
+%normal-linear-button:not(:disabled) {
+  @extend %clickeable;
+}
+
+%normal-linear-button:not(:disabled):hover {
+  background-color: var(--color-text);
+  color: var(--color-white);
+  opacity: 1;
+}
+
+
+/*** ------------------ ***/
+/*  HIGHLIGHTED LINEAR BUTTON  */
+/*** ------------------ ***/
+
+%highlighted-linear-button {
+  @extend %linear-button-structure;
+  border: 1px solid var(--color-highlighted);
+  color: var(--color-highlighted);
+}
+
+%highlighted-linear-button:disabled {
+  opacity: 0.5;
+}
+
+%highlighted-linear-button:not(:disabled) {
+  @extend %clickeable;
+}
+
+%highlighted-linear-button:not(:disabled):hover {
+  background-color: var(--color-highlighted);
+  color: var(--color-white);
+  opacity: 1;
+}
+
+/*** ------------------ ***/
+/*  SUCCESS LINEAR BUTTON  */
+/*** ------------------ ***/
+
+%success-linear-button {
+  @extend %linear-button-structure;
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+}
+
+%success-linear-button:disabled {
+  opacity: 0.5;
+}
+
+%success-linear-button:not(:disabled) {
+  @extend %clickeable;
+}
+
+%success-linear-button:not(:disabled):hover {
+  background-color: var(--color-success);
+  color: var(--color-white);
+  opacity: 1;
+}
+
+
+
+
+/*** ------------------ ***/
+/*  EXPORT CLASSES INVERT */
+/*** ------------------ ***/
+
+.normal-linear-button {
+  @extend %normal-linear-button;
+}
+
+
+.highlighted-linear-button {
+  @extend %highlighted-linear-button;
+}
+
+.success-linear-button {
+  @extend %success-linear-button;
+}

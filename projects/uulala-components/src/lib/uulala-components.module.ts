@@ -35,6 +35,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { UulTransactionsComponent } from './uul-transactions/uul-transactions.component';
 import { IconImageComponent } from './icon-image/icon-image.component';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 
 
@@ -71,7 +72,8 @@ import { IconImageComponent } from './icon-image/icon-image.component';
     CommonModule,
     ReactiveFormsModule,
     GraphQLModule,
-    NgxChartsModule
+    NgxChartsModule,
+    NgScrollbarModule
   ],
   exports: [
     UulalaComponentsComponent,
@@ -98,7 +100,8 @@ import { IconImageComponent } from './icon-image/icon-image.component';
     NgxChartsModule,
     FilterCryptoPipe,
     UulTransactionsComponent,
-    IconImageComponent
+    IconImageComponent, 
+    NgScrollbarModule
   ],
   providers: [
     LocalService,
