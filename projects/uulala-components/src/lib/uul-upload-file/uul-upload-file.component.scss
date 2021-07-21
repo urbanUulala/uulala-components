@@ -8,7 +8,7 @@
 	@extend %fs-14;	
 	display: grid;
   grid-template-columns: 1fr 0fr 0fr;
-	background: #fff;
+	background: var(--color-white,#fff);
 	align-items: center;
   justify-content: center;
 	padding-left: 10px;

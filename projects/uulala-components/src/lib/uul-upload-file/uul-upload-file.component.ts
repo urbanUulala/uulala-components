@@ -20,8 +20,19 @@ export class UulUploadFileComponent implements OnInit {
   status:string = 'INVALID';
   nameLabel: string = '';
   maximSize : number = 2000000; // 2MB 
+  @Input() containerCss: string = '';
+  @Input() bgBtnCss: string = '';
+
   // assets
   inputImages:any = uulInputImg;
+  
+  containerStyles:any = {
+    'container__upload': true
+  }
+  buttonStyles:any = {
+    'file-input label': true
+  }
+  
 
   constructor(
     private messagesService: MessagesService
@@ -29,7 +40,12 @@ export class UulUploadFileComponent implements OnInit {
 
   ngOnInit(): void {
     this.nameLabel = this.label;
-   
+   this.loadStyles();
+  }
+
+  loadStyles() {
+    this.containerStyles[this.containerCss] = this.containerCss != '';
+    this.buttonStyles[this.bgBtnCss] = this.bgBtnCss != '';
   }
 
   uploadToServer(event) {

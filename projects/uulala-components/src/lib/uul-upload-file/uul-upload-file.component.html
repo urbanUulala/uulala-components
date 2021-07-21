@@ -1,4 +1,4 @@
-<div class="container__upload">
+<div [ngClass]="containerStyles" [ngStyle]="containerCss">
 	<!-- <input class="inputUpload" id="upload-file" type="text" placeholder={{label}} [formControl]="upload" >
 	<button class="buttonUpload w-120" (click)="uploadToServer($event)">
 		{{buttonLabel}}
@@ -6,8 +6,8 @@
 	<div class="inputUpload">{{label}}</div>
 	<img  *ngIf="status === 'VALID'"  [src]="inputImages.paloma" alt="">
   <img  *ngIf="status === 'INVALID'" [src]="inputImages.tache" alt="">
-	<div class="file-input w-120">
+	<div [ngClass]="buttonStyles" [ngStyle]="bgBtnCss"  class="w-120">
 		<input  type="file" id="fileIdFront" class="file" (change)="uploadToServer($event)">
-		<label for="fileIdFront">{{buttonLabel}}</label>
+		<label [ngStyle]="bgBtnCss" for="fileIdFront">{{buttonLabel}}</label>
 	</div> 
 </div>
