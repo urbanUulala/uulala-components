@@ -8,6 +8,7 @@ import { FormatCardTypes } from '../models/types';
 export class FormatCardPipe implements PipeTransform {
 
   transform(cardNumber: string, type:FormatCardTypes = 'all', separator:string = ' '): string {
+    if(!cardNumber) return '';
     
     switch (type) {
       case 'last-four-off':

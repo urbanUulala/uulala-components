@@ -11,5 +11,5 @@ export interface ClientAccountModel {
     groupId:string;
     currencyCode:string;
     balance: BalanceModel;
-    transactions: TransactionsModel;
+    transactions: TransactionsModel[];
 }

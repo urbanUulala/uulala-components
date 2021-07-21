@@ -13,7 +13,7 @@
     </ng-container>
 
     <ng-container *ngSwitchDefault>
-      <input [type]="type" [formControl]="control"  [ngClass]="inputStyles" [id]="config.id + '-input'">
+      <input [type]="type" [formControl]="control"  [ngClass]="inputStyles" [id]="config.id + '-input'" value-editor [typeCap]="capitalizeType">
     </ng-container>
 
   </ng-container>

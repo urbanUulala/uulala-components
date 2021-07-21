@@ -100,6 +100,80 @@
 
 
 
+/*** --------------------- ***/
+/*  BUTTON STRUCTURE INVERT  */
+/*** --------------------- ***/
+
+%button-structure-invert {
+  @extend %button-radius;
+  @extend %fs-12;
+  @extend %fw-semibold;
+  
+  height: 36px;
+  padding-left: 30px;
+  padding-right: 30px;
+  opacity: 0.85;
+  background-color: var(--color-white);
+}
+
+/*** ------------ ***/
+/*  DARK BUTTON INVERT  */
+/*** ------------ ***/
+
+%dark-button-invert {
+  @extend %button-structure-invert;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+}
+
+%dark-button-invert:disabled {
+  opacity: 0.5;
+}
+
+%dark-button-invert:not(:disabled) {
+  @extend %clickeable;
+}
+
+%dark-button-invert:not(:disabled):hover {
+  background-color: var(--color-text);
+  color: var(--color-white);
+  opacity: 1;
+}
+
+
+/*** ------------------ ***/
+/*  EXPORT CLASSES INVERT */
+/*** ------------------ ***/
+
+.dark-button-invert {
+  @extend %dark-button-invert;
+}
+
+
+
+
+
+%button-structure:disabled {
+  opacity: 0.5;
+}
+
+%button-structure:not(:disabled) {
+  @extend %clickeable;
+}
+
+%button-structure:not(:disabled):hover {
+  
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -311,7 +385,8 @@
   position: relative;
 }
 
-%exit-button > img {
+%exit-button > img,
+%exit-button > .button-image {
   /*  position  */
   position: absolute;
   left: 20px;
@@ -374,6 +449,23 @@
 
   /*  shape  */
   width: 14px;
+}
+
+
+%button-menu > img,
+%button-menu > .button-image {
+  /*  position  */
+  position: absolute;
+  left: 15px;
+  top: 13px;
+
+  /*  shape  */
+  width: 14px;
+}
+
+.button-image {
+  width: 13px;
+  height: 13px;
 }
 
 %button-resposive-menu  {
@@ -468,10 +560,11 @@
 
 
 %profile-buttons{
-  background-color: var(--color-content-hover, #edf1f7);
-  color: var(--color-prof-menu-button-highlighted, #5a5e86);
-  @extend %border-radius-four;
+  background-color: var(--color-white, #edf1f7);
+  color: var(--color-text, #5a5e86);
+  @extend %border-radius;
   @extend %clickeable;
+  border: 1px solid var(--color-text);
 
   min-height: 26px;
 
@@ -482,7 +575,7 @@
 
 %profile-buttons:focus {
   @extend %white-text;
-  background-color: var(--color-prof-text-blue, #5867db);
+  background-color: var(--color-highlighted, #5867db);
 }
 
 %avatar-button {
@@ -685,4 +778,122 @@
   position: absolute;
   right: 20px;
   bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/*** ----------------------- ***/
+/*   LINEAR BUTTON STRUCTURE   */
+/*** ----------------------- ***/
+
+%linear-button-structure {
+  @extend %button-radius;
+  @extend %fs-12;
+  @extend %fw-semibold;
+  
+  height: 26px;
+  padding-left: 30px;
+  padding-right: 30px;
+  opacity: 0.85;
+  background-color: var(--color-content-hover);
+}
+
+/*** ------------------ ***/
+/*  NORMAL LINEAR BUTTON  */
+/*** ------------------ ***/
+
+%normal-linear-button {
+  @extend %linear-button-structure;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+}
+
+%normal-linear-button:disabled {
+  opacity: 0.5;
+}
+
+%normal-linear-button:not(:disabled) {
+  @extend %clickeable;
+}
+
+%normal-linear-button:not(:disabled):hover {
+  background-color: var(--color-text);
+  color: var(--color-white);
+  opacity: 1;
+}
+
+
+/*** ------------------ ***/
+/*  HIGHLIGHTED LINEAR BUTTON  */
+/*** ------------------ ***/
+
+%highlighted-linear-button {
+  @extend %linear-button-structure;
+  border: 1px solid var(--color-highlighted);
+  color: var(--color-highlighted);
+}
+
+%highlighted-linear-button:disabled {
+  opacity: 0.5;
+}
+
+%highlighted-linear-button:not(:disabled) {
+  @extend %clickeable;
+}
+
+%highlighted-linear-button:not(:disabled):hover {
+  background-color: var(--color-highlighted);
+  color: var(--color-white);
+  opacity: 1;
+}
+
+/*** ------------------ ***/
+/*  SUCCESS LINEAR BUTTON  */
+/*** ------------------ ***/
+
+%success-linear-button {
+  @extend %linear-button-structure;
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+}
+
+%success-linear-button:disabled {
+  opacity: 0.5;
+}
+
+%success-linear-button:not(:disabled) {
+  @extend %clickeable;
+}
+
+%success-linear-button:not(:disabled):hover {
+  background-color: var(--color-success);
+  color: var(--color-white);
+  opacity: 1;
+}
+
+
+
+
+/*** ------------------ ***/
+/*  EXPORT CLASSES INVERT */
+/*** ------------------ ***/
+
+.normal-linear-button {
+  @extend %normal-linear-button;
+}
+
+
+.highlighted-linear-button {
+  @extend %highlighted-linear-button;
+}
+
+.success-linear-button {
+  @extend %success-linear-button;
 }

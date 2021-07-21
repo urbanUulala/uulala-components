@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SystemLanguajes } from '../types/system.languages';
+import { SystemSitesType } from '../types/systemSites.type';
 
 export type LocalStorageKeys =
   'token' |
@@ -21,7 +22,8 @@ export type UulalaSites =
   'bank' |
   'panel' |
   'wallet' |
-  'payroll';
+  'payroll' | 
+  'batched';
 
 
 export type UulalaEnvironments = 'dev' | 'test' | 'prod';
@@ -49,7 +51,8 @@ const uulalaUrlSitesProd = {
 
 const systemKeyRedirects = {
   payroll: '96D0205A001056DEA02F06B11533F4AA',
-  bank: 'bd5af1f610a12434c9128e4a399cef8a'
+  bank: 'bd5af1f610a12434c9128e4a399cef8a',
+  batched: 'D2F6520849A4F012D0AF6BBD2854B0C7'
 }
 const defaultLanguajeValues = {
   es: {
@@ -190,6 +193,18 @@ export class LocalService {
     }
   }
 
+  getSystemByKey(key:string) : SystemSitesType {
+    switch (key) {
+      case systemKeyRedirects.payroll:
+        return 'panel'
+        case systemKeyRedirects.bank:
+        return 'bank'
+        case systemKeyRedirects.batched:
+        return 'batched'
+    }
+   
+  }
+
   getPayrollSesionUrl(environment: UulalaEnvironments) {
     let device_id: string = this.getValue('device_id');
     device_id = device_id.replace('/', 'diagonal');
@@ -204,6 +219,11 @@ export class LocalService {
 
     let url: string = `${this.getUrlSite('bank', environment)}/${this.getValue('token')}/${this.getApiLanguaje()}/${device_id}`;
     return url;
+  }
+
+  getDeviceId() {
+    let device_id: string = this.getValue('device_id');
+    return device_id.replace('/', 'diagonal');
   }
 
   getSiteKey(site: UulalaSites) {

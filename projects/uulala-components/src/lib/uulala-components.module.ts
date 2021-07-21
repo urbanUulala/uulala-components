@@ -26,8 +26,17 @@ import { FormatCardDatePipe } from './pipes/format-card-date.pipe';
 import { UulSearchComponent } from './uul-search/uul-search.component';
 import { FilterMovs } from './pipes/filter-movs.pipe'; 
 import { SystemBalance } from './pipes/balance.pipe';
+import { ValueEditorInputDirective } from './directives';
+import { ParametersService } from './services';
 import { FilterCryptoPipe } from './pipes/filter-crypto.pipe';
 import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.component';
+import { UtilsChartService } from './services/utilsChart.service';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { UulTransactionsComponent } from './uul-transactions/uul-transactions.component';
+import { IconImageComponent } from './icon-image/icon-image.component';
+import { NgScrollbarModule } from 'ngx-scrollbar';
+
 
 
 
@@ -51,13 +60,20 @@ import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.compon
     UulSearchComponent,
     FilterMovs,
     SystemBalance,
+
+    ValueEditorInputDirective,
     UulUploadFileComponent,
-    FilterCryptoPipe
+    LineChartComponent,
+    FilterCryptoPipe,
+    UulTransactionsComponent,
+    IconImageComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    GraphQLModule
+    GraphQLModule,
+    NgxChartsModule,
+    NgScrollbarModule
   ],
   exports: [
     UulalaComponentsComponent,
@@ -78,14 +94,22 @@ import { UulUploadFileComponent } from './uul-upload-file/uul-upload-file.compon
     UulSearchComponent,
     FilterMovs,
     SystemBalance,
+    ValueEditorInputDirective,
     UulUploadFileComponent,
-    FilterCryptoPipe
+    LineChartComponent,
+    NgxChartsModule,
+    FilterCryptoPipe,
+    UulTransactionsComponent,
+    IconImageComponent, 
+    NgScrollbarModule
   ],
   providers: [
     LocalService,
     MessagesService,
     GraphService,
     UiService,
+    ParametersService,
+    UtilsChartService,
     Apollo
   ]
 })

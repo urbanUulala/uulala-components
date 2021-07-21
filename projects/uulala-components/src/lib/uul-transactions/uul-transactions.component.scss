@@ -1,0 +1,13 @@
+@import '../styles/0-Base/base-dir';
+@import '../styles/2-Modules/modules-dir';
+
+
+.movements {
+    height: calc(100% - 30px);
+}
+
+.empty {
+    display: grid;
+    grid-template-columns: 330px 200px;
+    grid-template-rows: 1fr;
+}

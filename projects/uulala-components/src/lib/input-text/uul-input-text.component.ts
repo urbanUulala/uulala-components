@@ -7,6 +7,8 @@ import { ControlTextTypes } from '../models/types';
 import { InputControlTextConfig } from '../models/configurations';
 import { Subscription } from 'rxjs';
 import { uulInputImg } from '../assets/uul-input.img';
+import { CapitalizeTypes } from '../types/capitalize.type';
+
 
 
 
@@ -31,6 +33,7 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() containerCss: string = '';
   @Input() inputCss: string = '';
   @Input() labelCss: string = '';
+  @Input() capitalizeType: CapitalizeTypes = 'none';
 
   //local variables
   showPassword: boolean = false;
@@ -66,14 +69,21 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+  }
 
   ngAfterViewInit() {
     this.loadStyles();
     this.validateContent();
     this.loadElements();
-    this.value$ = this.control.valueChanges.subscribe(() => this.validateContent());
-    this.status$ = this.control.statusChanges.subscribe(result => this.status = result);
+    this.value$ = this.control.valueChanges.subscribe(val => {
+      this.validateContent();
+      
+    });
+    this.status$ = this.control.statusChanges.subscribe(result => {
+      console.log('text status', result);
+      this.status = result;
+    });
   }
 
   ngOnDestroy() {
@@ -100,10 +110,12 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
   validateContent() {
     this.labelStyles['control-label-focus'] = this.control.value != '';
     this.labelStyles['control-label'] = this.control.value == '';
-    setTimeout(() => {
-      if (this.control.value != '') this.status = this.control.status;
-      else this.status = '';
-    }, 100);
-  }
 
+    setTimeout(() => {
+      this.status = this.control.status;
+      // else this.status = '';
+    }, 100);
+    
+  }
+  
 }

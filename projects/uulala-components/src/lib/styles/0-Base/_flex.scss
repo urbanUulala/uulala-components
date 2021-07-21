@@ -6,8 +6,34 @@
   justify-content: center;
 }
 
+
+
 .center {
   @extend %center;
+}
+
+
+
+%center-ac-je {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+
+.center-ac-je {
+  @extend %center-ac-je;
+}
+
+%center-ac {
+  display: flex;
+  align-items: center;
+
+}
+
+.center-ac {
+  @extend %center-ac;
 }
 
 
