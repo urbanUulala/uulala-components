@@ -15,7 +15,8 @@ export type LocalStorageKeys =
   'session' |
   'blocked' |
   'society' |
-  'sessionBarStatus';
+  'sessionBarStatus' |
+  'reference';
 
 
 export type UulalaSites =
@@ -82,6 +83,7 @@ const keyValues = {
   code: 'T00002',
   phone: 'T00003',
   session: 'T00004',
+  reference: 'T00005'
 
 }
 

@@ -97,7 +97,7 @@
 
 .control-container > .control-label-select {
   /*  extends  */
-  @extend %normal-text;
+  @extend %highlighted-text;
   @extend %fs-12;
 
   /*  position  */
@@ -204,7 +204,7 @@
   @extend %center;
   @extend %fw-600;
   /*  color  */
-  background-color: $color-content-hover;
+  background-color: var(--color-content-hover);
   color: var(--color-text, #43465d);
 
   /*  shape  */

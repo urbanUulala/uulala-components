@@ -42,10 +42,12 @@ export class UulSelectComponent implements OnInit, OnDestroy {
     'control-container': true
   }
   inputStyles:any = {
-    'control-select': true
+    'control-select': true,
+    'normal-text': true
   }
   labelStyles:any = {
-    'control-label-select': true
+    'control-label-select': true,
+    'highlighted-text': true
   }
   constructor() { }
 

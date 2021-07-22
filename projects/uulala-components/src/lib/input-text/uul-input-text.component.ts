@@ -57,7 +57,8 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
     'control-container': true
   }
   inputStyles: any = {
-    'control-input': true
+    'control-input': true,
+    'normal-text': true
   }
   labelStyles: any = {
     'control-label': true,

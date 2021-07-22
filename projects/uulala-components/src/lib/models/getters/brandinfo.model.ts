@@ -1,3 +1,5 @@
+import { LoginConfigBrand } from "./loginbrand.model";
+import { RegisterConfigBrand } from "./registerbrand.model";
 export interface BrandInfoModel {
     cssTheme: string;
     imgCompany: string;
@@ -11,4 +13,7 @@ export interface BrandInfoModel {
     imgCompanyLoginHeight: number;
     imgCompanyDashboardHeight: number;
     requestSiteUrl?: string;
+    showAnimatedBackground?: boolean;
+    login?: LoginConfigBrand;
+    register?: RegisterConfigBrand;
 }

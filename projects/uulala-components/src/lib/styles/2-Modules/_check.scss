@@ -81,5 +81,5 @@
 
 
 .check-style {
-  @include css-checkbox( 20px, $selectedColor: var(--color-success, #23c9d3)-control);
+  @include css-checkbox( 20px, $selectedColor: var(--color-success, #23c9d3));
 }

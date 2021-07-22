@@ -182,3 +182,12 @@
   @extend %mb-25;
 }
 
+%mb-30 {
+  margin-bottom: 30px !important;
+}
+
+.mb-30 {
+  @extend %mb-30;
+}
+
+

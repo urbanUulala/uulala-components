@@ -10,6 +10,6 @@
 <div class="control-container bwc-highlighted pos-r" *ngIf="type === 'session'">
   <label class="control-label-select white-text">{{ label }}</label>
   <select class="control-select white-text" [formControl]="control">
-    <option class="normal-text"  *ngFor="let item of values" value="{{ item.value }}">{{ item.description }}</option>
+    <option class="normal-text bwc-content-hover"  *ngFor="let item of values" value="{{ item.value }}">{{ item.description }}</option>
   </select>
 </div>
