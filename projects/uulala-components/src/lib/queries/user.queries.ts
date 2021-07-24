@@ -341,5 +341,60 @@ export const userQueries = {
     setFile(token:$token,fileName:$fileName,file64:$file64)
   }`,
   
+  GET_USER_BATCHED: gql`
+  query($token:String!,$field:String!,$id:String!){
+    getUsersByField(token:$token,field:$field,id:$id)
+    {
+        id
+        email
+        phoneNumber
+        lada
+        usersProfile
+        {
+            userID
+            id
+            status
+            name
+            accountId
+            roleId
+            accounts
+            {
+                id
+                term
+                status
+                firstName
+                avatarImage
+                lastName
+                secondLastName
+                phoneNumber
+                middleName
+                email
+                clientId
+                currency
+                gender
+                alias
+                birthday
+                nationalId
+                otherNationalId
+                countryCode
+                externalId
+                pin
+                customerId
+                isComplete
+            }
 
+        },
+        licenses {
+          id
+          license
+          levelLicense
+          cost
+          userId
+          createdDate
+          assignedDate
+          status
+        }
+    }
+  }
+  `
 }

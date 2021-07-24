@@ -1,4 +1,5 @@
 
+import { LicencesModel } from './licences.model';
 import { ClientModel } from './client.model';
 import { ProfileModel } from './profile.model';
 
@@ -9,4 +10,5 @@ export interface UserModel {
   lada: string;
   usersProfile: ProfileModel;
   clients: ClientModel;
+  licenses: LicencesModel[];
 }
