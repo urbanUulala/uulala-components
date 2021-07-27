@@ -51,6 +51,19 @@ const dropdownQueries = {
     }
   }
   `,
+  GET_CRYPTO_CURRENCY: gql`
+  query ($token:String!,$filter:String!)
+	{  
+		getCryptoCurrency(token:$token,filter:$filter)
+		{
+				id
+				currency
+				name
+				icon
+				status			        
+		}
+	}
+  `,
 }
 
 @Injectable({
@@ -78,6 +91,17 @@ export class DropdownService {
   getCountries() {
     return this.graphService.execQuery(
       dropdownQueries.GET_COUNTRIES, {}
+    )
+  }
+
+  getCryptoCurrency() {
+    const token = this.localService.getValue('token');
+    return this.graphService.execQuery(
+      dropdownQueries.GET_CRYPTO_CURRENCY, 
+      {
+        token,
+        filter:''
+      }
     )
   }
 
@@ -134,6 +158,23 @@ export class DropdownService {
           {
             value: country.englishName.toUpperCase(),
             description: `${country.englishName}`
+          }
+        )
+      });
+      return output;
+    }))
+
+  }
+
+  getCryptoCurrencyNames() {
+    return this.getCryptoCurrency()
+    .pipe(map( result => {
+      let output: SelectListItem[] = [];
+      (result.data['getCryptoCurrency']).forEach(currency => {
+        output.push(
+          {
+            value: `${currency.name}`,
+            description: `${currency.name}`
           }
         )
       });
