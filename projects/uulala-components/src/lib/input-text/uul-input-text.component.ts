@@ -26,6 +26,9 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() placeholder: string = '';
   @Input() label: string = '';
 
+  @Input() minValue: number = 0;
+  @Input() maxValue: number = 0;
+
   //reactive form
   @Input() control: AbstractControl = new FormControl();
 

@@ -11,7 +11,8 @@ export type InfoModuleUser =
   'physical_cards' |
   'virtual_cards' |
   'all_cards' |
-  'basic';
+  'basic' |
+  'batched';
 
 
 
@@ -83,6 +84,13 @@ export class UserService {
         return {
           ...result.data['getUsersByField'][0].usersProfile[0].accounts
         }
+      case 'batched':
+        return {
+          ...result.data['getUsersByField'][0],
+          usersProfile: {
+            ...result.data['getUsersByField'][0].usersProfile[0]
+          }
+        }
       default:
         return {
           ...result.data['getUsersByField'][0],
@@ -121,6 +129,8 @@ export class UserService {
         return userQueries.GET_ALL_CARDS
       case 'basic':
         return userQueries.GET_USER_BASIC_INFO
+      case 'batched':
+        return userQueries.GET_USER_BATCHED
       default:
         return userQueries.GET_USER_BY_FIELD;
     }

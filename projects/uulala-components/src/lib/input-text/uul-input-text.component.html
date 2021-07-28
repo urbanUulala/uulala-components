@@ -12,6 +12,13 @@
       <div class="control-img-pwd-show" *ngIf="showPassword" (click)="showPassword=!showPassword"></div>
     </ng-container>
 
+    <ng-container *ngSwitchCase="'number'">
+      <input *ngIf="minValue === 0 && maxValue !== 0" [type]="type" [formControl]="control"  [ngClass]="inputStyles" [id]="config.id + '-input'" value-editor [typeCap]="capitalizeType" [max]="maxValue">
+      <input *ngIf="minValue !== 0 && maxValue === 0" [type]="type" [formControl]="control"  [ngClass]="inputStyles" [id]="config.id + '-input'" value-editor [typeCap]="capitalizeType" [min]="minValue">
+      <input *ngIf="minValue !== 0 && maxValue !== 0" [type]="type" [formControl]="control"  [ngClass]="inputStyles" [id]="config.id + '-input'" value-editor [typeCap]="capitalizeType" [min]="minValue"  [max]="maxValue">
+      <input *ngIf="minValue === 0 && maxValue === 0" [type]="type" [formControl]="control"  [ngClass]="inputStyles" [id]="config.id + '-input'" value-editor [typeCap]="capitalizeType">
+    </ng-container>
+
     <ng-container *ngSwitchDefault>
       <input [type]="type" [formControl]="control"  [ngClass]="inputStyles" [id]="config.id + '-input'" value-editor [typeCap]="capitalizeType">
     </ng-container>

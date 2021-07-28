@@ -835,6 +835,15 @@
   @extend %h-60;
 }
 
+%h-65 {
+  height: 65px !important;
+}
+
+.h-65 {
+  @extend %h-65;
+}
+
+
 %h-70 {
   height: 70px !important;
 }
