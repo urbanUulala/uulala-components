@@ -36,6 +36,7 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { UulTransactionsComponent } from './uul-transactions/uul-transactions.component';
 import { IconImageComponent } from './icon-image/icon-image.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { CryptoService } from './services/crypto.service';
 
 
 
@@ -110,6 +111,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     UiService,
     ParametersService,
     UtilsChartService,
+    CryptoService,
     Apollo
   ]
 })
