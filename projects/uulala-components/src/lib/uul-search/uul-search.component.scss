@@ -1,22 +1,12 @@
-@import '../styles/0-Base/base-dir';
-@import '../styles/2-Modules/modules-dir';
 .container__search{
-	@extend %border-radius;
-	@extend %border-container;
-	@extend %h-30;
 	display: grid;
-  grid-template-columns: 1fr 0fr;
+  	grid-template-columns: 1fr 0fr;
 	align-items: center;
 	padding: 0px 10px;
 	background: var(--color-white,#fff);
 }
-.imageSearch{
-	@extend %w-12;
-	height:12px;
-}
+
 .inputSearch{
-	@extend %fs-12;
-	@extend %normal-text;
 	border: 0px solid;
 	background-color: var(--color-white);
 }
