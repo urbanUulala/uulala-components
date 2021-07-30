@@ -6,5 +6,5 @@ export interface LicencesModel {
     UserId: string;
     CreatedDate: Date;
     AssignedDate: Date;
-    Status: number;
+    status?: number;
 }

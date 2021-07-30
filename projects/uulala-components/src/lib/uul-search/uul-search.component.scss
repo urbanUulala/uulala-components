@@ -8,7 +8,7 @@
   grid-template-columns: 1fr 0fr;
 	align-items: center;
 	padding: 0px 10px;
-	background: #fff;
+	background: var(--color-white,#fff);
 }
 .imageSearch{
 	@extend %w-12;
@@ -16,6 +16,10 @@
 }
 .inputSearch{
 	@extend %fs-12;
+	@extend %normal-text;
 	border: 0px solid;
-	
+	background-color: var(--color-white);
+}
+input::placeholder {
+  color: var(--color-text);
 }
