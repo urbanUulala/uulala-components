@@ -18,12 +18,29 @@
 
 /*  padding top  */
 
+%pt-10 {
+  padding-top: 10px !important;
+}
+
+.pt-10 {
+  @extend %pt-10;
+}
+
+
 %pt-15 {
   padding-top: 15px !important;
 }
 
 .pt-15 {
   @extend %pt-15;
+}
+
+%pt-20 {
+  padding-top: 20px !important;
+}
+
+.pt-20 {
+  @extend %pt-20;
 }
 
 %pt-25 {
@@ -35,6 +52,15 @@
 }
 
 /*  padding bottom  */
+
+%pb-10 {
+  padding-bottom: 10px !important;
+}
+
+.pb-10 {
+  @extend %pb-10;
+}
+
 
 %pb-15 {
   padding-bottom: 15px !important;

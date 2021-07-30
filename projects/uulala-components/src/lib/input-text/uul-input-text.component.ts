@@ -26,6 +26,9 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() placeholder: string = '';
   @Input() label: string = '';
 
+  @Input() minValue: number = 0;
+  @Input() maxValue: number = 0;
+
   //reactive form
   @Input() control: AbstractControl = new FormControl();
 
@@ -79,12 +82,13 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
     this.loadElements();
     this.value$ = this.control.valueChanges.subscribe(val => {
       this.validateContent();
-      
+      this.status = this.control.status;
     });
     this.status$ = this.control.statusChanges.subscribe(result => {
       console.log('text status', result);
       this.status = result;
     });
+    this.status$.unsubscribe();
   }
 
   ngOnDestroy() {

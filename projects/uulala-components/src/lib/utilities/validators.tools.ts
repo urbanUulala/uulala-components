@@ -21,13 +21,15 @@ export class ValidatorsTools {
     };
   }
 
+
+  
   static cardValidValidator(fieldKey: string): ValidatorFn {
-
+    
     return (cardForm: FormGroup): { [key: string]: string} => {
-
+      
       let numberCard: string = (cardForm.controls[fieldKey].value as string);
       let regex: RegExp = new RegExp('(\D|^)4[0-9]{3}(\ |\-|)[0-9]{4}(\ |\-|)[0-9]{4}(\ |\-|)[0-9]{4}(\D|$)');
-
+      
       if(numberCard.substring(numberCard.length - 1) === '-') return;
       if(numberCard.replace(/-/g, "").length % 4 === 0 && numberCard.replace(/-/g, "").length !== 16 && numberCard.replace(/-/g, "").length !== 0) cardForm.controls[fieldKey].setValue(numberCard + '-')
       
@@ -40,15 +42,15 @@ export class ValidatorsTools {
   }
 
   static cardDateValidator(fieldKey: string): ValidatorFn {
-
+    
     return (cardForm: FormGroup): { [key: string]: string} => {
-
+      
       let dateCard: string = (cardForm.controls[fieldKey].value as string);
       let regex: RegExp = new RegExp('^[0-9]{4}$');
-
+      
       //console.log(`date card value ${dateCard} - #${dateCard.replace(/\//g, "")}#`);
       if(dateCard.length === 2) cardForm.controls[fieldKey].setValue(dateCard + '/');
-
+      
       if(!regex.test(dateCard.replace(/\//g, ""))) {
         //console.log(`Regex with error`);
         cardForm.controls[fieldKey].setErrors({ cardDate: fieldKey});
@@ -57,15 +59,15 @@ export class ValidatorsTools {
       return null;
     }
   }
-
+  
   static checkValidator(control: AbstractControl): ValidationErrors | null {
     if (!control.value)
-      return { 'checkValidator': true }
-
+    return { 'checkValidator': true }
+    
     return null;
-
+    
   }
-
+  
   static numericCodeValidatorArray(length: number) {
     return [
       Validators.required,
@@ -74,7 +76,10 @@ export class ValidatorsTools {
       Validators.maxLength(length)
     ]
   }
-
+  static currencyValidator(){
+    return [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$')]
+  }
+  
   static passwordValidatorArray(minLength: number = 8) {
     return [Validators.required, Validators.pattern(`^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-\+]).{${ minLength },}$`)]
   }

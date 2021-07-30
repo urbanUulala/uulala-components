@@ -1,10 +1,10 @@
 export interface LicencesModel {
-    Id: number;
-    License: string;
-    LevelLicense: number;
-    Cost: number;
-    UserId: string;
-    CreatedDate: Date;
-    AssignedDate: Date;
-    status?: number;
+    id: number;
+    license: string;
+    levelLicense: number;
+    cost: number;
+    userId: string;
+    createdDate: Date;
+    assignedDate: Date;
+    status: number;
 }
