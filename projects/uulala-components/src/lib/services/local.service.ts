@@ -240,6 +240,6 @@ export class LocalService {
   }
 
   redirectToAccounts(accountsUrl:string) {
-    window.open( `${accountsUrl}/login/access/${this.getValue('token')}/${this.getValue('device_id_rsa')}/${this.getApiLanguaje()}`, '_blank')
+    window.open( `${accountsUrl}/login/access/${this.getValue('token')}/${this.getValue('device_id_rsa')}/${this.getApiLanguaje()}`, '_self')
   }
 }
