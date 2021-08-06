@@ -1,0 +1,16 @@
+<div class="highlighted-text fs-14 fw-bold">
+    {{ title }}
+</div>
+<div class="border-container border-radius mt-15 h-150" >
+    <ng-scrollbar #metadataGridScroll track="vertical" [visibility]="'hover'" [appearance]="'compact'">
+        <div class="terms__content normal-text fs-12" [innerHTML]="content"></div>
+    </ng-scrollbar>
+</div>
+<div class="mt-15" *ngIf="showCheck">
+    <uul-check [control]="control" [label]="labelCheck"></uul-check>
+</div>
+<div class="mt-15" *ngIf="!showCheck" style="display: flex; gap: 10px;">
+    <div class="w-20 h-20 border-container border-radius"></div>
+    <div class="normal-text fs-13">{{ labelCheck }}</div>
+</div>
+<!--  -->

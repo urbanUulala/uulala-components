@@ -37,6 +37,7 @@ import { UulTransactionsComponent } from './uul-transactions/uul-transactions.co
 import { IconImageComponent } from './icon-image/icon-image.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { CryptoService } from './services/crypto.service';
+import { UulTermsComponent } from './uul-terms/uul-terms.component';
 
 
 
@@ -67,7 +68,8 @@ import { CryptoService } from './services/crypto.service';
     LineChartComponent,
     FilterCryptoPipe,
     UulTransactionsComponent,
-    IconImageComponent
+    IconImageComponent,
+    UulTermsComponent
   ],
   imports: [
     CommonModule,
@@ -102,7 +104,8 @@ import { CryptoService } from './services/crypto.service';
     FilterCryptoPipe,
     UulTransactionsComponent,
     IconImageComponent, 
-    NgScrollbarModule
+    NgScrollbarModule,
+    UulTermsComponent
   ],
   providers: [
     LocalService,

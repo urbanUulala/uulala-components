@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { AbstractControl, FormControl } from '@angular/forms';
   templateUrl: './uul-check.component.html',
   styleUrls: ['./uul-check.component.scss']
 })
-export class UulCheckComponent implements OnInit {
+export class UulCheckComponent implements OnInit, AfterViewInit {
   //control config
   @Input() label:string = '';
 
@@ -16,6 +16,11 @@ export class UulCheckComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    
+  }
+
+  ngAfterViewInit() : void {
   }
 
 }
