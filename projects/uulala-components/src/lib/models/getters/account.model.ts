@@ -6,6 +6,7 @@ import { bankInformationModel } from './bankInformation.model';
 export interface AccountModel {
   id: string;
   term: boolean;
+  terms:string;
   status: number;
   firstName: string;
   avatarImage: string;

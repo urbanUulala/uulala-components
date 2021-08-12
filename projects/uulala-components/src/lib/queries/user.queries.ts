@@ -100,6 +100,7 @@ export const userQueries = {
             {
                 id
                 term
+                terms
                 status
                 firstName
                 avatarImage
