@@ -19,7 +19,7 @@ export class UulUploadFileComponent implements OnInit {
 
   status:string = 'INVALID';
   nameLabel: string = '';
-  maximSize : number = 2000000; // 2MB 
+  maximSize : number = 7000000; // 2MB 
   @Input() containerCss: string = '';
   @Input() bgBtnCss: string = '';
 

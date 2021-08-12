@@ -43,6 +43,7 @@ export class UserService {
   }
 
   getUserByFieldModuleAndId(id: string, infoModule: InfoModuleUser = 'general') {
+   // console.log('id user', id);
     return this.graphService.execQuery(
       this.getUserQuery(infoModule),
       {
@@ -69,7 +70,7 @@ export class UserService {
   }
 
   getResultObjectModule(infoModule: InfoModuleUser, result: any) {
-    console.log('physical cards', result);
+   // console.log('physical cards', result);
     switch (infoModule) {
       case 'physical_cards':
         return result.data['getUsersByField'][0].physicalCards

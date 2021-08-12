@@ -33,7 +33,7 @@ export class UiService {
       }
     ).pipe(
       map(result => {
-        console.log('brand info', result);
+        // console.log('brand info', result);
         return {
           ...result.data['getBrandCompany'],
           brandeo: JSON.parse(result.data['getBrandCompany'].brandeo)
