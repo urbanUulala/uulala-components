@@ -2,7 +2,7 @@
     {{ title }}
 </div>
 <div class="border-container border-radius mt-15 h-150" >
-    <ng-scrollbar class="ligth-scroll" thumbClass="white-scrollbars" #metadataGridScroll track="vertical" [visibility]="'native'" [appearance]="'compact'">
+    <ng-scrollbar #metadataGridScroll track="vertical" [visibility]="'hover'" [appearance]="'compact'">
         <div class="terms__content normal-text fs-12" [innerHTML]="content"></div>
     </ng-scrollbar>
 </div>

@@ -11,3 +11,12 @@
     grid-template-columns: 330px 200px;
     grid-template-rows: 1fr;
 }
+
+::ng-deep {
+    ng-scrollbar.ligth-scroll {
+  
+      --scrollbar-track-color: white;
+  
+    }
+  }
+  

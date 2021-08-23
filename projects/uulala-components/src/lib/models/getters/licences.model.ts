@@ -1,4 +1,4 @@
-export interface LicencesModel {
+export interface LicensesModel {
     id: number;
     license: string;
     levelLicense: number;

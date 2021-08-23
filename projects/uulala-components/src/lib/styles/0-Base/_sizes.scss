@@ -66,6 +66,14 @@
   @extend %w-30;
 }
 
+%w-35 {
+  width: 35px !important;
+}
+
+.w-35 {
+  @extend %w-35;
+}
+
 %w-40 {
   width: 40px !important;
 }

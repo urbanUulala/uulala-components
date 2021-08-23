@@ -8,3 +8,4 @@ export * from './rest.service';
 export * from './parameters.service';
 export * from './contact.service';
 export * from './crypto.service';
+export * from './points.service';

@@ -100,7 +100,6 @@ export const userQueries = {
             {
                 id
                 term
-                terms
                 status
                 firstName
                 avatarImage
@@ -346,56 +345,129 @@ export const userQueries = {
   query($token:String!,$field:String!,$id:String!){
     getUsersByField(token:$token,field:$field,id:$id)
     {
+      id
+      email
+      phoneNumber
+      lada
+      clients {
         id
-        email
-        phoneNumber
-        lada
-        usersProfile
-        {
-            userID
-            id
-            status
-            name
-            accountId
-            roleId
-            accounts
-            {
-                id
-                term
-                status
-                firstName
-                avatarImage
-                lastName
-                secondLastName
-                phoneNumber
-                middleName
-                email
-                clientId
-                currency
-                gender
-                alias
-                birthday
-                nationalId
-                otherNationalId
-                countryCode
-                externalId
-                pin
-                customerId
-                isComplete
-            }
-
-        },
-        licenses {
+        account {
           id
-          license
-          levelLicense
-          cost
-          userId
-          createdDate
-          assignedDate
-          status
         }
+      }
+      usersProfile
+      {
+          userID
+          id
+          status
+          name
+          accountId
+          roleId
+          accounts
+          {
+              id
+              term
+              status
+              firstName
+              avatarImage
+              lastName
+              secondLastName
+              phoneNumber
+              middleName
+              email
+              clientId
+              currency
+              gender
+              alias
+              birthday
+              nationalId
+              otherNationalId
+              countryCode
+              externalId
+              pin
+              customerId
+              isComplete
+          }
+
+      },
+      licenses {
+        id
+        license
+        levelLicense
+        cost
+        userId
+        createdDate
+        assignedDate
+        status
+      },
+      licensesReferences
+      {
+        id
+        uuid
+        email
+        name
+        description
+        estimateAmount
+        level
+        total
+        type
+        statusKraken
+        status
+        transactionId
+        approvedAmount
+        amountReferrer
+        percentageReferrer
+        amountSponsor
+        percentageSponsor
+        isPaid
+        currency
+        amountKraken
+        licensesReferences
+        {
+          id
+          uuid
+          email
+          name
+          description
+          estimateAmount
+          level
+          total
+          type
+          statusKraken
+          status
+          transactionId
+          approvedAmount
+          amountReferrer
+          percentageReferrer
+          amountSponsor
+          percentageSponsor
+          isPaid
+          currency
+          amountKraken
+        } 
+      } 
+      bachedTransaction
+      {
+        id
+        status
+        reference
+        address
+        amount
+        description
+        referenceTrx
+        verifyTrx
+        fee
+        feeTotal
+        transactionType
+        authorizeDecline
+        voucherCrypto
+        addressCrypto
+        currencyCrypto
+        createdDate
+        transactionId
+      }
     }
+    
   }
   `
 }

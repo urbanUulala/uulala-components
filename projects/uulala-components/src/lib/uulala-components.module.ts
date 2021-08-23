@@ -38,6 +38,7 @@ import { IconImageComponent } from './icon-image/icon-image.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { CryptoService } from './services/crypto.service';
 import { UulTermsComponent } from './uul-terms/uul-terms.component';
+import { FormatLocalDate } from './pipes/format-local-date.pipe';
 
 
 
@@ -59,6 +60,7 @@ import { UulTermsComponent } from './uul-terms/uul-terms.component';
     UulSwitchComponent,
     FormatCardPipe,
     FormatCardDatePipe,
+    FormatLocalDate,
     UulSearchComponent,
     FilterMovs,
     SystemBalance,
@@ -102,6 +104,7 @@ import { UulTermsComponent } from './uul-terms/uul-terms.component';
     LineChartComponent,
     NgxChartsModule,
     FilterCryptoPipe,
+    FormatLocalDate,
     UulTransactionsComponent,
     IconImageComponent, 
     NgScrollbarModule,

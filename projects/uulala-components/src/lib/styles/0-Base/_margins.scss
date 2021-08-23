@@ -154,6 +154,14 @@
   @extend %mt-40;
 }
 
+%mt-45 {
+  margin-top: 45px !important;
+}
+
+.mt-45 {
+  @extend %mt-45;
+}
+
 /*  Margin bottom  */
 
 

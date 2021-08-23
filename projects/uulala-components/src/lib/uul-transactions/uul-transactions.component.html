@@ -1,14 +1,36 @@
-<div class="normal-text fs-11 h-30" *ngIf="showTittle">
-    {{ config.tittle}}
+<div class="two-fields"  *ngIf="showTittle || showSearch">
+    <div class="normal-text fs-11 h-30" *ngIf="showTittle">
+        {{ config.tittle}}
+    </div>
+    <div  *ngIf="!showTittle"></div>
+    <div class="normal-text fs-11 h-30" *ngIf="showSearch">
+        <uul-search  [search]="searchControl" [label]="labelSearch"></uul-search>
+    </div>
+    <div  *ngIf="!showSearch"></div>
 </div>
-<div class="movements" >
+<div class="movements mt-10" >
     <div  [ngClass]="{'grid-table': true, 'border-radius': true, 'border-container': showBorder}">
         <div class="grid-row-header">
-            <div *ngFor="let header of config.headers" [ngStyle]="{'width': header.width + 'px'}">{{ header.text }}</div>
+            <div *ngFor="let header of config.headers" [ngStyle]="{'width': header.width + 'px'}">
+                <ng-container [ngSwitch]="header.typeColumn">
+                    <ng-container *ngSwitchCase="'button-normal'">
+                        {{ '' }}
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'button-success'">
+                        {{ '' }}
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'button-error'">
+                        {{ '' }}
+                    </ng-container>
+                    <ng-container *ngSwitchDefault>
+                        {{ header.text }}
+                    </ng-container>
+                </ng-container>
+            </div>
         </div>
 
         <ng-container *ngIf="config.data.length === 0">
-            <div class="grid-rows">
+            <div class="grid-rows" [ngStyle]="{'height': setHeigth + 'px'}">
                 <div class="empty center mt-30">
                     <div>
                         <div class="disabled-text fs-24" >
@@ -27,22 +49,40 @@
 
         <ng-container *ngIf="config.data.length !== 0">
             <div [ngStyle]="{'height': setHeigth + 'px'}">
-                <ng-scrollbar #metadataGridScroll track="vertical" [visibility]="'hover'" [appearance]="'compact'">
+                <ng-scrollbar #metadataGridScroll class="ligth-scroll" track="vertical" [visibility]="'native'" [appearance]="'compact'">
                     <div class="grid-rows">
                         <div class="grid-row normal-text fs-11" *ngFor="let data of config.data ">
                             <div *ngFor="let header of config.headers; let idx = index" [ngStyle]="{'width': header.width + 'px'}">
     
-                                <ng-container [ngSwitch]="header.typeColumn">
-                                    <ng-container *ngSwitchCase="'string'">
-                                        {{ data[idx] }}
-                                    </ng-container>
-                                    <ng-container *ngSwitchCase="'date'">
-                                        {{ data[idx] | date }}
-                                    </ng-container>
-                                    <ng-container *ngSwitchCase="'amount'">
-                                        {{ data[idx] | currency }}
+                                <ng-container *ngIf="!header.hideColumn">
+                                    <ng-container [ngSwitch]="header.typeColumn">
+                                        <ng-container *ngSwitchCase="'string'">
+                                            {{ data[idx] }}
+                                        </ng-container>
+                                        <ng-container *ngSwitchCase="'date'">
+                                            {{ data[idx] | localDate : 'short' }}
+                                        </ng-container>
+                                        <ng-container *ngSwitchCase="'amount'">
+                                            {{ data[idx] | currency }}
+                                        </ng-container>
+                                        <ng-container *ngSwitchCase="'button-success'">
+                                            <button class="success-linear-button pl-5 pr-5 h-20" (click)="execSendDataColumn({column: header.text,data: data[idx]})" [disabled]="data[idx] === ''">
+                                                {{ header.text }}
+                                            </button>
+                                        </ng-container>
+                                        <ng-container *ngSwitchCase="'button-normal'">
+                                            <button class="normal-linear-button pl-5 pr-5 h-20" (click)="execSendDataColumn({column: header.text,data: data[idx]})" [disabled]="data[idx] === ''">
+                                                {{ header.text }}
+                                            </button>
+                                        </ng-container>
+                                        <ng-container *ngSwitchCase="'button-error'">
+                                            <button class="error-linear-button pl-5 pr-5 h-20" (click)="execSendDataColumn({column: header.text,data: data[idx]})" [disabled]="data[idx] === ''">
+                                                {{ header.text }}
+                                            </button>
+                                        </ng-container>
                                     </ng-container>
                                 </ng-container>
+                                
                                 
                             </div>
                         </div>

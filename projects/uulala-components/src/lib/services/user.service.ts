@@ -90,7 +90,11 @@ export class UserService {
           ...result.data['getUsersByField'][0],
           usersProfile: {
             ...result.data['getUsersByField'][0].usersProfile[0]
-          }
+          },
+          clients: {
+            ...result.data['getUsersByField'][0].clients[0]
+          },
+          licensesReferences: this.getLicencesFormat(result.data['getUsersByField'][0].licensesReferences)
         }
       default:
         return {
@@ -214,5 +218,23 @@ export class UserService {
       }
       )
     );
+  }
+
+  getLicencesFormat(licenses:any[]) {
+
+    // console.log('licence reference data', licenses);
+    if(!licenses) return;
+
+    let returnarray:any[] = [];
+    licenses.forEach(license => {
+
+        returnarray.push({
+          ...license,
+          licensesReferences: this.getLicencesFormat(license?.licensesReferences)
+        })
+      
+    });
+
+    return returnarray;
   }
 }

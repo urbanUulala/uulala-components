@@ -16,8 +16,7 @@ export type LocalStorageKeys =
   'blocked' |
   'society' |
   'sessionBarStatus' |
-  'reference' |
-  'temporalS';
+  'reference';
 
 
 export type UulalaSites =
@@ -84,8 +83,7 @@ const keyValues = {
   code: 'T00002',
   phone: 'T00003',
   session: 'T00004',
-  reference: 'T00005',
-  temporalS: 'T00006'
+  reference: 'T00005'
 
 }
 
@@ -134,11 +132,23 @@ export class LocalService {
     return localStorage[keyValues[key]];
   }
 
+  getValueDirect(key: string) {
+    if (!(this.existKeyDirect(key))) return '';
+    return localStorage[key];
+  }
+
   setValue(key: LocalStorageKeys, value: string) {
     // console.group('local storege set')
     // console.log('set value', value, ' in the key ', key);
     // console.groupEnd();
     localStorage.setItem(keyValues[key], value);
+  }
+
+  setValueDirect(key: string, value: string) {
+    // console.group('local storege set')
+    // console.log('set value', value, ' in the key ', key);
+    // console.groupEnd();
+    localStorage.setItem(key, value);
   }
 
   setLanguaje(languaje: SystemLanguajes) {
@@ -172,6 +182,10 @@ export class LocalService {
 
   existKey(key: LocalStorageKeys) {
     return keyValues[key] in window.localStorage;
+  }
+
+  existKeyDirect(key: string) {
+    return key in window.localStorage;
   }
 
   getUrlSite(site: UulalaSites, environment: UulalaEnvironments) {

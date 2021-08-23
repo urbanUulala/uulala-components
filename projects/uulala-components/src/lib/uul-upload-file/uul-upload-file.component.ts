@@ -2,6 +2,8 @@ import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
 import { uulInputImg } from '../assets/uul-input.img';
 import { AbstractControl, FormControl } from '@angular/forms';
 import { MessagesService } from '../services/messages.service';
+import { UserService } from '../services';
+import { StringTools } from '../utilities';
 
 @Component({
   selector: 'uul-upload-file',
@@ -10,8 +12,13 @@ import { MessagesService } from '../services/messages.service';
 })
 export class UulUploadFileComponent implements OnInit {
 
+  //reactive form
+  @Input() control: AbstractControl = new FormControl();
+
   @Input() label:string = '';
   @Input() buttonLabel:string = '';
+
+  @Input() errorSizeMessage:string =  'The file must be less than';
 
   //reactive form
   @Output() newItemEvent = new EventEmitter<any>();
@@ -21,7 +28,7 @@ export class UulUploadFileComponent implements OnInit {
   nameLabel: string = '';
   maximSize : number = 7000000; // 2MB 
   @Input() containerCss: string = '';
-  @Input() bgBtnCss: string = '';
+  @Input() bgBtnCss: any = { backgroundColor: 'var(--color-highlighted)', color: 'var(--color-text)'};
 
   // assets
   inputImages:any = uulInputImg;
@@ -30,12 +37,14 @@ export class UulUploadFileComponent implements OnInit {
     'container__upload': true
   }
   buttonStyles:any = {
-    'file-input label': true
+
+    'file-input': true
   }
   
 
   constructor(
-    private messagesService: MessagesService
+    private messagesService: MessagesService,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -45,7 +54,6 @@ export class UulUploadFileComponent implements OnInit {
 
   loadStyles() {
     this.containerStyles[this.containerCss] = this.containerCss != '';
-    this.buttonStyles[this.bgBtnCss] = this.bgBtnCss != '';
   }
 
   uploadToServer(event) {
@@ -65,7 +73,7 @@ export class UulUploadFileComponent implements OnInit {
     if (file?.size > this.maximSize) {
       const sizeMb = this.maximSize / 1000000 + `${"MB"}`;
       this.status = 'INVALID';
-      this.newErrorSizeEvent.emit({ error: sizeMb });
+      this.errorSize({ error: sizeMb });
       this.messagesService.hidePreloader();
     } else this.fileReader(file)
   
@@ -78,7 +86,26 @@ export class UulUploadFileComponent implements OnInit {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = (_event) => {
-      this.newItemEvent.emit({name: this.label,file: reader.result});
+      this.uploadFile({name: this.label,file: reader.result});
     }
+  }
+
+  errorSize(newError: any) {
+    this.messagesService.fireErrorMessage('Error', `${this.errorSizeMessage} ${newError.error}`);
+    this.control.setValue('');
+  }
+
+  uploadFile(newItem: any) {
+   
+    this.messagesService.firePreloader();
+    let fileName:string = newItem?.name;
+    this.userService.setFile(`${StringTools.generateNewRandomString(9)}-${fileName}`, `${newItem?.file.split(',')[1]}`).subscribe(data => {
+      this.control.setValue(data);
+      this.messagesService.hidePreloader();
+    },
+    () => {
+      this.messagesService.fireErrorMessage('Error', 'File upload failed, try again')
+    });
+   
   }
 }

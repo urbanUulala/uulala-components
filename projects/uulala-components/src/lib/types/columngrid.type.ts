@@ -1,4 +1,7 @@
 export type ColumnGridType = 
 'date' |
 'string' |
-'amount'  ;
+'amount'  |
+'button-normal' |
+'button-success' |
+'button-error';
