@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'lib-change-buttons',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangeButtonsComponent implements OnInit {
 
+  @Output() upEvent:EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() downEvent:EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  up() {
+    this.upEvent.emit(true);
+  }
+
+  down() {
+    this.downEvent.emit(true);
   }
 
 }

@@ -353,6 +353,7 @@ export const userQueries = {
         id
         account {
           id
+          address
         }
       }
       usersProfile

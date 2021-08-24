@@ -98,8 +98,12 @@ export class UulUploadFileComponent implements OnInit {
   uploadFile(newItem: any) {
    
     this.messagesService.firePreloader();
-    let fileName:string = newItem?.name;
-    this.userService.setFile(`${StringTools.generateNewRandomString(9)}-${fileName}`, `${newItem?.file.split(',')[1]}`).subscribe(data => {
+    let splitName: string [] = newItem?.name?.split('.');
+    let extensionFile: string = splitName[splitName.length - 1];
+    let fileName: string = `${StringTools.generateNewRandomString(9)}-${StringTools.generateNewRandomString(9)}-${StringTools.generateNewRandomString(9)}-${StringTools.generateNewRandomString(9)}.${extensionFile}`
+    
+    this.userService.setFile(fileName, `${newItem?.file.split(',')[1]}`).subscribe(data => {
+      console.log('file name',  data);
       this.control.setValue(data);
       this.messagesService.hidePreloader();
     },

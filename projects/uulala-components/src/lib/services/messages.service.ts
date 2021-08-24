@@ -27,6 +27,14 @@ export class MessagesService {
     }, time);
   }
 
+  fireErrorMessageGraph(title: string, graphObject: any, functionExecWillClose: any = null, time:number = 0) {
+    this.fireErrorMessage(title, this.getGraphErrorString(graphObject), functionExecWillClose, time);
+  }
+
+  getGraphErrorString(error:any) {
+    return error.networkError.error.Message.replace('GraphQL.ExecutionError:', '').replace('|','').trim();
+}
+
   fireSystemErrorMessage(data: any, functionExecWillClose: any = null) {
     this.hidePreloader();
     setTimeout(() => {
