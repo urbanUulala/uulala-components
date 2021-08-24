@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 
 // Rxjs
 import { map } from 'rxjs/operators';
-import { pointsQueries } from 'uulala-components/projects/uulala-components/src/lib/queries/points.queries';
-import { parametersQueries } from '../queries/parameters.queries';
+import { pointsQueries } from '../queries/points.queries';
 
 
 // Queries

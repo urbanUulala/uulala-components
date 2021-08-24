@@ -39,6 +39,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 import { CryptoService } from './services/crypto.service';
 import { UulTermsComponent } from './uul-terms/uul-terms.component';
 import { FormatLocalDate } from './pipes/format-local-date.pipe';
+import { ChangeButtonsComponent } from './change-buttons/change-buttons.component';
 
 
 
@@ -71,7 +72,8 @@ import { FormatLocalDate } from './pipes/format-local-date.pipe';
     FilterCryptoPipe,
     UulTransactionsComponent,
     IconImageComponent,
-    UulTermsComponent
+    UulTermsComponent,
+    ChangeButtonsComponent
   ],
   imports: [
     CommonModule,
@@ -108,7 +110,8 @@ import { FormatLocalDate } from './pipes/format-local-date.pipe';
     UulTransactionsComponent,
     IconImageComponent, 
     NgScrollbarModule,
-    UulTermsComponent
+    UulTermsComponent,
+    ChangeButtonsComponent
   ],
   providers: [
     LocalService,

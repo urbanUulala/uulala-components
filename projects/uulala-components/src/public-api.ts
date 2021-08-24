@@ -32,6 +32,7 @@
  export * from './lib/uul-transactions/uul-transactions.component';
  export * from './lib/icon-image/icon-image.component';
  export * from './lib/uul-terms/uul-terms.component';
+ export * from './lib/change-buttons/change-buttons.component';
 
  export * from './lib/store/actions';
  export * from './lib/store/effects';
