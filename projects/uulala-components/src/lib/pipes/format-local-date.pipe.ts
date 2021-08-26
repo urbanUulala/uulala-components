@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Pipe, PipeTransform, LOCALE_ID, Inject } from '@angular/core';
+import { DateTools } from 'uulala-components/projects/uulala-components/src/lib/utilities/date.tools';
 import { FormatCardTypes } from '../models/types';
 
 
@@ -11,8 +12,7 @@ export class FormatLocalDate extends DatePipe implements PipeTransform {
     transform(value: null|undefined): null;
     transform(value: Date|string|number|null|undefined): string|null;
     transform(value: Date | string | number, format?: string, timezone?: string, locale?: string): string|null {
-        let localDate:Date = new Date(value);
-        let transformDate: Date = new Date(Date.UTC(localDate.getFullYear(), localDate.getMonth(), localDate.getDate(),  localDate.getHours(), localDate.getMinutes(), localDate.getSeconds()));
+        let transformDate: Date = DateTools.getLocalDateFromUTC(value)
         return super.transform(transformDate, format, timezone, locale)   
     }
 }

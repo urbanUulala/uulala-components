@@ -24,6 +24,14 @@
   @extend %pl-20;
 }
 
+%pl-40 {
+  padding-left: 40px !important;
+}
+
+.pl-40 {
+  @extend %pl-40;
+}
+
 /*  padding rogth  */
 
 %pr-5 {
@@ -32,6 +40,14 @@
 
 .pr-5 {
   @extend %pr-5;
+}
+
+%pr-40 {
+  padding-right: 40px !important;
+}
+
+.pr-40 {
+  @extend %pr-40;
 }
 
 /*  padding top  */

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject, interval } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 import { uiQueries } from '../queries/ui.queries';
 import { GraphService } from './graph.service';
 
@@ -40,6 +40,10 @@ export class UiService {
         }
       })
     )
+  }
+
+  getCounter(iterationTime:number, iterationsNumber:number = 0) {
+    return iterationsNumber === 0 ? interval(iterationTime * 1000): interval(iterationTime * 1000).pipe(take(iterationsNumber))
   }
 
 }
