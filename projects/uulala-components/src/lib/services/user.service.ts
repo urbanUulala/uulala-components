@@ -237,4 +237,20 @@ export class UserService {
 
     return returnarray;
   }
+
+  updateUserPicture(id:string, image:string){
+    return this.graphService.execMutation(userQueries.UPDATE_USER_PROFILE,
+      {
+        token: this.localService.getValue('token'),
+        id,
+        image
+      }
+    ).pipe(
+      map((result)=>{
+        console.log('update profile picture result')
+        return result.data['setPictureChange'];
+      }
+      )
+    );
+  }
 }

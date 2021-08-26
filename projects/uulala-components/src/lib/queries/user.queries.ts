@@ -470,5 +470,10 @@ export const userQueries = {
     }
     
   }
+  `,
+  UPDATE_USER_PROFILE: gql `
+  mutation($token:String!,$id:String!,$image:String!){
+    setPictureChange(token:$token,id:$id,image:$image)
+  }
   `
 }

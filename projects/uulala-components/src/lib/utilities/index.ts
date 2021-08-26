@@ -5,3 +5,4 @@ export * from './style.tools';
 export * from './validators.tools';
 export * from './object.tools';
 export * from './array.tools';
+export * from './date.tools';

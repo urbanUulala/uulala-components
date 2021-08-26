@@ -8,6 +8,7 @@ import { InputControlTextConfig } from '../models/configurations';
 import { Subscription } from 'rxjs';
 import { uulInputImg } from '../assets/uul-input.img';
 import { CapitalizeTypes } from '../types/capitalize.type';
+import { DateTools } from '../utilities/date.tools';
 
 
 
@@ -74,6 +75,15 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void { 
+    switch (this.type) {
+      case 'date':  
+        let date: Date = new Date(this.control.value);
+        this.control.setValue(DateTools.dateToYMD(date))       
+        break;
+    
+      default:
+        break;
+    }
   }
 
   ngAfterViewInit() {

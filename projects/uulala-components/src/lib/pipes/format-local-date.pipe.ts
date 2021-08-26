@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Pipe, PipeTransform, LOCALE_ID, Inject } from '@angular/core';
-import { DateTools } from 'uulala-components/projects/uulala-components/src/lib/utilities/date.tools';
+import { DateTools } from '../utilities/date.tools';
 import { FormatCardTypes } from '../models/types';
 
 

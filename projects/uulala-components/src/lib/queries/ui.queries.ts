@@ -7,6 +7,10 @@ export const uiQueries = {
             id
             name
             brandeo
+            urlLegalDocument1
+            urlLegalDocument2
+            termsAndConditions
+            privacyPolice
         }
     }
     `
