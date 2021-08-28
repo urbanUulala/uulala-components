@@ -151,6 +151,14 @@ export const userQueries = {
                     bankName
                     routingNumber
                     accountNumber
+                    beneficiary
+                    phoneNumber
+                    swiftCode
+                    streetAddress
+                    city
+                    postalCode
+                    state
+                    countryCode
                   }
             }
 

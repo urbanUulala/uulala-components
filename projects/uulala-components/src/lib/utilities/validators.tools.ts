@@ -76,6 +76,15 @@ export class ValidatorsTools {
       Validators.maxLength(length)
     ]
   }
+
+  static lengthMinMax(minLength: number, maxLength: number) {
+    return [
+      Validators.required,
+      Validators.minLength(minLength),
+      Validators.maxLength(maxLength)
+    ]
+  }
+
   static currencyValidator(){
     return [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$')]
   }
