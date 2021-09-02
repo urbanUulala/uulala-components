@@ -30,6 +30,10 @@ export class PointsService {
        return this.getPoolBalance(id, pointsConstants.POOLS.COMMISSION);
     }
 
+    getRewardsPointsBalance( id:number) {
+        return this.getPoolBalance(id, pointsConstants.POOLS.REWARDS);
+     }
+
     getLiquidPointsBalance( id:number ) {
         return this.getPoolBalance(id, pointsConstants.POOLS.LIQUIDITY);
      }

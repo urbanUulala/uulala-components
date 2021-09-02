@@ -357,6 +357,7 @@ export const userQueries = {
       email
       phoneNumber
       lada
+      is2Points
       clients {
         id
         account {
