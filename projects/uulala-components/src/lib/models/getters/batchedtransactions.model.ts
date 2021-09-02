@@ -16,4 +16,6 @@ export interface BatchedTransaction {
     currencyCrypto: string;
     createdDate: Date
     transactionId: string;
+    routingNumber: number;
+    accountNumber: number;
 }

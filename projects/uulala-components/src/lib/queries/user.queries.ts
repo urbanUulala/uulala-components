@@ -399,16 +399,6 @@ export const userQueries = {
           }
 
       },
-      licenses {
-        id
-        license
-        levelLicense
-        cost
-        userId
-        createdDate
-        assignedDate
-        status
-      },
       licensesReferences
       {
         id
@@ -474,6 +464,8 @@ export const userQueries = {
         currencyCrypto
         createdDate
         transactionId
+        routingNumber
+        accountNumber
       }
     }
     
