@@ -52,7 +52,7 @@
                 <ng-scrollbar #metadataGridScroll class="ligth-scroll" track="vertical" [visibility]="'native'" [appearance]="'compact'">
                     <div class="grid-rows">
                         <div class="grid-row normal-text fs-11" *ngFor="let data of config.data ">
-                            <div *ngFor="let header of config.headers; let idx = index" [ngStyle]="{'width': header.width + 'px'}">
+                            <div *ngFor="let header of config.headers; let idx = index" [ngStyle]="{'width': header.width + 'px'}" class="overflow-text">
     
                                 <ng-container *ngIf="!header.hideColumn">
                                     <ng-container [ngSwitch]="header.typeColumn">
@@ -64,6 +64,9 @@
                                         </ng-container>
                                         <ng-container *ngSwitchCase="'amount'">
                                             {{ data[idx] | currency }}
+                                        </ng-container>
+                                        <ng-container *ngSwitchCase="'number'">
+                                            {{ data[idx] | number:'1.2-2' }}
                                         </ng-container>
                                         <ng-container *ngSwitchCase="'button-success'">
                                             <button class="success-linear-button pl-5 pr-5 h-20" (click)="execSendDataColumn({column: header.text,data: data[idx]})" [disabled]="data[idx] === ''">

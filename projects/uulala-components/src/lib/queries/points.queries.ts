@@ -24,7 +24,29 @@ export const pointsQueries = {
         createPoolTransactionByTokenAddressToClient(token: $token,     withdrawalAddress: $withdrawalAddress,     withdrawalPool: $withdrawalPool,     amountAddress: $amountAddress,     depositClient: $depositClient,     depositPool: $depositPool,     amountClient: $amountClient,     transactionDate: $transactionDate,     note: $note){
             id
         }
-    }`
+    }`,
+    GET_TRANSACTIONS_TOKENS: gql`
+    query($token:String!, $id:Int!, $pool: Int!) {
+        getAccountTransactionsTokens(token:$token,id:$id,pool:$pool){
+            id
+            accountId
+            transactionDate
+            type
+            amount
+            finalBalance
+            currencyCode
+            exchageRate
+            createdDate
+            note {
+                clientId
+                accountId
+                transactionId
+                noteDescription
+            }
+        }
+        
+    }
+    `
 
 
     

@@ -1,12 +1,9 @@
 export interface RewardsConfigModel {
-    year: number;
+    id: number;
+    groupid: number;
     description: string;
-    enabled: boolean;
-    interval: number;
     startDate: Date;
-    startHours: string;
-    endHours: string;
-    dayRewards: number;
-    mounthRewards: number;
-    yearRewards: number;
+    endDate: Date;
+    amount: number;
+    isClose: boolean;
 }

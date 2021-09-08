@@ -33,6 +33,11 @@ export class DateTools {
     return new Date(Date.UTC(localDate.getFullYear(), localDate.getMonth(), localDate.getDate() + days,  +arrayHour[0], +arrayHour[1], +arrayHour[2]));
   }
 
+  static getLocalDateFromUTCAddDays(inputDate: Date, days: number) {
+    let localDate: Date = new Date(inputDate);
+    return new Date(Date.UTC(localDate.getFullYear(), localDate.getMonth(), localDate.getDate() + days,  localDate.getHours(), localDate.getMinutes(), localDate.getSeconds()));
+  }
+
   static dateToYMD(date: Date) {
     var d = date.getDate();
     var m = date.getMonth() + 1; //Month from 0 to 11

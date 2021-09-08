@@ -8,6 +8,7 @@ export const pointsConstants = {
         TOKENS: 0,
         COMMISSION: 1,
         REWARDS: 2,
-        LIQUIDITY: 3
+        LIQUIDITY: 3,
+        GATEWAY: 4
     }
 }
