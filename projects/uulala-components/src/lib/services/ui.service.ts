@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, interval, of } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-import { BrandModel } from 'uulala-components/projects/uulala-components/src/lib/models/getters/brand.model';
-import { LocalService } from 'uulala-components/projects/uulala-components/src/lib/services/local.service';
+import { BrandModel } from '../models/getters/brand.model';
+import { LocalService } from '../services/local.service';
 import { uiQueries } from '../queries/ui.queries';
 import { GraphService } from './graph.service';
 
