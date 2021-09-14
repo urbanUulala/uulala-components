@@ -17,18 +17,19 @@ export type LocalStorageKeys =
   'society' |
   'sessionBarStatus' |
   'reference' |
-  'temporalS';
+  'temporalS' |
+  'brand';
 
 
 export type UulalaSites =
   'bank' |
   'panel' |
   'wallet' |
-  'payroll' | 
+  'payroll' |
   'batched';
 
 
-export type UulalaEnvironments = 'dev' | 'test' | 'prod';
+export type UulalaEnvironments = 'dev' | 'test' | 'prod' | 'staging';
 
 const uulalaUrlSitesDev = {
   bank: 'http://localhost:4200/access',
@@ -78,6 +79,7 @@ const keyValues = {
   society: 'V00007',
   device_id_rsa: 'V00008',
   sessionBarStatus: 'V00009',
+  brand: 'V00010',
 
   //Temporal values
   pin: 'T00001',
@@ -206,30 +208,30 @@ export class LocalService {
     switch (site) {
       case systemKeyRedirects.payroll:
         return this.getPayrollSesionUrl(environment);
-        case systemKeyRedirects.bank:
+      case systemKeyRedirects.bank:
         return this.getBankSesionUrl(environment);
       default:
         break;
     }
   }
 
-  getSystemByKey(key:string) : SystemSitesType {
+  getSystemByKey(key: string): SystemSitesType {
     switch (key) {
       case systemKeyRedirects.payroll:
         return 'panel'
-        case systemKeyRedirects.bank:
+      case systemKeyRedirects.bank:
         return 'bank'
-        case systemKeyRedirects.batched:
+      case systemKeyRedirects.batched:
         return 'batched'
     }
-   
+
   }
 
   getPayrollSesionUrl(environment: UulalaEnvironments) {
     let device_id: string = this.getValue('device_id');
     device_id = device_id.replace('/', 'diagonal');
 
-    let url: string = `${this.getUrlSite('payroll', environment)}/${this.getValue('token')}/${this.getApiLanguaje()}/${device_id}`;
+    let url: string = `${this.getUrlSite('payroll', environment)}/${this.getStorage('token')}/${this.getApiLanguaje()}/${device_id}`;
     return url;
   }
 
@@ -237,7 +239,7 @@ export class LocalService {
     let device_id: string = this.getValue('device_id');
     device_id = device_id.replace('/', 'diagonal');
 
-    let url: string = `${this.getUrlSite('bank', environment)}/${this.getValue('token')}/${this.getApiLanguaje()}/${device_id}`;
+    let url: string = `${this.getUrlSite('bank', environment)}/${this.getStorage('token')}/${this.getApiLanguaje()}/${device_id}`;
     return url;
   }
 
@@ -250,14 +252,159 @@ export class LocalService {
     return systemKeyRedirects[site];
   }
 
-  getSystemLanguaje(language:number) {
+  getSystemLanguaje(language: number) {
     switch (language) {
       case 2: return 'es';
       case 3: return 'en';
     }
   }
 
-  redirectToAccounts(accountsUrl:string) {
-    window.open( `${accountsUrl}/login/access/${this.getValue('token')}/${this.getValue('device_id_rsa')}/${this.getApiLanguaje()}`, '_self')
+  redirectToAccounts(accountsUrl: string) {
+    window.open(`${accountsUrl}/login/access/${this.getStorage('token')}/${this.getValue('device_id_rsa')}/${this.getApiLanguaje()}`, '_self')
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*  removeStorage: removes a key from localStorage and its sibling expiracy key
+    params:
+        key <string>     : localStorage key to remove
+    returns:
+        <boolean> : telling if operation succeeded
+ */
+  removeStorage(key: LocalStorageKeys) {
+    try {
+      localStorage.removeItem(keyValues[key]);
+      localStorage.removeItem(`_${keyValues[key]}`);
+    } catch (e) {
+      console.log('removeStorage: Error removing key [' + key + '] from localStorage: ' + JSON.stringify(e));
+      return false;
+    }
+    return true;
+  }
+  /*  getStorage: retrieves a key from localStorage previously set with setStorage().
+    params:
+        key <string> : localStorage key
+    returns:
+        <string> : value of localStorage key
+        null : in case of expired key or failure
+  */
+  getStorage(key: LocalStorageKeys) : string {
+
+    let currentDate: number = Date.now();  //epoch time, lets deal only with integer
+    let expiresIn: number = 0;
+    // set expiration for storage
+    let expiresItem: any = localStorage.getItem(`_${keyValues[key]}`);
+    if (expiresItem === undefined || expiresItem === null)  expiresIn = 0; 
+    else expiresIn = +expiresItem;
+
+    if (expiresIn < currentDate) {// Expired
+      this.removeStorage(key);
+      return null;
+    } else {
+      try {
+        return localStorage.getItem(keyValues[key]);
+      } catch (e) {
+        console.log('getStorage: Error reading key [' + key + '] from localStorage: ' + JSON.stringify(e));
+        return null;
+      }
+    }
+  }
+
+  getStorageType<T>(key: LocalStorageKeys) : T{
+
+    let currentDate: number = Date.now();  //epoch time, lets deal only with integer
+    let expiresIn: number = 0;
+    // set expiration for storage
+    let expiresItem: any = localStorage.getItem(`_${keyValues[key]}`);
+    if (expiresItem === undefined || expiresItem === null) { expiresIn = 0; }
+    else expiresIn = +expiresItem;
+
+    if (expiresIn < currentDate) {// Expired
+      this.removeStorage(key);
+      return null;
+    } else {
+      try {
+        var value:T = JSON.parse(localStorage.getItem(keyValues[key]));
+        return value;
+      } catch (e) {
+        console.log('getStorage: Error reading key [' + key + '] from localStorage: ' + JSON.stringify(e));
+        return null;
+      }
+    }
+  }
+  /*  setStorage: writes a key into localStorage setting a expire time
+    params:
+        key <string>     : localStorage key
+        value <string>   : localStorage value
+        expires <number> : number of seconds from now to expire the key
+    returns:
+        <boolean> : telling if operation succeeded
+  */
+  setStorageHours(key: LocalStorageKeys, value: string, expires: number = 24) {
+    expires = Math.abs(expires * 60 * 60);
+
+    return this.setStorage(key, value, expires);
+  }
+
+  setStorageMinutes(key: LocalStorageKeys, value: string, expires: number = 24) {
+    expires = Math.abs(expires * 60);
+
+    return this.setStorage(key, value, expires);
+  }
+
+  private setStorage(key: LocalStorageKeys, value: string, expires: number ) {
+    // console.log('setStorage', value);
+    let currentDate = Date.now();  //millisecs since epoch time, lets deal only with integer
+    let schedule = currentDate + expires * 1000;
+    try {
+      localStorage.setItem(keyValues[key], value);
+      localStorage.setItem(`_${keyValues[key]}`, schedule.toString());
+    } catch (e) {
+      console.log('setStorage: Error setting key [' + key + '] in localStorage: ' + JSON.stringify(e));
+      return false;
+    }
+    return true;
   }
 }

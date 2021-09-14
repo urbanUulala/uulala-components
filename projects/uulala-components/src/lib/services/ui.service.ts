@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, interval } from 'rxjs';
+import { BehaviorSubject, interval, of } from 'rxjs';
 import { map, take } from 'rxjs/operators';
+import { BrandModel } from 'uulala-components/projects/uulala-components/src/lib/models/getters/brand.model';
+import { LocalService } from 'uulala-components/projects/uulala-components/src/lib/services/local.service';
 import { uiQueries } from '../queries/ui.queries';
 import { GraphService } from './graph.service';
 
@@ -14,7 +16,8 @@ export class UiService {
   private css_theme_class$ = new BehaviorSubject(null);
 
   constructor(
-    private graphService: GraphService
+    private graphService: GraphService,
+    private localService: LocalService
   ) { }
 
   setCssThemeClass(cssClass: string) {
@@ -26,18 +29,26 @@ export class UiService {
   }
 
   getBrandInfo(id: number) {
-    return this.graphService.execQuery(
+
+    let brandInfo: BrandModel = this.localService.getStorageType<BrandModel>( 'brand' );
+
+    // console.log('brand info', brandInfo)
+
+    if(brandInfo) return of(brandInfo);
+    
+    if(!brandInfo) return this.graphService.execQuery(
       uiQueries.GET_BRAND_INFO,
       {
         id
       }
     ).pipe(
       map(result => {
-        // console.log('brand info', result);
-        return {
+        brandInfo = {
           ...result.data['getBrandCompany'],
           brandeo: JSON.parse(result.data['getBrandCompany'].brandeo)
         }
+        this.localService.setStorageHours('brand', JSON.stringify(brandInfo), 120)
+        return brandInfo;
       })
     )
   }

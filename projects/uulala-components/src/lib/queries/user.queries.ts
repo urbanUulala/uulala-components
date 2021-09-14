@@ -363,6 +363,10 @@ export const userQueries = {
         account {
           id
           address
+          balanceTokens {
+            total
+            currency
+          }
         }
       }
       usersProfile
