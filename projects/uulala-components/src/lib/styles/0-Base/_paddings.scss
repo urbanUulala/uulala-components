@@ -8,6 +8,14 @@
   @extend %pl-5;
 }
 
+%pl-10 {
+  padding-left: 10px !important;
+}
+
+.pl-10 {
+  @extend %pl-10;
+}
+
 %pl-15 {
   padding-left: 15px !important;
 }
@@ -40,6 +48,14 @@
 
 .pr-5 {
   @extend %pr-5;
+}
+
+%pr-10 {
+  padding-right: 10px !important;
+}
+
+.pr-10 {
+  @extend %pr-10;
 }
 
 %pr-40 {

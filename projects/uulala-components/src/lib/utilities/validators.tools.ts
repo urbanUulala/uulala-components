@@ -106,4 +106,8 @@ export class ValidatorsTools {
     return expr.test(cadena);
   }
 
+  static transactionCryptoIdRegex() {
+    return [Validators.required, Validators.pattern('^(0x)?[a-fA-F0-9]{64}$')]
+  }
+
 }

@@ -27,12 +27,16 @@ export class MessagesService {
     }, time);
   }
 
+  fireErrorMessageManage(tittle: string, payload: any, functionExecWillClose: any = null, time:number = 0) {
+    console.log('payload error', this.getGraphErrorString(payload));
+  }
+
   fireErrorMessageGraph(title: string, graphObject: any, functionExecWillClose: any = null, time:number = 0) {
     this.fireErrorMessage(title, this.getGraphErrorString(graphObject), functionExecWillClose, time);
   }
 
   getGraphErrorString(error:any) {
-    return error.networkError.error.Message.replace('GraphQL.ExecutionError:', '').replace('|','').trim();
+    return error?.networkError?.error?.Message?.replace('GraphQL.ExecutionError:', '').replace('|','').trim();
 }
 
   fireSystemErrorMessage(data: any, functionExecWillClose: any = null) {
