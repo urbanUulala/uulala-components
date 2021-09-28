@@ -12,7 +12,8 @@ export type InfoModuleUser =
   'virtual_cards' |
   'all_cards' |
   'basic' |
-  'batched';
+  'batched' | 
+  'refered';
 
 
 
@@ -96,6 +97,16 @@ export class UserService {
           },
           licensesReferences: this.getLicencesFormat(result.data['getUsersByField'][0].licensesReferences)
         }
+      case 'refered':
+        return {
+          ...result.data['getUsersByField'][0],
+          usersProfile: {
+            ...result.data['getUsersByField'][0].usersProfile[0],
+            accounts: {
+              ...result.data['getUsersByField'][0].usersProfile[0].accounts
+            }
+          }
+        }
       default:
         return {
           ...result.data['getUsersByField'][0],
@@ -136,6 +147,8 @@ export class UserService {
         return userQueries.GET_USER_BASIC_INFO
       case 'batched':
         return userQueries.GET_USER_BATCHED
+      case 'refered': 
+        return userQueries.GET_USER_REFERED
       default:
         return userQueries.GET_USER_BY_FIELD;
     }
@@ -252,5 +265,18 @@ export class UserService {
       }
       )
     );
+  }
+
+  getUserReferal(id) {
+    return this.graphService.execQuery(userQueries.GET_USER_REFERER,
+      {
+        id
+      }
+    ).pipe(
+      map( result => ({
+        ...result.data['getUserReferer'],
+        id
+      }))
+    )
   }
 }
