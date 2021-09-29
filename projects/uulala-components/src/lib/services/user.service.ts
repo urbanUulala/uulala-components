@@ -279,4 +279,21 @@ export class UserService {
       }))
     )
   }
+
+  updateUserReferal(uuid:string) {
+    return this.graphService.execMutation(userQueries.UPDATE_USER_REFERER,
+      {
+        token: this.localService.getValue('token'),
+        uuid
+      }
+    ).pipe(
+      map((result) => (
+          {
+            ...result.data['addReferenceUser'],
+            uuid
+          }
+        )
+      )
+    );
+  }
 }

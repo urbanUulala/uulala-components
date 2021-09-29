@@ -513,5 +513,10 @@ export const userQueries = {
           avatarImage
       }
   }
+  `,
+  UPDATE_USER_REFERER: gql`
+  mutation($token:String!,$uuid:String!){
+    addReferenceUser(token:$token,uuid:$uuid)
+  }
   `
 }

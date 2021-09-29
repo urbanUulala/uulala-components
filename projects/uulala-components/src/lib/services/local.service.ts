@@ -315,7 +315,6 @@ export class LocalService {
  */
   removeStorage(key: LocalStorageKeys) {
     try {
-      console.log('removeStorage: ', key, keyValues[key]);
       localStorage.removeItem(keyValues[key]);
       localStorage.removeItem(`_${keyValues[key]}`);
     } catch (e) {

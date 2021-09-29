@@ -1,5 +1,5 @@
 <div [ngClass]="containerStyles">
-  <div [ngClass]="tittleStyles">
+  <div [ngClass]="tittleStyles" *ngIf="tittle">
     {{ tittle }}
   </div>
   <div [ngClass]="descriptionStyles">
