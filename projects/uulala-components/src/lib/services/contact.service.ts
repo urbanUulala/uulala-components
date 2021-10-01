@@ -22,7 +22,7 @@ export class ContactService {
 		private graphService: GraphService
 	) { }
 
-	setMessageProcess(email: string, subject: string, message: string, clientId: string, clientName: string, clientPhone:string, clientCompany:string) {
+	setMessageProcess(email: string, subject: string, message: string, clientId: string, clientName: string, clientPhone:string, clientCompany:string, template:string) {
 		
 		let token: string = this.localService.getValue('token');
 		let localLanguage = this.localService.getValue('language');
@@ -43,7 +43,7 @@ export class ContactService {
 						},
 						{
 							"name": "template",
-							"value": localLanguage === 'es' ? "user_template_contact_client_es" : "user_template_contact_client_en"
+							"value": `${template}_${localLanguage === 'es' ? "es_mx" : "en_us"}` 
 						},
 						{
 							"name": "subject",

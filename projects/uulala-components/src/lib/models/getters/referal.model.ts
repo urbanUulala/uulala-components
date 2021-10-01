@@ -3,4 +3,5 @@ export interface ReferalModel {
     lastName: string;
     avatarImage: string;
     id:string;
+    email: string;
 }

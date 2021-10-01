@@ -511,6 +511,7 @@ export const userQueries = {
           firstName
           lastName
           avatarImage
+          email
       }
   }
   `,
