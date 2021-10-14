@@ -106,7 +106,14 @@ export class ValidatorsTools {
     return expr.test(cadena);
   }
 
-  static transactionCryptoIdRegex() {
+  static transactionCryptoIdRegex(currency:string) {
+    switch (currency) {
+      case 'BTC':
+        return [Validators.required, Validators.pattern('^[a-fA-F0-9]{64}$')]
+      case 'ETH':
+        return [Validators.required, Validators.pattern('^(0x)[a-fA-F0-9]{64}$')]
+
+    }
     return [Validators.required, Validators.pattern('^(0x)?[a-fA-F0-9]{64}$')]
   }
 
