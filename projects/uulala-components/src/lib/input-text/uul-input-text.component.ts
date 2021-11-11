@@ -19,6 +19,9 @@ import { DateTools } from '../utilities/date.tools';
   styleUrls: ['./uul-input-text.component.scss']
 })
 export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
+  // Subscriptions
+  subscriptions: Subscription[] = [];
+
   //control config
   @Input() config: InputControlTextConfig = {
     id: StringTools.generateNewRandomString(12)
@@ -29,6 +32,9 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() minValue: number = 0;
   @Input() maxValue: number = 0;
+  @Input() showErrorMessage: boolean = false;
+  @Input() labelErrorMessage: string;
+  @Input() trimValue: boolean = false;
 
   //reactive form
   @Input() control: AbstractControl = new FormControl();
@@ -95,15 +101,24 @@ export class UulInputTextComponent implements OnInit, AfterViewInit, OnDestroy {
       this.status = this.control.status;
     });
     this.status$ = this.control.statusChanges.subscribe(result => {
-      console.log('text status', result);
+      // console.log('text status', result);
       this.status = result;
     });
+
+    if(this.trimValue) this.subscriptions.push(
+      this.control.valueChanges.subscribe( value => {
+        // console.log('event clean', value);
+        this.control.setValue(value.trim(), {emitEvent:false} )
+      })
+    )
+
     this.status$.unsubscribe();
   }
 
   ngOnDestroy() {
     this.value$.unsubscribe();
     this.status$.unsubscribe();
+    this.subscriptions.forEach(s => s.unsubscribe());
   }
 
   loadStyles() {

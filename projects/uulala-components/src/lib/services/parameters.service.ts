@@ -27,13 +27,13 @@ export class ParametersService {
 
     }
 
-    getParameterByCompany(filter:string, company:number) {
+    getParameterByCompany(filter:string) {
         return this.graphService.execQuery(
             parametersQueries.GET_PARAMETER_BY_COMPANY,
             {
               token: this.localService.getValue( 'token' ),
               filter,
-              company
+              company: +this.localService.getStorage('company')
             }
           ).pipe(
             map(result => result.data['getParametersByCompany'])

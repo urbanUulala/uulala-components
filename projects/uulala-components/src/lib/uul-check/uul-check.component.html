@@ -3,5 +3,5 @@
     <input type="checkbox" class="check-style" [formControl]="control">
     <i></i>
   </label>
-  <div class="normal-text fs-13">{{ label }}</div>
-</div>
+  <div class="normal-text fs-13">{{ label }} <span *ngIf="control.invalid" class="error-text fw-bold"> - You must check this field to continue</span></div> 
+</div> 

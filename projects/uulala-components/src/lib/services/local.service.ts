@@ -18,7 +18,9 @@ export type LocalStorageKeys =
   'sessionBarStatus' |
   'reference' |
   'temporalS' |
-  'brand';
+  'brand' | 
+  'version' |
+  'company';
 
 
 export type UulalaSites =
@@ -80,6 +82,8 @@ const keyValues = {
   device_id_rsa: 'V00008',
   sessionBarStatus: 'V00009',
   brand: 'V00010',
+  version: 'V00011',
+  company: 'V00012',
 
   //Temporal values
   pin: 'T00001',
@@ -315,6 +319,7 @@ export class LocalService {
  */
   removeStorage(key: LocalStorageKeys) {
     try {
+      console.log('removeStorage: ', key, keyValues[key]);
       localStorage.removeItem(keyValues[key]);
       localStorage.removeItem(`_${keyValues[key]}`);
     } catch (e) {

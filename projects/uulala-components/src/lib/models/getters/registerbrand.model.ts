@@ -3,4 +3,5 @@ export interface RegisterConfigBrand {
     hideNationalId?: boolean;
     redirectSite?: string;
     notSendActiveAccount?: boolean;
+    referenceCodeRequired?: boolean;
 }

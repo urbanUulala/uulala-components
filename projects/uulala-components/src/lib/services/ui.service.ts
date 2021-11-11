@@ -28,9 +28,20 @@ export class UiService {
     return this.css_theme_class$.asObservable();
   }
 
-  getBrandInfo(id: number) {
-
+  getBrandInfo( version:string) {
+    let versionStorage:string = this.localService.getStorage('version');
+    // console.log('versions data', version, versionStorage, version !== versionStorage)
     let brandInfo: BrandModel = this.localService.getStorageType<BrandModel>( 'brand' );
+    let company: number = +this.localService.getStorage('company');
+
+    if(versionStorage !== version) {
+      this.localService.setStorageHours('version', version, 672)
+      this.localService.removeStorage( 'brand');
+    }
+
+    if(company !== +brandInfo.id) brandInfo = null;
+
+
 
     // console.log('brand info', brandInfo)
 
@@ -39,7 +50,7 @@ export class UiService {
     if(!brandInfo) return this.graphService.execQuery(
       uiQueries.GET_BRAND_INFO,
       {
-        id
+        id: +this.localService.getStorage('company')
       }
     ).pipe(
       map(result => {
@@ -47,7 +58,7 @@ export class UiService {
           ...result.data['getBrandCompany'],
           brandeo: JSON.parse(result.data['getBrandCompany'].brandeo)
         }
-        this.localService.setStorageHours('brand', JSON.stringify(brandInfo), 120)
+        this.localService.setStorageHours('brand', JSON.stringify(brandInfo), 240)
         return brandInfo;
       })
     )

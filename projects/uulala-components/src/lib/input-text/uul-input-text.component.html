@@ -27,3 +27,6 @@
   <img [ngClass]="{'img-status': this.type !== 'password','img-status-password': this.type === 'password'}" *ngIf="status === 'VALID'"  [src]="inputImages.paloma" alt="">
   <img [ngClass]="{'img-status': this.type !== 'password','img-status-password': this.type === 'password'}" *ngIf="status === 'INVALID'" [src]="inputImages.tache" alt="">
 </div>
+<div class="error-text fs-12 fw-bold mt-5" *ngIf="showErrorMessage && control.errors && (control.dirty || control.touched)">
+  {{ labelErrorMessage }}
+</div>

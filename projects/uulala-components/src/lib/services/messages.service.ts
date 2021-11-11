@@ -27,6 +27,17 @@ export class MessagesService {
     }, time);
   }
 
+  fireWarningMessage(tittle: string, message: string, functionExecWillClose: any = null, time:number = 0) {
+    this.hidePreloader();
+    setTimeout(() => {
+      Swal.fire({
+        icon: 'warning',
+        title: tittle,
+        text: message,
+        willClose: functionExecWillClose
+      })
+    }, time);
+  }
   fireErrorMessageManage(tittle: string, payload: any, functionExecWillClose: any = null, time:number = 0) {
     console.log('payload error', this.getGraphErrorString(payload));
   }

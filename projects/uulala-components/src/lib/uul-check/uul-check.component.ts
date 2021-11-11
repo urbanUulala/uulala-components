@@ -17,7 +17,7 @@ export class UulCheckComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
-    
+
   }
 
   ngAfterViewInit() : void {
