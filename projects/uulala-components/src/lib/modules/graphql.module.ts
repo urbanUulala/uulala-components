@@ -27,7 +27,7 @@ export const URL_HEADERS = new InjectionToken<HttpHeaders>('headers');
   exports: [ApolloModule, HttpLinkModule],
 })
 export class GraphQLModule {
-  static forRoot(urlInput:string, headers: HttpHeaders): ModuleWithProviders<GraphQLModule> {
+  static forRoot(urlInput:string): ModuleWithProviders<GraphQLModule> {
     return {
       ngModule: GraphQLModule,
       providers: [
@@ -37,7 +37,7 @@ export class GraphQLModule {
           provide: APOLLO_OPTIONS,
           useFactory: (httpLink: HttpLink, url:string) => {
             return {
-              link: httpLink.create({ uri:url, headers:headers }),
+              link: httpLink.create({ uri:url }),
               cache: new InMemoryCache({resultCaching:false,addTypename:false}),
               defaultOptions: defaultOptions
             }

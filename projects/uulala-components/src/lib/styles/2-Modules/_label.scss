@@ -6,12 +6,12 @@
 
 .label-container {
   /*  shape  */
-
+  min-height: 30px;
 
   /*  grid  */
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: auto auto;
   grid-row-gap: 5px;
 }
 

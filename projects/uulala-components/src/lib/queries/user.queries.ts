@@ -358,16 +358,11 @@ export const userQueries = {
       phoneNumber
       lada
       is2Points
-      refererId
       clients {
         id
         account {
           id
           address
-          balanceTokens {
-            total
-            currency
-          }
         }
       }
       usersProfile
@@ -480,44 +475,6 @@ export const userQueries = {
   UPDATE_USER_PROFILE: gql `
   mutation($token:String!,$id:String!,$image:String!){
     setPictureChange(token:$token,id:$id,image:$image)
-  }
-  `,
-  GET_USER_REFERED: gql`
-  query($token:String!,$field:String!,$id:String!)
-  {
-    getUsersByField(token:$token,field:$field,id:$id)
-    {
-      
-      usersProfile
-      {
-        accounts
-        {
-          firstName
-          avatarImage
-          lastName
-          secondLastName
-          middleName
-        }
-      }
-    }
-    
-  }
-  `,
-  GET_USER_REFERER: gql `
-  query($id:String!)
-  {        
-      getUserReferer(id:$id)
-      {     
-          firstName
-          lastName
-          avatarImage
-          email
-      }
-  }
-  `,
-  UPDATE_USER_REFERER: gql`
-  mutation($token:String!,$uuid:String!){
-    addReferenceUser(token:$token,uuid:$uuid)
   }
   `
 }
