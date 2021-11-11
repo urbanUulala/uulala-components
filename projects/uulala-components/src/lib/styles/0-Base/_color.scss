@@ -1,5 +1,13 @@
 @import 'variables';
 
+%bwc-success {
+  background-color: var(--color-success, #23c9d3) !important;
+}
+
+.bwc-success {
+  @extend %bwc-success;
+}
+
 %bwc-highlighted {
   background-color: var(--color-highlighted, #4f5ed5);
 }

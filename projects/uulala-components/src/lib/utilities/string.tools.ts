@@ -57,6 +57,7 @@ export class StringTools {
         break;
       case 3:
         output = `${date.substring(1, 3)}`
+        break;
       case 4:
         output = `${date.substring(2, 4)}`
         break;

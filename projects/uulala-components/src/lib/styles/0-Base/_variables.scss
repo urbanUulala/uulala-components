@@ -51,6 +51,7 @@ $button-radius: 2px;
   --color-back-menu: #{$color-back-menu};
   --color-content-hover: #{$color-content-hover};
   --color-profile-menu: #{$color-profile-menu};
+  --color-back-menu-selected: #717171;
   --color-borders: #{$color-borders};
   --color-block-shadow: #{$color-block-shadow};
   --color-text: #{$color-text};
@@ -86,13 +87,22 @@ $button-radius: 2px;
   --color-empty-1:#{$color-empty-1};
 
   /*  PALETA COMPONENTS  */
-  --color-success-control:#{$color-success-control};
+  --color-success-control:#{var(--color-success)-control};
+  
 
 }
 
 .default_uulala_theme {
   @extend %default_uulala_theme;
   --color-highlighted: #{$color-highlighted};
+}
+
+
+.default_uulala_theme_panel {
+  @extend %default_uulala_theme;
+  --color-highlighted: #{$color-highlighted};
+  --color-back-menu: #37458B;
+  --color-back-menu-selected: #5867DB;
 }
 
 .brand_theme_lurra {
@@ -102,6 +112,14 @@ $button-radius: 2px;
   --color-back-menu: #F0F0F0;
 }
 
+.brand_theme_lurra_panel {
+  @extend %default_uulala_theme;
+  --color-highlighted: #E86447;
+  --color-content-hover: #F0F0F0;
+  --color-back-menu: #D6662A;
+  --color-back-menu-selected: #BD5016;
+}
+
 .brand_theme_novatech {
   @extend %default_uulala_theme;
   --color-highlighted: #00687F;
@@ -109,11 +127,27 @@ $button-radius: 2px;
   --color-back-menu: #E5E9F0;
 }
 
+.brand_theme_novatech_panel {
+  @extend %default_uulala_theme;
+  --color-highlighted: #00687F;
+  --color-content-hover: #E5E9F0;
+  --color-back-menu: #00637A;
+  --color-back-menu-selected: #147C94;
+}
+
 .brand_theme_digital_profit {
   @extend %default_uulala_theme;
   --color-highlighted: #5867DB;
   --color-content-hover: #F2F8FD;
   --color-back-menu: #E1E8EE;
+}
+
+.brand_theme_digital_profit_panel {
+  @extend %default_uulala_theme;
+  --color-highlighted: #5867DB;
+  --color-content-hover: #F2F8FD;
+  --color-back-menu: #086493;
+  --color-back-menu-selected: #1184BE;
 }
 
 
@@ -124,6 +158,14 @@ $button-radius: 2px;
   --color-back-menu: #EBEEF5;
 }
 
+.brand_theme_auto_insurance_panel {
+  @extend %default_uulala_theme;
+  --color-highlighted: #5867DB;
+  --color-content-hover: #EBEEF5;
+  --color-back-menu: #295DA6;
+  --color-back-menu-selected: #3979D3;
+}
+
 .brand_theme_iot_basics {
   @extend %default_uulala_theme;
   --color-highlighted: #3298DB;
@@ -131,21 +173,61 @@ $button-radius: 2px;
   --color-back-menu: #E3E7EC;
 }
 
+.brand_theme_iot_basics_panel {
+  @extend %default_uulala_theme;
+  --color-highlighted: #3298DB;
+  --color-content-hover: #F5F5F5;
+  --color-back-menu: #A9B7C9;
+  --color-back-menu-selected: #7F94AF;
+}
+
 .brand_theme_batched {
   @extend %default_uulala_theme;
   --color-content-hover: #161B30;
   --color-borders: #6785FF;
+  --color-back-menu: #161B30;
 
   --color-text: white;
   --color-highlighted: #00A9FF;
-  --color-white: #161B30;
+  --color-white: #ffffff;
+  
+}
+
+.brand_theme_batched_panel {
+  @extend %default_uulala_theme;
+  --color-highlighted: #{$color-highlighted};
+  --color-back-menu: #37458B;
+  --color-back-menu-selected: #5867DB;
   
 }
 
 .brand_theme_savvy {
+  @extend %default_uulala_theme;
   --color-highlighted: #a94712;
-  --color-content-hover: #fff;
+  --color-content-hover: #efefef;
   --color-back-menu: #efefef;
+}
+
+.brand_theme_savvy_panel {
+  @extend %default_uulala_theme;
+  --color-highlighted: #a94712;
+  --color-content-hover: #efefef;
+  --color-back-menu: #323232;
+  --color-back-menu-selected: #5D5D5D;
+}
+
+.no_brand_theme {
+  @extend %default_uulala_theme;
+  --color-content-hover: white;
+  --color-borders: black;
+
+
+  --color-text: black;
+  --color-highlighted: black;
+  --color-white: #ffffff;
+  --color-back-menu: #898989;
+  --color-back-menu-selected: #717171;
+  
 }
 
 

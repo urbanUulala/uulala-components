@@ -358,6 +358,7 @@ export const userQueries = {
       phoneNumber
       lada
       is2Points
+      refererId
       clients {
         id
         account {
@@ -510,7 +511,13 @@ export const userQueries = {
           firstName
           lastName
           avatarImage
+          email
       }
+  }
+  `,
+  UPDATE_USER_REFERER: gql`
+  mutation($token:String!,$uuid:String!){
+    addReferenceUser(token:$token,uuid:$uuid)
   }
   `
 }
