@@ -36,10 +36,10 @@ export class UiService {
 
     if(versionStorage !== version) {
       this.localService.setStorageHours('version', version, 672)
-      this.localService.removeStorage( 'brand');
+      brandInfo = null;
     }
 
-    if(company !== +brandInfo.id) brandInfo = null;
+    if(company !== +brandInfo?.id) brandInfo = null;
 
 
 

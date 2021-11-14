@@ -168,8 +168,28 @@ export class LocalService {
   }
 
   getApiLanguaje() {
-    return defaultLanguajeValues[this.getValue('language')].apiLanguaje;
-  }
+		let language: string = this.getValue('language');
+		if (Number.isInteger(language)) {
+			let keys = Object.keys(defaultLanguajeValues);
+
+			keys.some(language => {
+				let lan: any = defaultLanguajeValues[language];
+				if (lan.apiLanguaje === +language) return lan.apiLanguaje;
+			});
+		}
+		return defaultLanguajeValues[this.getValue('language')].apiLanguaje;
+	}
+
+  setApiLanguage(language: number) {
+		let keys = Object.keys(defaultLanguajeValues);
+
+		keys.some(langKey => {
+			let lan: any = defaultLanguajeValues[langKey];
+			if (lan.apiLanguaje === language) {
+				this.setValue('language', lan.systemLanguage);
+			}
+		});
+	}
 
   getDefaultPhoneCode() {
     return defaultLanguajeValues[this.getValue('language')].phoneCode;

@@ -95,6 +95,8 @@ $button-radius: 2px;
 .default_uulala_theme {
   @extend %default_uulala_theme;
   --color-highlighted: #{$color-highlighted};
+  --color-back-menu: #37458B;
+  --color-back-menu-selected: #5867DB;
 }
 
 
@@ -109,7 +111,8 @@ $button-radius: 2px;
   @extend %default_uulala_theme;
   --color-highlighted: #E86447;
   --color-content-hover: #F0F0F0;
-  --color-back-menu: #F0F0F0;
+  --color-back-menu: #D6662A;
+  --color-back-menu-selected: #BD5016;
 }
 
 .brand_theme_lurra_panel {
@@ -124,7 +127,8 @@ $button-radius: 2px;
   @extend %default_uulala_theme;
   --color-highlighted: #00687F;
   --color-content-hover: #E5E9F0;
-  --color-back-menu: #E5E9F0;
+  --color-back-menu: #00637A;
+  --color-back-menu-selected: #147C94;
 }
 
 .brand_theme_novatech_panel {
@@ -139,7 +143,8 @@ $button-radius: 2px;
   @extend %default_uulala_theme;
   --color-highlighted: #5867DB;
   --color-content-hover: #F2F8FD;
-  --color-back-menu: #E1E8EE;
+  --color-back-menu: #086493;
+  --color-back-menu-selected: #1184BE;
 }
 
 .brand_theme_digital_profit_panel {
@@ -155,7 +160,8 @@ $button-radius: 2px;
   @extend %default_uulala_theme;
   --color-highlighted: #5867DB;
   --color-content-hover: #EBEEF5;
-  --color-back-menu: #EBEEF5;
+  --color-back-menu: #295DA6;
+  --color-back-menu-selected: #3979D3;
 }
 
 .brand_theme_auto_insurance_panel {
@@ -170,7 +176,8 @@ $button-radius: 2px;
   @extend %default_uulala_theme;
   --color-highlighted: #3298DB;
   --color-content-hover: #F5F5F5;
-  --color-back-menu: #E3E7EC;
+  --color-back-menu: #A9B7C9;
+  --color-back-menu-selected: #7F94AF;
 }
 
 .brand_theme_iot_basics_panel {
@@ -189,7 +196,7 @@ $button-radius: 2px;
 
   --color-text: white;
   --color-highlighted: #00A9FF;
-  --color-white: #ffffff;
+  --color-white: #161B30;
   
 }
 
@@ -205,7 +212,8 @@ $button-radius: 2px;
   @extend %default_uulala_theme;
   --color-highlighted: #a94712;
   --color-content-hover: #efefef;
-  --color-back-menu: #efefef;
+  --color-back-menu: #323232;
+  --color-back-menu-selected: #5D5D5D;
 }
 
 .brand_theme_savvy_panel {

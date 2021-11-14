@@ -7,4 +7,7 @@ export interface MenuModel {
   imgUrl: string;
   childs?: MenuModel[];
   allChilds?: MenuModel[];
+  detailExpanded?:boolean;
+  fatherSelect?:boolean;
+  childSelect?:boolean;
 }

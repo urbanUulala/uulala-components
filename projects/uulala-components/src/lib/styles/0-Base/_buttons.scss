@@ -376,8 +376,8 @@
   @extend %clickeable;
 
   /*  color  */
-  background-color: var(--color-back-menu, #e5e9f0);
-  color: var(--color-highlighted, #4f5ed5);
+  background-color: var(--color-back-menu-selected, #e5e9f0);
+  color: var(--color-white, #4f5ed5);
 
   /*  shape  */
   width: 100%;
