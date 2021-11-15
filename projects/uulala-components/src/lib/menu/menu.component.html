@@ -1,0 +1,4 @@
+<div class="container-menu-init">
+        <div class="menu-item-init"></div>
+        <app-row-menu class="menu-item-init" *ngFor="let menu of menus" [data]=menu (closeMenusEvent)="closeEvent($event)" (selectFather)="fatherSelect($event)"></app-row-menu>
+</div>

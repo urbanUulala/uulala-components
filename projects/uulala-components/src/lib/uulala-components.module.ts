@@ -40,6 +40,8 @@ import { CryptoService } from './services/crypto.service';
 import { UulTermsComponent } from './uul-terms/uul-terms.component';
 import { FormatLocalDate } from './pipes/format-local-date.pipe';
 import { ChangeButtonsComponent } from './change-buttons/change-buttons.component';
+import { MenuComponent } from './menu/menu.component';
+import { RowMenuComponent } from './row-menu/rowmenu.component';
 
 
 
@@ -73,7 +75,9 @@ import { ChangeButtonsComponent } from './change-buttons/change-buttons.componen
     UulTransactionsComponent,
     IconImageComponent,
     UulTermsComponent,
-    ChangeButtonsComponent
+    ChangeButtonsComponent,
+    MenuComponent, 
+    RowMenuComponent
   ],
   imports: [
     CommonModule,
@@ -111,7 +115,9 @@ import { ChangeButtonsComponent } from './change-buttons/change-buttons.componen
     IconImageComponent, 
     NgScrollbarModule,
     UulTermsComponent,
-    ChangeButtonsComponent
+    ChangeButtonsComponent,
+    MenuComponent, 
+    RowMenuComponent
   ],
   providers: [
     LocalService,

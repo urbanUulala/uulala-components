@@ -1,0 +1,44 @@
+
+<div  [ngClass]="{'container-menu': !isChild , 'container-menu-child': isChild, 'detail-expanded': data?.detailExpanded}"  style="border-radius: 3px 0px 0px 3px">
+    <div class="link-menu-data border-radius"  (click)="routerLink()"  *ngIf="!(data?.childs?.length || data?.urlV2 === '#')" >
+        <div class="link-menu" [ngClass]="{ 'clickeable': true, 'link-menu': !isChild, 'link-menu-child': isChild, 'selected-menu': data?.detailExpanded || data?.fatherSelect }">
+            <div  class="link-menu-lateral-child" *ngIf="isChild"></div>
+            <div  class="link-menu-lateral" [ngClass]="{ 'selected-lateral': data?.fatherSelect }" *ngIf="!isChild"></div>
+            <div class="link-menu-img">
+                    <icon-image [inputImage]="data?.imgUrl" *ngIf="!isChild"></icon-image>
+                    <div class="icon-child-menu" *ngIf="isChild"  [ngClass]="{'selected-icon-child-menu': data?.childSelect}"></div>
+            </div>
+            <div  [ngClass]="{'link-menu-text': !isChild, 'link-menu-text-child': isChild }">
+                <h5 [ngClass]="{'fs-12': true, 'link-text': !isChild, 'link-text-child': isChild }">{{ data?.description  }}</h5>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <a  *ngIf="data?.childs?.length" (click)="expandDetail()">
+        <div class="link-menu" [ngClass]="{'clickeable': true, 'link-menu': !isChild, 'link-menu-child': isChild, 'selected-menu': data?.detailExpanded || data?.fatherSelect }">
+            <div  class="link-menu-lateral-child"   *ngIf="isChild"></div>
+            <div  class="link-menu-lateral" [ngClass]="{ 'show-lateral': data.detailExpanded && !data?.fatherSelect, 'selected-lateral': data?.fatherSelect }" *ngIf="!isChild"></div>
+            <div class="link-menu-img">
+                    <!-- <img  src="{{ data?.imgUrl }}" alt="" *ngIf="!isChild"> -->
+                    <icon-image [inputImage]="data?.imgUrl" *ngIf="!isChild"></icon-image>
+                    <div class="icon-child-menu" *ngIf="isChild" ></div>
+            </div>
+            <div  [ngClass]="{'link-menu-text': !isChild, 'link-menu-text-child': isChild }">
+                <h5 [ngClass]="{'center': true, 'link-text': !isChild, 'link-text-child': isChild }">{{ data?.description }}</h5>
+            </div>
+            
+        </div>
+        
+    </a>
+    
+    <div class="container-menu-child incoming-animation" *ngIf="data?.detailExpanded">
+        <div class="container-menu-child" *ngIf="data?.childs?.length">
+            <app-row-menu *ngFor="let child of data?.childs" [data]="child" [isChild]="true" [father]="data" (selectChild)="selectChildEvent($event)" (selectFather)="fatherEvent($event)"> </app-row-menu>
+        </div>
+    </div>
+    
+</div>
+
+      
