@@ -35,6 +35,7 @@
  export * from './lib/change-buttons/change-buttons.component';
  export * from './lib/menu/menu.component';
  export * from './lib/row-menu/rowmenu.component';
+ export * from './lib/breadcrum/breadcrum.component';
 
  export * from './lib/store/actions';
  export * from './lib/store/effects';

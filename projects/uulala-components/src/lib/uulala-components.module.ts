@@ -42,6 +42,7 @@ import { FormatLocalDate } from './pipes/format-local-date.pipe';
 import { ChangeButtonsComponent } from './change-buttons/change-buttons.component';
 import { MenuComponent } from './menu/menu.component';
 import { RowMenuComponent } from './row-menu/rowmenu.component';
+import { BreadcrumComponent } from './breadcrum/breadcrum.component';
 
 
 
@@ -77,7 +78,8 @@ import { RowMenuComponent } from './row-menu/rowmenu.component';
     UulTermsComponent,
     ChangeButtonsComponent,
     MenuComponent, 
-    RowMenuComponent
+    RowMenuComponent,
+    BreadcrumComponent
   ],
   imports: [
     CommonModule,
@@ -117,7 +119,8 @@ import { RowMenuComponent } from './row-menu/rowmenu.component';
     UulTermsComponent,
     ChangeButtonsComponent,
     MenuComponent, 
-    RowMenuComponent
+    RowMenuComponent,
+    BreadcrumComponent
   ],
   providers: [
     LocalService,

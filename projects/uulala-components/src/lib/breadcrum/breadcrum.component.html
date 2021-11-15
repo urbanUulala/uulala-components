@@ -1,0 +1,26 @@
+<div class="breadcrum">
+    <div>
+        <div class="normal-text fs-18 fw-500">
+            <ng-container *ngFor="let textConfig of breadcrumConfig?.tittle">
+                <ng-container *ngIf="textConfig?.isStrong">
+                    <strong>{{ textConfig.text  }}</strong>
+                </ng-container>
+                <ng-container *ngIf="!textConfig?.isStrong">
+                    {{ textConfig.text }}
+                </ng-container>
+                {{' '}}
+            </ng-container> 
+        </div>
+    </div>
+    <div class="breadcrum__bar">
+        <ng-container  *ngFor="let bread of breadcrumConfig?.breadItems; let i = index">
+            <div [ngClass]="{'breadcrum__container': !bread?.selected, 'breadcrum__container--selected': bread?.selected}" [ngStyle]="{'z-index': breadcrumConfig?.breadItems.length - i }" (click)="goToMenu(bread)">
+                {{ bread.tittle }}
+                <div class="triangulo-redondeado"></div>
+                <div class="triangulo-redondeado2" *ngIf="i !== 0"></div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+    
