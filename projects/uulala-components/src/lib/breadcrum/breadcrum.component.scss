@@ -15,7 +15,7 @@
     @extend %fw-bold;
     @extend %clickeable;
 
-    border: 1px solid var(--color-text, #43465d);
+    border: 1px solid var(--color-back-menu, #43465d);
     border-radius: 3px;
     position: relative;
     display: inline-block;
@@ -30,8 +30,8 @@
     @extend %fs-12;
     @extend %fw-bold;
 
-    border: 1px solid var(--color-text, #43465d);
-    background-color:  var(--color-text, #43465d);
+    border: 1px solid var(--color-back-menu, #43465d);
+    background-color:  var(--color-back-menu, #43465d);
     border-radius: 3px;
     position: relative;
     display: inline-block;
@@ -45,7 +45,7 @@
 .breadcrum__container:hover > .triangulo-redondeado,
 .breadcrum__container--selected > .triangulo-redondeado {
     @extend %white-text;
-    background-color: var(--color-text, #43465d);
+    background-color: var(--color-back-menu, #43465d);
     
 }
 
@@ -57,8 +57,8 @@
     /* top: 4em; */
     background-color: var(--color-content-hover);
     border-top-right-radius: 3px;
-    border-top: 1px solid var(--color-text, #43465d);
-    border-right: 1px solid var(--color-text, #43465d);
+    border-top: 1px solid var(--color-back-menu, #43465d);
+    border-right: 1px solid var(--color-back-menu, #43465d);
     transform: rotate(45deg);
     right: -8px;
     top: 3px;
@@ -72,8 +72,8 @@
     /* top: 4em; */
     background-color: white;
     border-top-right-radius: 3px;
-    border-top: 1px solid var(--color-text, #43465d);
-    border-right: 1px solid var(--color-text, #43465d);
+    border-top: 1px solid var(--color-back-menu, #43465d);
+    border-right: 1px solid var(--color-back-menu, #43465d);
     transform: rotate(45deg);
     left: -7px;
     top: 3px;
