@@ -120,7 +120,9 @@ export const userQueries = {
                 pin
                 customerId
                 isComplete
+                terms
                 address
+                
                 {
                     id
                     city
