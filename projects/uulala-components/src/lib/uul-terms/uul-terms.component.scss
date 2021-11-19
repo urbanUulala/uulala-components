@@ -1,4 +1,3 @@
-
 .terms__content {
     width: calc(100% - 20px);
     padding-left: 10px;
@@ -7,9 +6,12 @@
 
 ::ng-deep {
     ng-scrollbar.ligth-scroll {
-  
-      --scrollbar-track-color: white;
-  
+        --scrollbar-track-color: white;
     }
-  }
-  
+}
+
+.lotie-scroll {
+    right: -25px;
+    top: 0px;
+    background-color: white;
+}

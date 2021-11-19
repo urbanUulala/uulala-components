@@ -17,6 +17,7 @@ export class UulModalComponent implements OnInit, AfterViewInit {
   @Input() id: string;
   @Input() type: ModalTypes = 'form';
   @Input() autoClose: boolean = true;
+  @Input() showCloseButton:boolean = true;
 
   // Outputs
   @Output() closeEvent:EventEmitter<boolean> = new EventEmitter<boolean>();

@@ -92,11 +92,15 @@ export class PointsService {
 
 
     setLiquidityCommissions(address: string, amount: number) {
-        return this.setTransactionBetweenInternalPools(address, pointsConstants.POOLS.COMMISSION, pointsConstants.POOLS.LIQUIDITY, amount, `Liquidity points for ${address}`);
+        return this.setTransactionBetweenInternalPools(address, pointsConstants.POOLS.COMMISSION, pointsConstants.POOLS.LIQUIDITY, amount, `Send points from commission to exec`);
     }
 
     setRewardsToGateway(address: string, amount: number) {
-        return this.setTransactionBetweenInternalPools(address, pointsConstants.POOLS.REWARDS, pointsConstants.POOLS.GATEWAY, amount, `Send points to gateway for ${address}`);
+        return this.setTransactionBetweenInternalPools(address, pointsConstants.POOLS.REWARDS, pointsConstants.POOLS.GATEWAY, amount, `Send points from rewards to gateway`);
+    }
+
+    setGatewayToRewards(address: string, amount: number) {
+        return this.setTransactionBetweenInternalPools(address, pointsConstants.POOLS.GATEWAY, pointsConstants.POOLS.REWARDS, amount, `Send points from gateway to rewards`);
     }
 
 
@@ -119,7 +123,7 @@ export class PointsService {
     }
 
     setLiquidityPool(address: string, amount: number, depositClient: number) {
-        return this.setTransactionPointsToClientWallet(address, pointsConstants.POOLS.LIQUIDITY, amount / 0.1, depositClient, walletConstants.POOLS.PENDING, amount, `Sent points to wallet for ${address}`)
+        return this.setTransactionPointsToClientWallet(address, pointsConstants.POOLS.LIQUIDITY, amount / 0.1, depositClient, walletConstants.POOLS.PENDING, amount, `Sent commission points to wallet`)
     }
 
 

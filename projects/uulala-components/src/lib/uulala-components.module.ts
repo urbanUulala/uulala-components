@@ -43,6 +43,7 @@ import { ChangeButtonsComponent } from './change-buttons/change-buttons.componen
 import { MenuComponent } from './menu/menu.component';
 import { RowMenuComponent } from './row-menu/rowmenu.component';
 import { BreadcrumComponent } from './breadcrum/breadcrum.component';
+import { LottieAnimationViewComponent } from './lottie-animation-view/lottie-animation-view.component';
 
 
 
@@ -79,7 +80,8 @@ import { BreadcrumComponent } from './breadcrum/breadcrum.component';
     ChangeButtonsComponent,
     MenuComponent, 
     RowMenuComponent,
-    BreadcrumComponent
+    BreadcrumComponent,
+    LottieAnimationViewComponent
   ],
   imports: [
     CommonModule,
@@ -120,7 +122,8 @@ import { BreadcrumComponent } from './breadcrum/breadcrum.component';
     ChangeButtonsComponent,
     MenuComponent, 
     RowMenuComponent,
-    BreadcrumComponent
+    BreadcrumComponent,
+    LottieAnimationViewComponent
   ],
   providers: [
     LocalService,

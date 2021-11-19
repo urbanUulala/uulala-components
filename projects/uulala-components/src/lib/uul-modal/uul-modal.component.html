@@ -1,6 +1,6 @@
 <div [ngClass]="{'uul-modal': true }">
     <div [ngClass]="{'uul-modal-body': true, 'uul-modal-form': type === 'form'}">
-        <button class="close-icon-button uul-modal-btn-close" (click)="close()"></button>
+        <button class="close-icon-button uul-modal-btn-close" (click)="close()"  *ngIf="showCloseButton"></button>
         <ng-content></ng-content>
     </div>
 </div>

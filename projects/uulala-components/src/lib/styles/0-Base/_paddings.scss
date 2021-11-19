@@ -1,3 +1,11 @@
+/* PADDINGS */
+%p-10 {
+    padding: 10px !important;
+}
+
+.p-10 {
+    @extend %p-10;
+}
 /*  padding left  */
 
 %pl-5 {
