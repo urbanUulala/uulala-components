@@ -135,14 +135,17 @@
 
 .link-menu-child:hover {
     background-color: var(--color-back-menu, white);
+    border: 1px solid var(--color-back-menu-selected);
 }
 
 .link-menu:hover .icon-child-menu {
     background-color: var(--color-success);
+    border: 1px solid var(--color-back-menu-selected);
 }
 
 .link-menu-child:hover .link-menu {
     background-color: var(--color-white);
+    border: 1px solid var(--color-back-menu-selected);
 }
 
 .link-menu-img {
