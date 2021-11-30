@@ -1,4 +1,11 @@
-<div class="container-menu-init">
+<div class="container-menu-init pos-r">
         <div class="menu-item-init"></div>
         <app-row-menu class="menu-item-init" *ngFor="let menu of menus" [data]=menu (closeMenusEvent)="closeEvent($event)" (selectFather)="fatherSelect($event)"></app-row-menu>
+        <div class="button-half-circle pos-a">
+            <div class="w-25 h-50 pos-r">
+                <div class="button-half-circle-img pos-a clickeable"  [ngStyle]="{transform: showBanners ? 'rotate(0deg)' : 'rotate(180deg)', top: showBanners ? '14px' : '10px'}">
+                    <!-- <svg-icon src="/assets/img/icons/white-arrow-rigth.svg" [stretch]="true" [svgStyle]="{'width.px':7, 'height.px': 12,'fill':'var(--color-white)','padding.px':1,'margin.px':3}"></svg-icon> -->
+                </div>
+            </div>
+        </div>
 </div>

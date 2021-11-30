@@ -23,12 +23,12 @@ export class StringTools {
   }
 
   static getGraphErrorMessage(error: string): string {
-    let errorString: string = error.replace('GraphQL.ExecutionError: ', '');
-    errorString = errorString.substring(0, errorString.length - 1);
+    let errorString: string = error?.replace('GraphQL.ExecutionError: ', '');
+    errorString = errorString?.substring(0, errorString.length - 1);
 
-    let errors: string[] = errorString.split('|');
+    let errors: string[] = errorString?.split('|') || [];
 
-    if (errors.length !== 0) return errors[0];
+    if (errors?.length  !== 0) return errors[0];
     else return '';
   }
 

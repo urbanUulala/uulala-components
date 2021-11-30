@@ -1,16 +1,53 @@
 
-
+@import '../styles/0-Base/base-dir';
+@import '../styles/2-Modules/modules-dir';
 
 .container-menu-init {
     display: grid;
     grid-template-rows: auto ;
-    grid-auto-columns: 230px;
-    grid-auto-rows: minmax(39px, auto);
+
+    grid-auto-rows: auto;
     grid-row-gap: 20px;
-    justify-content: center;
+    // justify-content: center;
+
 
 }
 
+
+.button-half-circle {
+    background: var(--color-back-menu);
+    display: inline-block;
+    margin: 0 1em 1em 0;
+
+    height: 50px;
+    width: 25px;
+
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+
+
+    right: -50px;
+    transform: rotate(180deg);
+
+    display: none;
+
+    @include media-query(1160px) {
+
+        display: inline-block;
+
+    }
+}
+
+.button-half-circle-img {
+    top: 10px;
+    right: 2px;
+    transition: transform 0.8s;
+   
+}
+
+.button-half-circle:hover {
+    background: var(--color-highlighted);
+}
 
 
 

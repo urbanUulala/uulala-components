@@ -1,6 +1,6 @@
 {
   "name": "uulala-components",
-  "version": "0.0.165",
+  "version": "0.0.172",
   "peerDependencies": {
     "@angular/common": "^11.0.5",
     "@angular/core": "^11.0.5"

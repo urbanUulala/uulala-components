@@ -12,5 +12,9 @@ export class StyleTools {
     return document.body.offsetHeight;
   }
 
+  static getBodyWidth(): number {
+      return document.body.offsetWidth;
+  }
+
 
 }

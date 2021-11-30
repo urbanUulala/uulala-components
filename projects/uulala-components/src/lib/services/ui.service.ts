@@ -40,7 +40,8 @@ export class UiService {
         let company: number = +this.localService.getStorage('company');
 
         if (versionStorage !== version) {
-            this.localService.setStorageHours('version', version, 672)
+            this.localService.setStorageHours('version', version, 672);
+            // location.reload();
             brandInfo = null;
         }
 

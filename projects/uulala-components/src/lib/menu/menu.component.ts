@@ -9,6 +9,8 @@ import { MenuModel } from "../models/getters/menu.model";
     styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit{
+
+    showBanners:boolean;
     @Input() menus:MenuModel[] = [];
     @Input() detailExpanded:boolean = true;
     constructor(){

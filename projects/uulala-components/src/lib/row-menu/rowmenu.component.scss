@@ -1,4 +1,5 @@
-
+@import '../styles/0-Base/base-dir';
+@import '../styles/2-Modules/modules-dir';
 
 .icon-child-menu {
     width: 3px;
@@ -51,6 +52,12 @@
     justify-content: initial;
     position: relative;
     border-radius: 3px 3px 3px 3px;
+
+    @include media-query(1160px) {
+
+        grid-template-columns: 40px;
+
+    }
 }
 
 .link-menu-out {
@@ -77,6 +84,14 @@
     grid-row-gap: 5px;
     border-radius: 3px;
     opacity: 0.85;
+
+    
+    @include media-query(1160px) {
+
+        grid-auto-columns: 40px;
+
+    }
+    
 }
 
 .container-menu:hover {
@@ -109,6 +124,12 @@
     grid-auto-columns: 230px;
     grid-auto-rows: minmax(39px, auto);
     grid-row-gap: 2px;
+
+    @include media-query(1160px) {
+
+        grid-auto-columns: auto;
+
+    }
 }
 
 .link-menu-lateral {
@@ -159,6 +180,12 @@
 .link-menu-text {
     align-self: center;
     justify-self: start;
+
+    @include media-query(1160px) {
+
+        display: none;
+
+    }
 }
 
 .link-menu-text .link-text {
@@ -169,6 +196,12 @@
 .link-menu-text-child {
     align-self: center;
     justify-self: start;
+
+    @include media-query(1160px) {
+
+        display: none;
+
+    }
 }
 .link-menu-text-child .link-text-child {
     color: var(--color-white);
